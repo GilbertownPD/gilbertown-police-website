@@ -489,3 +489,433 @@
       font-size: 2rem;
       line-height: 1.05;
     }
+
+    .news-item {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .news-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .news-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .news-date {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .news-item h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.18rem;
+      line-height: 1.25;
+    }
+
+    .news-item p {
+      margin: 8px 0 0;
+    }
+
+    .news-item a {
+      color: var(--navy-3);
+      font-weight: 800;
+    }
+
+    .contact-line {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .contact-line:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-line strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .contact-line a {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .notice {
+      margin-top: 34px;
+      padding: 20px 24px;
+      color: var(--navy);
+      background: #fff1b6;
+      border-left: 6px solid var(--gold-dark);
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: #dce8f2;
+      background: #051421;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .small {
+      font-size: 0.87rem;
+    }
+
+    @media (max-width: 900px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .information-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slide {
+        min-height: 590px;
+      }
+
+      .slide::before {
+        background: linear-gradient(100deg, rgba(5, 19, 32, 0.95), rgba(5, 19, 32, 0.63));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .masthead {
+        min-height: 84px;
+        padding: 15px 0;
+      }
+
+      .brand-department {
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+      }
+
+      .explore-button {
+        min-width: 112px;
+        gap: 8px;
+        padding: 11px 12px;
+        font-size: 0.7rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        padding: 10px 0 18px;
+      }
+
+      .site-menu a {
+        padding: 12px 13px;
+      }
+
+      .site-menu.open {
+        max-height: 900px;
+      }
+
+      .slide {
+        min-height: 575px;
+      }
+
+      .slide-content {
+        padding: 44px 0 100px;
+      }
+
+      .slide-panel {
+        padding: 25px;
+      }
+
+      .carousel-controls {
+        right: 4%;
+        bottom: 20px;
+      }
+
+      .carousel-control {
+        min-width: 42px;
+        min-height: 42px;
+      }
+
+      main {
+        padding: 48px 0 58px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading > a {
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="emergency-strip">
+    For emergencies or crimes in progress, call <a href="tel:911">911</a>.
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="masthead">
+        <a class="brand" href="index.html" aria-label="Gilbertown Police Department home">
+          <span class="brand-town">Gilbertown</span>
+          <span class="brand-department">Police Department</span>
+        </a>
+
+        <button class="explore-button" id="explore-button" type="button" aria-expanded="false" aria-controls="site-menu">
+          Explore
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
+      <div class="wrap menu-grid">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="forms.html">Forms</a>
+        <a href="news.html">News &amp; Notices</a>
+        <a href="events.html">Community Events</a>
+        <a href="links.html">Helpful Links</a>
+        <a href="tips.html">Submit a Tip</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="carousel" aria-label="Gilbertown Police Department featured information" aria-roledescription="carousel">
+    <div class="carousel-track" id="carousel-track">
+      <article class="slide slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <div class="slide-content">
+          <div class="slide-panel">
+            <span class="slide-label">Gilbertown Police Department</span>
+            <h1>Committed to Gilbertown.<br>Focused on Public Safety.</h1>
+            <p>Clear information, professional service, and public-safety resources for the people of Gilbertown, Alabama.</p>
+            <a class="slide-button" href="about.html">About the Department</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
+        <div class="slide-content">
+          <div class="slide-panel">
+            <span class="slide-label">Public Services</span>
+            <h2>Services and Forms for Our Community</h2>
+            <p>Find information about records requests, accident reports, vacation watch, court contacts, and department forms.</p>
+            <a class="slide-button" href="services.html">View Services</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
+        <div class="slide-content">
+          <div class="slide-panel">
+            <span class="slide-label">Stay Connected</span>
+            <h2>News, Events, and Community Information</h2>
+            <p>See department notices, community events, useful public-safety links, and ways to contact the department.</p>
+            <a class="slide-button" href="news.html">View News &amp; Notices</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="carousel-controls" aria-label="Carousel controls">
+      <button class="carousel-control" id="previous-slide" type="button" aria-label="Previous slide">&#8592;</button>
+
+      <div class="carousel-dots" role="group" aria-label="Choose a slide">
+        <button class="carousel-dot" type="button" aria-label="Show slide 1" aria-current="true" data-slide="0"></button>
+        <button class="carousel-dot" type="button" aria-label="Show slide 2" aria-current="false" data-slide="1"></button>
+        <button class="carousel-dot" type="button" aria-label="Show slide 3" aria-current="false" data-slide="2"></button>
+      </div>
+
+      <button class="carousel-control" id="next-slide" type="button" aria-label="Next slide">&#8594;</button>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section aria-labelledby="quick-links-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Public Resources</p>
+          <h2 id="quick-links-heading">Quick Links</h2>
+        </div>
+
+        <a href="services.html">View all services</a>
+      </div>
+
+      <div class="quick-links">
+        <a class="quick-link" href="services.html">
+          <small>Department Services</small>
+          <h3>Services &amp; Records</h3>
+          <span>Explore services &#8594;</span>
+        </a>
+
+        <a class="quick-link" href="forms.html">
+          <small>Downloadable Documents</small>
+          <h3>Public Forms</h3>
+          <span>View forms &#8594;</span>
+        </a>
+
+        <a class="quick-link" href="tips.html">
+          <small>Public Safety Information</small>
+          <h3>Submit a Tip</h3>
+          <span>Tip information &#8594;</span>
+        </a>
+
+        <a class="quick-link" href="events.html">
+          <small>Community Information</small>
+          <h3>Events &amp; Notices</h3>
+          <span>See updates &#8594;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="information-grid" aria-label="News and contact information">
+      <div class="news-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Official Updates</p>
+            <h2>Latest News</h2>
+          </div>
+
+          <a href="news.html">All news</a>
+        </div>
+
+        <article class="news-item">
+          <p class="news-date">September 18, 2026</p>
+          <h3>Website Under Development</h3>
+          <p>The Gilbertown Police Department is developing this official public website to make department information, approved public forms, and public resources easier to find.</p>
+          <p><a href="news.html">Read news and public notices &#8594;</a></p>
+        </article>
+
+        <article class="news-item">
+          <p class="news-date">Coming Soon</p>
+          <h3>Public Forms and Community Resources</h3>
+          <p>Approved public forms, helpful links, safety resources, and community notices will be added as they are ready for publication.</p>
+        </article>
+      </div>
+
+      <aside class="contact-panel">
+        <h2>Contact Information</h2>
+
+        <div class="contact-line">
+          <strong>Emergency</strong>
+          <a href="tel:911">Call 911</a>
+        </div>
+
+        <div class="contact-line">
+          <strong>Non-Emergency Dispatch</strong>
+          <a href="tel:+12054595911">Choctaw County E-911: (205) 459-5911</a>
+        </div>
+
+        <div class="contact-line">
+          <strong>Department Office</strong>
+          <a href="tel:+12518432766">(251) 843-2766</a>
+        </div>
+
+        <div class="contact-line">
+          <strong>Office Hours</strong>
+          8:00 a.m.–4:00 p.m.<br>
+          Closed Tuesday, Saturday, and Sunday
+        </div>
+
+        <div class="contact-line">
+          <strong>Location</strong>
+          40 Front Street<br>
+          Gilbertown, Alabama 36908
+        </div>
+      </aside>
+    </section>
+
+    <section class="notice">
+      <p><strong>Important:</strong> This website and email are not monitored for emergency dispatch. For emergencies, crimes in progress, or urgent police assistance, call 911.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Gilbertown Police Department</strong></p>
+      <p class="small">Official public website. Last updated: September 18, 2026.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('explore-button');
+    const siteMenu = document.getElementById('site-menu');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    const track = document.getElementById('carousel-track');
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+    const previousButton = document.getElementById('previous-slide');
+    const nextButton = document.getElementById('next-slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      dots.forEach((dot, dotIndex) => {
+        dot.setAttribute('aria-current', dotIndex === currentSlide ? 'true' : 'false');
+      });
+    }
+
+    previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+    nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide)));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const tag = document.activeElement.tagName.toLowerCase();
+
+      if (tag === 'input' || tag === 'textarea') {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+      }
+
+      if (event.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+      }
+    });
+  </script>
+</body>
+</html>
