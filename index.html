@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Official public website of the Gilbertown Police Department.">
+  <title>Gilbertown Police Department</title>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #1f5f99;
+      --gold: #c79a2b;
+      --light: #f4f7fa;
+      --ink: #17212b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--light);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .emergency {
+      padding: 10px 20px;
+      color: var(--white);
+      background: #8b1e1e;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    header {
+      color: var(--white);
+      background: var(--navy);
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .wrap {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .brand {
+      padding: 30px 0 22px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .brand p {
+      margin: 8px 0 0;
+      font-size: 1.05rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      padding-bottom: 12px;
+    }
+
+    nav a {
+      padding: 10px 14px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    main {
+      padding: 35px 0;
+    }
+
+    .hero,
+    .card {
+      padding: 26px;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero {
+      border-left: 6px solid var(--gold);
+    }
+
+    .hero h2,
+    .card h2 {
+      margin-top: 0;
+      color: var(--navy);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      border-top: 4px solid var(--blue);
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff5d9;
+      border-left: 5px solid var(--gold);
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .small {
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="emergency">
+    For emergencies or crimes in progress, call 911.
+  </div>
+
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <h1>Gilbertown Police Department</h1>
+        <p>Serving the Town of Gilbertown, Alabama</p>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services &amp; Forms</a>
+        <a href="#news">News &amp; Alerts</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="home">
+      <h2>Welcome</h2>
+      <p>
+        Welcome to the official public website of the Gilbertown Police Department.
+        This website provides department information, public notices, contact details,
+        and approved public resources.
+      </p>
+      <p>
+        This website and email are not monitored for emergency dispatch. For emergencies,
+        crimes in progress, or urgent assistance, call 911.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="Department information">
+      <article class="card" id="about">
+        <h2>About the Department</h2>
+        <p>
+          The Gilbertown Police Department is committed to professional service,
+          public safety, and respectful treatment of every person in our community.
+        </p>
+        <p><a href="#contact">Contact the department</a></p>
+      </article>
+
+      <article class="card" id="services">
+        <h2>Services &amp; Forms</h2>
+        <p>
+          Information about records requests, public forms, and department services
+          will be posted here as materials are approved for public release.
+        </p>
+      </article>
+
+      <article class="card" id="news">
+        <h2>News &amp; Alerts</h2>
+        <p>
+          Department announcements, safety notices, and community information
+          will be posted here.
+        </p>
+      </article>
+    </section>
+
+    <section class="notice">
+      <strong>Important:</strong> Do not use this website to report an emergency,
+      crime in progress, or urgent police matter. Call 911.
+    </section>
+
+    <section class="card" id="contact" style="margin-top: 20px;">
+      <h2>Contact</h2>
+      <p><strong>Gilbertown Police Department</strong></p>
+      <p>
+        Non-emergency telephone: <em>To be added</em><br>
+        Address: <em>To be added</em><br>
+        Office hours: <em>To be added</em>
+      </p>
+      <p class="small">
+        Please do not publish personal cell-phone numbers, internal radio information,
+        officer schedules, or any other nonpublic operational information.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Gilbertown Police Department</strong></p>
+      <p class="small">Official public website. Last updated: September 18, 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>
