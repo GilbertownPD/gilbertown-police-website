@@ -17,13 +17,14 @@
       --navy-deep: #081c2d;
       --navy-menu: #1c4666;
       --gold: #f4c430;
+      --gold-bright: #ffd400;
       --gold-dark: #bc8b00;
       --ivory: #fbfaf5;
       --paper: #ffffff;
       --ink: #172735;
       --muted: #607080;
       --red: #8e1f26;
-      --line: rgba(22, 58, 87, 0.18);
+      --line: rgba(22, 58, 87, 0.22);
       --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
     }
 
@@ -40,11 +41,13 @@
       color: var(--ink);
       background: linear-gradient(
         180deg,
-        #f4c430 0,
-        #f8dc72 16rem,
-        #fbf1c2 38rem,
-        var(--ivory) 75rem,
-        var(--ivory) 100%
+        #ffd400 0,
+        #ffd400 18rem,
+        #ffe44d 34rem,
+        #fff09a 56rem,
+        #fff8d7 82rem,
+        #fbfaf5 112rem,
+        #fbfaf5 100%
       );
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
@@ -87,7 +90,7 @@
       z-index: 20;
       color: #ffffff;
       background: var(--navy);
-      border-bottom: 10px solid var(--gold);
+      border-bottom: 10px solid var(--gold-bright);
     }
 
     .masthead {
@@ -107,7 +110,7 @@
 
     .brand-town {
       display: block;
-      color: var(--gold);
+      color: var(--gold-bright);
       font-family: "Playfair Display", Georgia, serif;
       font-size: clamp(1.9rem, 4.6vw, 3.4rem);
       font-weight: 700;
@@ -132,7 +135,7 @@
       gap: 11px;
       padding: 13px 17px;
       color: var(--navy-dark);
-      background: var(--gold);
+      background: var(--gold-bright);
       border: 0;
       cursor: pointer;
       font-size: 0.8rem;
@@ -147,7 +150,7 @@
 
     .explore-button:hover,
     .explore-button:focus {
-      background: #ffe37b;
+      background: #fff17c;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       outline: none;
@@ -165,7 +168,7 @@
       background: var(--navy-dark);
     }
 
-    /* Slower EXPLORE menu */
+    /* Slow, smooth EXPLORE menu */
 
     .site-menu {
       display: grid;
@@ -238,13 +241,13 @@
     .site-menu a:focus,
     .site-menu a[aria-current="page"] {
       padding-left: 22px;
-      color: var(--gold);
+      color: var(--gold-bright);
       background: rgba(255, 255, 255, 0.08);
-      border-left-color: var(--gold);
+      border-left-color: var(--gold-bright);
       outline: none;
     }
 
-    /* Full-width image-first carousel */
+    /* Full-width picture carousel */
 
     .carousel {
       position: relative;
@@ -270,7 +273,11 @@
       background-size: cover;
     }
 
-    /* Only a very light lower text-support fade; no blue panel */
+    /*
+      No blue text panel and no solid overlay.
+      Only a nearly invisible black fade at the bottom edge to help
+      the small gold lettering remain readable over a future photograph.
+    */
 
     .slide::before {
       content: "";
@@ -278,10 +285,10 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(8, 28, 45, 0) 0%,
-        rgba(8, 28, 45, 0) 64%,
-        rgba(8, 28, 45, 0.20) 83%,
-        rgba(8, 28, 45, 0.40) 100%
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 73%,
+        rgba(0, 0, 0, 0.10) 88%,
+        rgba(0, 0, 0, 0.26) 100%
       );
     }
 
@@ -308,56 +315,61 @@
       z-index: 1;
       width: min(1180px, 92%);
       margin: 0 auto;
-      padding: 0 0 78px;
+      padding: 0 0 54px;
     }
 
+    /*
+      Small, simple transparent text treatment:
+      gold lettering only, no panel, no large heading, no background box.
+    */
+
     .slide-text {
-      width: min(450px, 100%);
+      width: min(360px, 100%);
       padding: 0;
-      color: #ffffff;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+      color: var(--gold-bright);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
     }
 
     .slide-label {
-      display: inline-block;
-      margin-bottom: 10px;
-      padding-bottom: 7px;
-      color: var(--gold);
-      border-bottom: 2px solid var(--gold);
-      font-size: 0.7rem;
+      display: block;
+      margin: 0 0 7px;
+      color: var(--gold-bright);
+      font-size: 0.64rem;
       font-weight: 800;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     .slide-text h1,
     .slide-text h2 {
       margin: 0;
-      color: #ffffff;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(1.9rem, 4.2vw, 3.45rem);
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.045em;
+      color: var(--gold-bright);
+      font-family: "Montserrat", Arial, Helvetica, sans-serif;
+      font-size: clamp(1.1rem, 2.25vw, 1.55rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .slide-text p {
-      margin: 9px 0 0;
-      font-size: clamp(0.86rem, 1.5vw, 1rem);
-      font-weight: 500;
-      line-height: 1.45;
+      margin: 6px 0 0;
+      color: var(--gold-bright);
+      font-size: clamp(0.73rem, 1.2vw, 0.86rem);
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .slide-link {
       display: inline-block;
-      margin-top: 18px;
-      padding: 8px 0;
-      color: var(--gold);
-      border-bottom: 2px solid var(--gold);
+      margin-top: 10px;
+      padding: 0 0 4px;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-bright);
       text-decoration: none;
-      font-size: 0.74rem;
+      font-size: 0.66rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
       transition:
         color 0.22s ease,
@@ -371,7 +383,11 @@
       outline: none;
     }
 
-    /* Free-standing transparent gold carousel controls */
+    /*
+      Free-standing controls:
+      transparent middle, no filled square/circle background.
+      Arrows are plain gold chevrons, dots are thin gold outline circles.
+    */
 
     .carousel-controls {
       position: absolute;
@@ -380,66 +396,68 @@
       bottom: 30px;
       display: flex;
       align-items: center;
-      gap: 13px;
-    }
-
-    .carousel-control,
-    .carousel-dot {
-      color: var(--gold);
-      background: transparent;
-      border: 1.5px solid var(--gold);
-      cursor: pointer;
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+      gap: 17px;
     }
 
     .carousel-control {
-      width: 44px;
-      height: 44px;
-      display: inline-grid;
-      place-items: center;
+      width: auto;
+      height: auto;
       padding: 0;
-      font-size: 1.45rem;
+      color: var(--gold-bright);
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: 2.1rem;
       font-weight: 400;
       line-height: 1;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .carousel-control:hover,
     .carousel-control:focus {
-      color: var(--navy-dark);
-      background: var(--gold);
-      border-color: var(--gold);
-      transform: translateY(-2px);
-      outline: none;
+      color: #ffffff;
+      transform: scale(1.18);
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 4px;
     }
 
     .carousel-dots {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
     }
 
     .carousel-dot {
       width: 12px;
       height: 12px;
       padding: 0;
+      background: transparent;
+      border: 1.5px solid var(--gold-bright);
       border-radius: 50%;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .carousel-dot:hover,
     .carousel-dot:focus {
-      background: rgba(244, 196, 48, 0.42);
+      background: rgba(255, 212, 0, 0.35);
+      border-color: #ffffff;
+      transform: scale(1.15);
       outline: none;
     }
 
     .carousel-dot[aria-current="true"] {
-      background: var(--gold);
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
     }
 
-    /* Gold-to-ivory content area */
+    /* Bright-yellow-to-ivory content */
 
     main {
       padding: 70px 0 76px;
@@ -491,8 +509,6 @@
       border-color: var(--gold-dark);
     }
 
-    /* Open, less-blocky quick links */
-
     .quick-links {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -539,7 +555,7 @@
 
     .quick-link:hover small,
     .quick-link:focus small {
-      color: var(--gold);
+      color: var(--gold-bright);
     }
 
     .quick-link h3 {
@@ -608,7 +624,7 @@
       padding: 28px;
       color: #ffffff;
       background: var(--navy);
-      border-top: 6px solid var(--gold);
+      border-top: 6px solid var(--gold-bright);
       box-shadow: var(--shadow);
     }
 
@@ -632,7 +648,7 @@
     .contact-line strong {
       display: block;
       margin-bottom: 4px;
-      color: var(--gold);
+      color: var(--gold-bright);
       font-size: 0.71rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -648,7 +664,7 @@
       margin-top: 52px;
       padding: 21px 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.52);
       border-left: 4px solid var(--gold-dark);
     }
 
@@ -695,26 +711,19 @@
       .slide {
         min-height: 610px;
       }
-
-      .slide::before {
-        background: linear-gradient(
-          180deg,
-          rgba(8, 28, 45, 0) 0%,
-          rgba(8, 28, 45, 0.05) 65%,
-          rgba(8, 28, 45, 0.50) 100%
-        );
-      }
     }
 
     @media (max-width: 560px) {
       body {
         background: linear-gradient(
           180deg,
-          #f4c430 0,
-          #f9df7d 20rem,
-          #fbf1c2 45rem,
-          var(--ivory) 83rem,
-          var(--ivory) 100%
+          #ffd400 0,
+          #ffd400 21rem,
+          #ffe65b 41rem,
+          #fff09d 63rem,
+          #fff9dd 89rem,
+          #fbfaf5 118rem,
+          #fbfaf5 100%
         );
       }
 
@@ -749,21 +758,21 @@
       }
 
       .slide-content {
-        padding: 0 0 92px;
+        padding: 0 0 76px;
       }
 
       .slide-text {
-        width: min(430px, 100%);
+        width: min(310px, 100%);
       }
 
       .carousel-controls {
         right: 4%;
-        bottom: 23px;
+        bottom: 25px;
+        gap: 14px;
       }
 
       .carousel-control {
-        width: 40px;
-        height: 40px;
+        font-size: 1.8rem;
       }
 
       main {
@@ -851,8 +860,8 @@
         <div class="slide-content">
           <div class="slide-text">
             <span class="slide-label">Gilbertown Police Department</span>
-            <h1>Focused on Public Safety.</h1>
-            <p>Serving Gilbertown, Alabama.</p>
+            <h1>Focused on Public Safety</h1>
+            <p>Serving Gilbertown, Alabama</p>
             <a class="slide-link" href="about.html">About the Department &#8594;</a>
           </div>
         </div>
@@ -862,8 +871,8 @@
         <div class="slide-content">
           <div class="slide-text">
             <span class="slide-label">Public Services</span>
-            <h2>Information When You Need It.</h2>
-            <p>Services, records, and public forms.</p>
+            <h2>Information When You Need It</h2>
+            <p>Services, records, and public forms</p>
             <a class="slide-link" href="services.html">Explore Services &#8594;</a>
           </div>
         </div>
@@ -873,8 +882,8 @@
         <div class="slide-content">
           <div class="slide-text">
             <span class="slide-label">Community Updates</span>
-            <h2>Stay Connected.</h2>
-            <p>News, events, and public-safety resources.</p>
+            <h2>Stay Connected</h2>
+            <p>News, events, and public-safety resources</p>
             <a class="slide-link" href="news.html">View News &amp; Notices &#8594;</a>
           </div>
         </div>
