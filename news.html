@@ -3,172 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="News and public alerts from the Gilbertown Police Department.">
-  <title>News & Alerts | Gilbertown Police Department</title>
+  <meta name="description" content="News and public notices from the Gilbertown Police Department.">
+  <title>News | Gilbertown Police Department</title>
   <style>
-    :root {
-      --navy: #102a43;
-      --blue: #1f5f99;
-      --gold: #c79a2b;
-      --light: #f4f7fa;
-      --ink: #17212b;
-      --white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--light);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    .emergency {
-      padding: 10px 20px;
-      color: var(--white);
-      background: #8b1e1e;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    header {
-      color: var(--white);
-      background: var(--navy);
-      border-bottom: 5px solid var(--gold);
-    }
-
-    .wrap {
-      width: min(1050px, 92%);
-      margin: 0 auto;
-    }
-
-    .brand { padding: 28px 0 18px; }
-
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(1.7rem, 5vw, 2.7rem);
-      line-height: 1.15;
-    }
-
-    .brand p { margin: 8px 0 0; }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2px;
-      padding-bottom: 12px;
-    }
-
-    nav a {
-      padding: 10px 14px;
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 4px;
-    }
-
-    nav a:hover,
-    nav a:focus,
-    nav a[aria-current="page"] {
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    main { padding: 34px 0; }
-
-    .page,
-    .post {
-      padding: 25px;
-      background: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
-    }
-
-    .page { border-top: 5px solid var(--gold); }
-
-    .post {
-      margin-top: 18px;
-      border-left: 5px solid var(--blue);
-    }
-
-    .date {
-      color: #51606e;
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    h2 { color: var(--navy); }
-
-    footer {
-      padding: 28px 0;
-      margin-top: 34px;
-      color: var(--white);
-      background: var(--navy);
-    }
-
-    footer p { margin: 5px 0; }
-
-    .small { font-size: 0.92rem; }
+    :root { --navy:#102a43; --blue:#1f5f99; --gold:#c79a2b; --light:#f4f7fa; --ink:#17212b; --white:#fff; --red:#8b1e1e; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--light); font-family:Arial,Helvetica,sans-serif; line-height:1.6; }
+    .emergency { padding:10px 20px; color:var(--white); background:var(--red); text-align:center; font-weight:700; }
+    header { color:var(--white); background:var(--navy); border-bottom:5px solid var(--gold); } .wrap { width:min(1050px,92%); margin:0 auto; }
+    .brand { padding:28px 0 18px; } .brand h1 { margin:0; font-size:clamp(1.7rem,5vw,2.7rem); line-height:1.15; } .brand p { margin:8px 0 0; }
+    nav { display:flex; flex-wrap:wrap; gap:2px; padding-bottom:12px; } nav a { padding:10px 13px; color:var(--white); text-decoration:none; font-weight:700; border-radius:4px; } nav a:hover,nav a:focus,nav a[aria-current="page"] { background:rgba(255,255,255,.16); }
+    main { padding:34px 0; } .page,.post { padding:25px; background:var(--white); border-radius:8px; box-shadow:0 2px 9px rgba(0,0,0,.08); } .page { border-top:5px solid var(--gold); } .post { margin-top:18px; border-left:5px solid var(--blue); }
+    .date { color:#51606e; font-size:.92rem; font-weight:700; } h2 { color:var(--navy); } a { color:var(--blue); } nav a { color:var(--white); } footer { padding:28px 0; margin-top:34px; color:var(--white); background:var(--navy); } footer p { margin:5px 0; } .small { font-size:.92rem; }
   </style>
 </head>
-
 <body>
-  <div class="emergency">
-    For emergencies or crimes in progress, call 911.
-  </div>
-
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <h1>Gilbertown Police Department</h1>
-        <p>Serving the Town of Gilbertown, Alabama</p>
-      </div>
-
-      <nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services &amp; Forms</a>
-        <a href="news.html" aria-current="page">News &amp; Alerts</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+  <div class="emergency">For emergencies or crimes in progress, call 911.</div>
+  <header><div class="wrap"><div class="brand"><h1>Gilbertown Police Department</h1><p>Serving Gilbertown, Alabama</p></div>
+    <nav aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="forms.html">Forms</a><a href="news.html" aria-current="page">News</a><a href="events.html">Events</a><a href="links.html">Links</a><a href="tips.html">Submit a Tip</a><a href="contact.html">Contact</a></nav>
+  </div></header>
   <main class="wrap">
-    <section class="page">
-      <h2>News &amp; Alerts</h2>
-      <p>
-        Official department announcements, public-safety information, and
-        community notices will be posted here.
-      </p>
-    </section>
-
-    <article class="post">
-      <p class="date">September 18, 2026</p>
-      <h2>Website Under Development</h2>
-      <p>
-        The Gilbertown Police Department is developing this official public
-        website to make department information and approved public resources
-        easier to find.
-      </p>
-    </article>
-
-    <article class="post">
-      <p class="date">Future Announcements</p>
-      <h2>How Notices Will Be Posted</h2>
-      <p>
-        Future public notices will appear here with a date, title, and a clear
-        description. Outdated notices will be removed or marked as archived.
-      </p>
-    </article>
+    <section class="page"><h2>News &amp; Public Notices</h2><p>Official department announcements, public-safety information, and community notices will be posted here.</p></section>
+    <article class="post"><p class="date">September 18, 2026</p><h2>Website Under Development</h2><p>The Gilbertown Police Department is developing this official public website to make department information, approved public forms, and public resources easier to find.</p></article>
+    <article class="post"><p class="date">Future Announcements</p><h2>How Notices Will Be Posted</h2><p>Future public notices will appear here with a date, title, and a clear description. Outdated notices will be removed or marked as archived when appropriate.</p></article>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <p><strong>Gilbertown Police Department</strong></p>
-      <p class="small">Official public website. Last updated: September 18, 2026.</p>
-    </div>
-  </footer>
+  <footer><div class="wrap"><p><strong>Gilbertown Police Department</strong></p><p class="small">Official public website. Last updated: September 18, 2026.</p></div></footer>
 </body>
 </html>
