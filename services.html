@@ -3,195 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Public services and forms from the Gilbertown Police Department.">
-  <title>Services & Forms | Gilbertown Police Department</title>
+  <meta name="description" content="Public services provided by the Gilbertown Police Department.">
+  <title>Services | Gilbertown Police Department</title>
   <style>
-    :root {
-      --navy: #102a43;
-      --blue: #1f5f99;
-      --gold: #c79a2b;
-      --light: #f4f7fa;
-      --ink: #17212b;
-      --white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--light);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    .emergency {
-      padding: 10px 20px;
-      color: var(--white);
-      background: #8b1e1e;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    header {
-      color: var(--white);
-      background: var(--navy);
-      border-bottom: 5px solid var(--gold);
-    }
-
-    .wrap {
-      width: min(1050px, 92%);
-      margin: 0 auto;
-    }
-
-    .brand { padding: 28px 0 18px; }
-
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(1.7rem, 5vw, 2.7rem);
-      line-height: 1.15;
-    }
-
-    .brand p { margin: 8px 0 0; }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2px;
-      padding-bottom: 12px;
-    }
-
-    nav a {
-      padding: 10px 14px;
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 4px;
-    }
-
-    nav a:hover,
-    nav a:focus,
-    nav a[aria-current="page"] {
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    main { padding: 34px 0; }
-
-    .page,
-    .service {
-      padding: 25px;
-      background: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
-    }
-
-    .page { border-top: 5px solid var(--gold); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .service { border-top: 4px solid var(--blue); }
-
-    h2 { color: var(--navy); }
-
-    a { color: var(--blue); }
-
-    .notice {
-      margin-top: 20px;
-      padding: 18px;
-      background: #fff5d9;
-      border-left: 5px solid var(--gold);
-    }
-
-    footer {
-      padding: 28px 0;
-      margin-top: 34px;
-      color: var(--white);
-      background: var(--navy);
-    }
-
-    footer p { margin: 5px 0; }
-
-    .small { font-size: 0.92rem; }
+    :root { --navy:#102a43; --blue:#1f5f99; --gold:#c79a2b; --light:#f4f7fa; --ink:#17212b; --white:#fff; --red:#8b1e1e; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--light); font-family:Arial,Helvetica,sans-serif; line-height:1.6; }
+    .emergency { padding:10px 20px; color:var(--white); background:var(--red); text-align:center; font-weight:700; }
+    header { color:var(--white); background:var(--navy); border-bottom:5px solid var(--gold); } .wrap { width:min(1050px,92%); margin:0 auto; }
+    .brand { padding:28px 0 18px; } .brand h1 { margin:0; font-size:clamp(1.7rem,5vw,2.7rem); line-height:1.15; } .brand p { margin:8px 0 0; }
+    nav { display:flex; flex-wrap:wrap; gap:2px; padding-bottom:12px; } nav a { padding:10px 13px; color:var(--white); text-decoration:none; font-weight:700; border-radius:4px; } nav a:hover,nav a:focus,nav a[aria-current="page"] { background:rgba(255,255,255,.16); }
+    main { padding:34px 0; } .page,.service { padding:25px; background:var(--white); border-radius:8px; box-shadow:0 2px 9px rgba(0,0,0,.08); } .page { border-top:5px solid var(--gold); } .service { margin-top:18px; border-left:5px solid var(--blue); }
+    h2 { color:var(--navy); } a { color:var(--blue); } nav a { color:var(--white); } .notice { margin-top:20px; padding:18px; background:#fff5d9; border-left:5px solid var(--gold); } footer { padding:28px 0; margin-top:34px; color:var(--white); background:var(--navy); } footer p { margin:5px 0; } .small { font-size:.92rem; }
   </style>
 </head>
-
 <body>
-  <div class="emergency">
-    For emergencies or crimes in progress, call 911.
-  </div>
-
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <h1>Gilbertown Police Department</h1>
-        <p>Serving the Town of Gilbertown, Alabama</p>
-      </div>
-
-      <nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html" aria-current="page">Services &amp; Forms</a>
-        <a href="news.html">News &amp; Alerts</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+  <div class="emergency">For emergencies or crimes in progress, call 911.</div>
+  <header><div class="wrap"><div class="brand"><h1>Gilbertown Police Department</h1><p>Serving Gilbertown, Alabama</p></div>
+    <nav aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html" aria-current="page">Services</a><a href="forms.html">Forms</a><a href="news.html">News</a><a href="events.html">Events</a><a href="links.html">Links</a><a href="tips.html">Submit a Tip</a><a href="contact.html">Contact</a></nav>
+  </div></header>
   <main class="wrap">
-    <section class="page">
-      <h2>Services &amp; Public Information</h2>
-      <p>
-        This page provides information about publicly available department services
-        and forms. Additional materials will be added only after they are reviewed
-        and approved for public release.
-      </p>
-    </section>
-
-    <section class="grid" aria-label="Public services">
-      <article class="service">
-        <h2>Records Requests</h2>
-        <p>
-          Instructions for requesting public records and report information will
-          be posted here.
-        </p>
-        <p><em>Information pending confirmation.</em></p>
-      </article>
-
-      <article class="service">
-        <h2>Compliments &amp; Complaints</h2>
-        <p>
-          The Gilbertown Police Department welcomes commendations and takes
-          complaints seriously. Instructions and an approved form will be posted here.
-        </p>
-        <p><em>Information pending confirmation.</em></p>
-      </article>
-
-      <article class="service">
-        <h2>Public Forms</h2>
-        <p>
-          Approved public forms and instructions will be made available here
-          when appropriate.
-        </p>
-        <p><em>No forms are currently posted.</em></p>
-      </article>
-    </section>
-
-    <section class="notice">
-      <strong>Emergency notice:</strong> Do not use this website for emergency
-      reporting, crimes in progress, or urgent police assistance. Call 911.
-    </section>
+    <section class="page"><h2>Services</h2><p>This page provides information about public services offered by the Gilbertown Police Department. Downloadable forms are listed separately on the <a href="forms.html">Forms</a> page.</p></section>
+    <article class="service"><h2>Public Records Requests</h2><p>The Gilbertown Police Department will make a public-records request form available on this website. A completed form may be printed, completed, and brought to the Gilbertown Police Department for review.</p><p>Each request will be reviewed before records are released. Records may be released when permitted by law and when the requested records are available. Some records may be withheld, redacted, or unavailable because of legal exemptions, privacy considerations, investigative status, or other lawful reasons. If records can be released, the department will provide them through the method requested when reasonably possible.</p><p><a href="forms.html">View available forms</a></p></article>
+    <article class="service"><h2>Accident Reports</h2><p>Accident-report requests may currently be made using the department’s records-request process. A separate online accident-report request resource is planned for the future. When available, a link and instructions will be posted on this website.</p></article>
+    <article class="service"><h2>Commendations and Complaints</h2><p>The Gilbertown Police Department welcomes commendations regarding professional service and takes complaints seriously. Forms will be available on this website for printing and completion. Completed forms may be brought to the department office for review and processing.</p><p>A commendation or complaint form is not for emergency reporting. For an emergency or crime in progress, call 911.</p></article>
+    <article class="service"><h2>Vacation Watch Requests</h2><p>The Gilbertown Police Department offers vacation-watch requests for residents within the department’s service area. A request form will be available for printing and completion. Please submit the completed form to the department before leaving town whenever possible.</p><p>Residents are asked to notify the department when they have returned home so the request can be closed. Vacation-watch requests do not guarantee continuous surveillance or prevent criminal activity. Residents should secure their homes, arrange for mail and package collection, and report suspicious activity by calling the appropriate dispatch number.</p></article>
+    <article class="service"><h2>Employment and Volunteer Information</h2><p>Applications for employment and volunteer opportunities are available at the Gilbertown Police Department office. Applications may be obtained and submitted in person.</p><p>The availability of an application does not mean that a position is currently open. Employment opportunities and application deadlines will be posted when applicable.</p></article>
+    <article class="service"><h2>Court Information</h2><p>For general court-related questions, contact the Court Clerk at the department office number: <a href="tel:+12518432766">(251) 843-2766</a>. The Court Clerk can provide appropriate information about court matters.</p><p>The Gilbertown Police Department does not provide legal advice, make court decisions, or control court scheduling, fines, payments, or case outcomes.</p></article>
+    <section class="notice"><strong>Emergency notice:</strong> Do not use this website, a form, or email for emergency reporting, crimes in progress, or urgent police assistance. Call 911. For non-emergency dispatch, call Choctaw County E-911 Dispatch at <a href="tel:+12054595911">(205) 459-5911</a>.</section>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <p><strong>Gilbertown Police Department</strong></p>
-      <p class="small">Official public website. Last updated: September 18, 2026.</p>
-    </div>
-  </footer>
+  <footer><div class="wrap"><p><strong>Gilbertown Police Department</strong></p><p class="small">Official public website. Last updated: September 18, 2026.</p></div></footer>
 </body>
 </html>
