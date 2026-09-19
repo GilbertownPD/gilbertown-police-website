@@ -16,15 +16,14 @@
       --navy-dark: #0d263b;
       --navy-deep: #081c2d;
       --navy-menu: #1c4666;
-      --gold: #f4c430;
-      --gold-bright: #ffd400;
-      --gold-dark: #bc8b00;
+      --yellow: #ffd400;
+      --yellow-dark: #bc8b00;
       --ivory: #fbfaf5;
       --paper: #ffffff;
       --ink: #172735;
       --muted: #607080;
       --red: #8e1f26;
-      --line: rgba(22, 58, 87, 0.22);
+      --line: rgba(22, 58, 87, 0.24);
       --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
     }
 
@@ -42,11 +41,11 @@
       background: linear-gradient(
         180deg,
         #ffd400 0,
-        #ffd400 18rem,
-        #ffe44d 34rem,
-        #fff09a 56rem,
-        #fff8d7 82rem,
-        #fbfaf5 112rem,
+        #ffd400 45rem,
+        #ffe451 66rem,
+        #fff19d 91rem,
+        #fff9dd 120rem,
+        #fbfaf5 151rem,
         #fbfaf5 100%
       );
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
@@ -67,8 +66,6 @@
       margin: 0 auto;
     }
 
-    /* Emergency strip */
-
     .emergency-strip {
       padding: 9px 18px;
       color: #ffffff;
@@ -83,14 +80,12 @@
       color: #ffffff;
     }
 
-    /* Header */
-
     .site-header {
       position: relative;
       z-index: 20;
       color: #ffffff;
       background: var(--navy);
-      border-bottom: 10px solid var(--gold-bright);
+      border-bottom: 10px solid var(--yellow);
     }
 
     .masthead {
@@ -110,7 +105,7 @@
 
     .brand-town {
       display: block;
-      color: var(--gold-bright);
+      color: var(--yellow);
       font-family: "Playfair Display", Georgia, serif;
       font-size: clamp(1.9rem, 4.6vw, 3.4rem);
       font-weight: 700;
@@ -135,7 +130,7 @@
       gap: 11px;
       padding: 13px 17px;
       color: var(--navy-dark);
-      background: var(--gold-bright);
+      background: var(--yellow);
       border: 0;
       cursor: pointer;
       font-size: 0.8rem;
@@ -168,7 +163,7 @@
       background: var(--navy-dark);
     }
 
-    /* Slow, smooth EXPLORE menu */
+    /* Slow EXPLORE menu — retained as currently working */
 
     .site-menu {
       display: grid;
@@ -241,9 +236,9 @@
     .site-menu a:focus,
     .site-menu a[aria-current="page"] {
       padding-left: 22px;
-      color: var(--gold-bright);
+      color: var(--yellow);
       background: rgba(255, 255, 255, 0.08);
-      border-left-color: var(--gold-bright);
+      border-left-color: var(--yellow);
       outline: none;
     }
 
@@ -273,11 +268,7 @@
       background-size: cover;
     }
 
-    /*
-      No blue text panel and no solid overlay.
-      Only a nearly invisible black fade at the bottom edge to help
-      the small gold lettering remain readable over a future photograph.
-    */
+    /* Barely visible bottom fade only; no blue panel or solid text block */
 
     .slide::before {
       content: "";
@@ -286,9 +277,9 @@
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 73%,
-        rgba(0, 0, 0, 0.10) 88%,
-        rgba(0, 0, 0, 0.26) 100%
+        rgba(0, 0, 0, 0) 76%,
+        rgba(0, 0, 0, 0.08) 90%,
+        rgba(0, 0, 0, 0.22) 100%
       );
     }
 
@@ -315,85 +306,45 @@
       z-index: 1;
       width: min(1180px, 92%);
       margin: 0 auto;
-      padding: 0 0 54px;
+      padding: 0 0 52px;
     }
 
-    /*
-      Small, simple transparent text treatment:
-      gold lettering only, no panel, no large heading, no background box.
-    */
+    /* One short gold line per carousel image */
 
     .slide-text {
-      width: min(360px, 100%);
+      width: min(380px, 100%);
       padding: 0;
-      color: var(--gold-bright);
+      color: var(--yellow);
       text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-    }
-
-    .slide-label {
-      display: block;
-      margin: 0 0 7px;
-      color: var(--gold-bright);
-      font-size: 0.64rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
     }
 
     .slide-text h1,
     .slide-text h2 {
       margin: 0;
-      color: var(--gold-bright);
+      color: var(--yellow);
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
-      font-size: clamp(1.1rem, 2.25vw, 1.55rem);
+      font-size: clamp(0.85rem, 1.85vw, 1.22rem);
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: 0.04em;
+      line-height: 1.2;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    .slide-text p {
-      margin: 6px 0 0;
-      color: var(--gold-bright);
-      font-size: clamp(0.73rem, 1.2vw, 0.86rem);
-      font-weight: 600;
-      line-height: 1.4;
-    }
+    /* Hide all extra carousel words */
 
+    .slide-label,
+    .slide-text p,
     .slide-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 0 0 4px;
-      color: var(--gold-bright);
-      border-bottom: 1px solid var(--gold-bright);
-      text-decoration: none;
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      transition:
-        color 0.22s ease,
-        border-color 0.22s ease;
+      display: none;
     }
 
-    .slide-link:hover,
-    .slide-link:focus {
-      color: #ffffff;
-      border-color: #ffffff;
-      outline: none;
-    }
-
-    /*
-      Free-standing controls:
-      transparent middle, no filled square/circle background.
-      Arrows are plain gold chevrons, dots are thin gold outline circles.
-    */
+    /* Free-standing gold chevrons and transparent outlined dots */
 
     .carousel-controls {
       position: absolute;
       z-index: 3;
       right: 4%;
-      bottom: 30px;
+      bottom: 28px;
       display: flex;
       align-items: center;
       gap: 17px;
@@ -403,7 +354,7 @@
       width: auto;
       height: auto;
       padding: 0;
-      color: var(--gold-bright);
+      color: var(--yellow);
       background: transparent;
       border: 0;
       cursor: pointer;
@@ -420,7 +371,7 @@
     .carousel-control:focus {
       color: #ffffff;
       transform: scale(1.18);
-      outline: 2px solid var(--gold-bright);
+      outline: 2px solid var(--yellow);
       outline-offset: 4px;
     }
 
@@ -435,7 +386,7 @@
       height: 12px;
       padding: 0;
       background: transparent;
-      border: 1.5px solid var(--gold-bright);
+      border: 1.5px solid var(--yellow);
       border-radius: 50%;
       cursor: pointer;
       transition:
@@ -453,11 +404,11 @@
     }
 
     .carousel-dot[aria-current="true"] {
-      background: var(--gold-bright);
-      border-color: var(--gold-bright);
+      background: var(--yellow);
+      border-color: var(--yellow);
     }
 
-    /* Bright-yellow-to-ivory content */
+    /* Bright yellow immediately below carousel, then slow ivory fade */
 
     main {
       padding: 70px 0 76px;
@@ -498,15 +449,12 @@
       font-weight: 800;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
     }
 
     .section-heading > a:hover,
     .section-heading > a:focus {
-      color: var(--gold-dark);
-      border-color: var(--gold-dark);
+      color: var(--yellow-dark);
+      border-color: var(--yellow-dark);
     }
 
     .quick-links {
@@ -546,7 +494,7 @@
     }
 
     .quick-link small {
-      color: var(--gold-dark);
+      color: var(--yellow-dark);
       font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.11em;
@@ -555,7 +503,7 @@
 
     .quick-link:hover small,
     .quick-link:focus small {
-      color: var(--gold-bright);
+      color: var(--yellow);
     }
 
     .quick-link h3 {
@@ -597,7 +545,7 @@
 
     .news-date {
       margin: 0 0 6px;
-      color: var(--gold-dark);
+      color: var(--yellow-dark);
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -624,7 +572,7 @@
       padding: 28px;
       color: #ffffff;
       background: var(--navy);
-      border-top: 6px solid var(--gold-bright);
+      border-top: 6px solid var(--yellow);
       box-shadow: var(--shadow);
     }
 
@@ -648,7 +596,7 @@
     .contact-line strong {
       display: block;
       margin-bottom: 4px;
-      color: var(--gold-bright);
+      color: var(--yellow);
       font-size: 0.71rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -665,7 +613,7 @@
       padding: 21px 24px;
       color: var(--navy-dark);
       background: rgba(255, 255, 255, 0.52);
-      border-left: 4px solid var(--gold-dark);
+      border-left: 4px solid var(--yellow-dark);
     }
 
     .notice p {
@@ -718,11 +666,11 @@
         background: linear-gradient(
           180deg,
           #ffd400 0,
-          #ffd400 21rem,
-          #ffe65b 41rem,
-          #fff09d 63rem,
-          #fff9dd 89rem,
-          #fbfaf5 118rem,
+          #ffd400 55rem,
+          #ffe65b 79rem,
+          #fff1a4 108rem,
+          #fff9dd 139rem,
+          #fbfaf5 174rem,
           #fbfaf5 100%
         );
       }
@@ -758,16 +706,16 @@
       }
 
       .slide-content {
-        padding: 0 0 76px;
+        padding: 0 0 72px;
       }
 
       .slide-text {
-        width: min(310px, 100%);
+        width: min(300px, 100%);
       }
 
       .carousel-controls {
         right: 4%;
-        bottom: 25px;
+        bottom: 23px;
         gap: 14px;
       }
 
@@ -859,10 +807,7 @@
       <article class="slide slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
         <div class="slide-content">
           <div class="slide-text">
-            <span class="slide-label">Gilbertown Police Department</span>
             <h1>Focused on Public Safety</h1>
-            <p>Serving Gilbertown, Alabama</p>
-            <a class="slide-link" href="about.html">About the Department &#8594;</a>
           </div>
         </div>
       </article>
@@ -870,10 +815,7 @@
       <article class="slide slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
         <div class="slide-content">
           <div class="slide-text">
-            <span class="slide-label">Public Services</span>
-            <h2>Information When You Need It</h2>
-            <p>Services, records, and public forms</p>
-            <a class="slide-link" href="services.html">Explore Services &#8594;</a>
+            <h2>Services &amp; Forms</h2>
           </div>
         </div>
       </article>
@@ -881,10 +823,7 @@
       <article class="slide slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
         <div class="slide-content">
           <div class="slide-text">
-            <span class="slide-label">Community Updates</span>
             <h2>Stay Connected</h2>
-            <p>News, events, and public-safety resources</p>
-            <a class="slide-link" href="news.html">View News &amp; Notices &#8594;</a>
           </div>
         </div>
       </article>
