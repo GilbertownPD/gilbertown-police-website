@@ -522,40 +522,6 @@
       color: var(--yellow);
     }
 
-    /*
-      These selectors are intentionally more specific than the general
-      link rules below. They control the idle colors inside the navy panel.
-    */
-    .leadership-panel .dispatch-note a[href="tel:911"] {
-      color: var(--emergency-red);
-      font-weight: 800;
-      text-decoration-color: currentColor;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .leadership-panel .dispatch-note a[href="tel:+12054595911"] {
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration-color: currentColor;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .leadership-panel .dispatch-note a[href="tel:911"]:hover,
-    .leadership-panel .dispatch-note a[href="tel:911"]:focus,
-    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:hover,
-    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:focus {
-      color: var(--yellow);
-      text-decoration-thickness: 2px;
-      text-decoration-color: currentColor;
-      transform: translateX(2px);
-      outline: 2px solid var(--yellow);
-      outline-offset: 4px;
-    }
-
     .emergency-note {
       margin-top: 74px;
       padding: 22px 26px;
@@ -584,23 +550,42 @@
     }
 
     /*
-      This comes after the general main-link rule so that the emergency
-      and dispatch telephone numbers keep their requested idle colors.
+      Emergency phone colors:
+      The !important flags intentionally override the generic main-link rule.
     */
-    .leadership-panel .dispatch-note a[href="tel:911"] {
-      color: var(--emergency-red);
+    .leadership-panel a.emergency-phone,
+    main .leadership-panel a.emergency-phone {
+      color: var(--emergency-red) !important;
+      font-weight: 800;
+      text-decoration-color: currentColor;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
     }
 
-    .leadership-panel .dispatch-note a[href="tel:+12054595911"] {
-      color: #ffffff;
+    .leadership-panel a.dispatch-phone,
+    main .leadership-panel a.dispatch-phone {
+      color: #ffffff !important;
+      font-weight: 800;
+      text-decoration-color: currentColor;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
     }
 
-    .leadership-panel .dispatch-note a[href="tel:911"]:hover,
-    .leadership-panel .dispatch-note a[href="tel:911"]:focus,
-    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:hover,
-    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:focus {
-      color: var(--yellow);
-      outline: 2px solid var(--yellow);
+    .leadership-panel a.emergency-phone:hover,
+    .leadership-panel a.emergency-phone:focus,
+    .leadership-panel a.dispatch-phone:hover,
+    .leadership-panel a.dispatch-phone:focus,
+    main .leadership-panel a.emergency-phone:hover,
+    main .leadership-panel a.emergency-phone:focus,
+    main .leadership-panel a.dispatch-phone:hover,
+    main .leadership-panel a.dispatch-phone:focus {
+      color: var(--yellow) !important;
+      text-decoration-thickness: 2px;
+      text-decoration-color: currentColor;
+      transform: translateX(2px);
+      outline: 2px solid var(--yellow) !important;
       outline-offset: 4px;
     }
 
@@ -961,12 +946,13 @@
         </div>
 
         <p class="dispatch-note">
-          <strong>Emergency:</strong> Call <a href="tel:911">911</a> for emergencies or crimes in progress.
+          <strong>Emergency:</strong>
+          Call <a class="emergency-phone" href="tel:911">911</a> for emergencies or crimes in progress.
         </p>
 
         <p class="dispatch-note">
           <strong>Non-Emergency Dispatch:</strong>
-          <a href="tel:+12054595911">(205) 459-5911</a>
+          <a class="dispatch-phone" href="tel:+12054595911">(205) 459-5911</a>
         </p>
       </aside>
     </section>
