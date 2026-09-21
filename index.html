@@ -1,4 +1,3 @@
-xml
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +19,6 @@ xml
       --yellow: #ffd400;
       --yellow-dark: #bc8b00;
       --ivory: #fbfaf5;
-      --paper: #ffffff;
       --ink: #172735;
       --muted: #607080;
       --red: #8e1f26;
@@ -28,8 +26,13 @@ xml
       --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -48,12 +51,35 @@ xml
       line-height: 1.6;
     }
 
-    button, a { font: inherit; }
-    a { color: inherit; }
+    button,
+    a {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
 
     .wrap {
       width: min(1440px, 94%);
       margin: 0 auto;
+    }
+
+    .section-rule {
+      position: relative;
+      margin-bottom: 30px;
+      padding-top: 25px;
+      border-top: 2px solid var(--navy);
+    }
+
+    .section-rule::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 105px;
+      height: 5px;
+      background: var(--yellow-dark);
     }
 
     .section-kicker {
@@ -84,12 +110,14 @@ xml
       font-weight: 800;
       letter-spacing: 0.07em;
       text-transform: uppercase;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
     .section-link:hover,
     .section-link:focus {
       color: var(--yellow-dark);
       border-color: var(--yellow-dark);
+      transform: translateX(3px);
       outline: none;
     }
 
@@ -103,7 +131,9 @@ xml
       letter-spacing: 0.01em;
     }
 
-    .emergency-strip a { color: #ffffff; }
+    .emergency-strip a {
+      color: #ffffff;
+    }
 
     .site-header {
       position: relative;
@@ -119,7 +149,7 @@ xml
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 15px 0;
+      padding: 8px 0;
     }
 
     .brand {
@@ -130,14 +160,22 @@ xml
       text-decoration: none;
     }
 
+    .brand:hover .brand-badge,
+    .brand:focus .brand-badge {
+      transform: scale(1.04);
+    }
+
     .brand-badge {
       width: 92px;
       height: 92px;
       object-fit: contain;
       flex: 0 0 auto;
+      transition: transform 0.25s ease;
     }
 
-    .brand-text { line-height: 1; }
+    .brand-text {
+      line-height: 1;
+    }
 
     .brand-town {
       display: block;
@@ -217,7 +255,9 @@ xml
       transition: transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .site-menu.open > .wrap { transform: translateY(0); }
+    .site-menu.open > .wrap {
+      transform: translateY(0);
+    }
 
     .menu-grid {
       display: grid;
@@ -272,7 +312,7 @@ xml
 
     .carousel-track {
       display: flex;
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .slide {
@@ -291,17 +331,31 @@ xml
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 76%, rgba(0,0,0,0.08) 90%, rgba(0,0,0,0.22) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 76%,
+        rgba(0, 0, 0, 0.08) 90%,
+        rgba(0, 0, 0, 0.22) 100%
+      );
     }
 
-    .slide-1 { background-image: url("assets/images/carousel-about.jpeg"); }
-    .slide-2 { background-image: url("assets/images/carousel-services.jpeg"); }
-    .slide-3 { background-image: url("assets/images/carousel-community.jpeg"); }
+    .slide-1 {
+      background-image: url("assets/images/carousel-about.jpeg");
+    }
+
+    .slide-2 {
+      background-image: url("assets/images/carousel-services.jpeg");
+    }
+
+    .slide-3 {
+      background-image: url("assets/images/carousel-community.jpeg");
+    }
 
     .slide-content {
       position: relative;
       z-index: 1;
-      width: min(1180px, 92%);
+      width: min(1440px, 94%);
       margin: 0 auto;
       padding: 0 0 52px;
     }
@@ -309,7 +363,7 @@ xml
     .slide-text {
       width: min(520px, 100%);
       color: var(--yellow);
-      text-shadow: 0 1px 5px rgba(0,0,0,0.65);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
     }
 
     .slide-text h1,
@@ -332,6 +386,7 @@ xml
       display: flex;
       align-items: center;
       gap: 17px;
+      color: var(--yellow);
     }
 
     .carousel-control {
@@ -342,10 +397,10 @@ xml
       background: transparent;
       border: 0;
       cursor: pointer;
-      font-size: 2.1rem;
-      font-weight: 400;
+      font-size: 1.75rem;
+      font-weight: 300;
       line-height: 1;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.65);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
       transition: color 0.2s ease, transform 0.2s ease;
     }
 
@@ -364,8 +419,8 @@ xml
     }
 
     .carousel-dot {
-      width: 12px;
-      height: 12px;
+      width: 11px;
+      height: 11px;
       padding: 0;
       background: transparent;
       border: 1.5px solid var(--yellow);
@@ -387,6 +442,16 @@ xml
       border-color: var(--yellow);
     }
 
+    .slide-counter {
+      min-width: 48px;
+      color: var(--yellow);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    }
+
     .public-alert {
       color: #ffffff;
       background: var(--navy-dark);
@@ -394,7 +459,9 @@ xml
       border-bottom: 4px solid var(--yellow);
     }
 
-    .public-alert.hidden { display: none; }
+    .public-alert.hidden {
+      display: none;
+    }
 
     .public-alert-content {
       display: flex;
@@ -436,7 +503,9 @@ xml
       outline: none;
     }
 
-    main { padding: 65px 0 76px; }
+    main {
+      padding: 65px 0 76px;
+    }
 
     .section-heading {
       display: flex;
@@ -466,7 +535,9 @@ xml
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
     }
 
-    .quick-action:first-child { border-left: 1px solid var(--line); }
+    .quick-action:first-child {
+      border-left: 1px solid var(--line);
+    }
 
     .quick-action:hover,
     .quick-action:focus {
@@ -485,7 +556,9 @@ xml
     }
 
     .quick-action:hover small,
-    .quick-action:focus small { color: var(--yellow); }
+    .quick-action:focus small {
+      color: var(--yellow);
+    }
 
     .quick-action h3 {
       margin: 18px 0 0;
@@ -504,29 +577,43 @@ xml
     }
 
     .chief-welcome {
-      display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 36px;
-      align-items: center;
+      position: relative;
+      display: block;
+      isolation: isolate;
       margin-bottom: 88px;
-      padding: 38px 0;
+      padding: 48px 0;
+      overflow: visible;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .chief-badge-wrap {
-      display: grid;
-      place-items: center;
-    }
-
-    .chief-badge {
-      width: min(260px, 100%);
-      max-height: 440px;
+    .chief-watermark {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      width: min(620px, 56vw);
+      height: min(620px, 56vw);
       object-fit: contain;
+      opacity: 0.055;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
     }
 
-    .chief-welcome .section-title { max-width: 710px; }
-    .chief-welcome p { max-width: 760px; }
+    .chief-welcome-content {
+      position: relative;
+      z-index: 1;
+      width: min(860px, 100%);
+      margin: 0 auto;
+    }
+
+    .chief-welcome .section-title {
+      max-width: 710px;
+    }
+
+    .chief-welcome p {
+      max-width: 760px;
+    }
 
     .chief-signature {
       margin-top: 20px;
@@ -568,7 +655,9 @@ xml
     }
 
     .news-item:last-child,
-    .event-item:last-child { border-bottom: 1px solid var(--line); }
+    .event-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
 
     .news-date,
     .event-date {
@@ -589,7 +678,9 @@ xml
     }
 
     .news-item p,
-    .event-item p { margin: 8px 0 0; }
+    .event-item p {
+      margin: 8px 0 0;
+    }
 
     .news-item a,
     .event-item a {
@@ -605,12 +696,29 @@ xml
       box-shadow: var(--shadow);
     }
 
-    .event-panel .section-kicker { color: var(--yellow); }
-    .event-panel .section-title { color: #ffffff; }
-    .event-panel .event-item { border-color: rgba(255,255,255,0.22); }
-    .event-panel .event-date { color: var(--yellow); }
-    .event-panel .event-item h3 { color: #ffffff; }
-    .event-panel .event-item a { color: var(--yellow); }
+    .event-panel .section-kicker {
+      color: var(--yellow);
+    }
+
+    .event-panel .section-title {
+      color: #ffffff;
+    }
+
+    .event-panel .event-item {
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .event-panel .event-date {
+      color: var(--yellow);
+    }
+
+    .event-panel .event-item h3 {
+      color: #ffffff;
+    }
+
+    .event-panel .event-item a {
+      color: var(--yellow);
+    }
 
     .resources-section {
       margin-bottom: 88px;
@@ -632,7 +740,7 @@ xml
       flex-direction: column;
       padding: 24px;
       color: var(--navy-dark);
-      background: rgba(255,255,255,0.28);
+      background: rgba(255, 255, 255, 0.28);
       border: 1px solid var(--line);
       text-decoration: none;
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
@@ -655,7 +763,9 @@ xml
     }
 
     .resource-card:hover small,
-    .resource-card:focus small { color: var(--yellow); }
+    .resource-card:focus small {
+      color: var(--yellow);
+    }
 
     .resource-card h3 {
       margin: 15px 0 0;
@@ -681,7 +791,9 @@ xml
       margin-bottom: 54px;
     }
 
-    .contact-intro p { max-width: 680px; }
+    .contact-intro p {
+      max-width: 680px;
+    }
 
     .contact-panel {
       padding: 30px;
@@ -701,10 +813,12 @@ xml
 
     .contact-line {
       padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .contact-line:last-child { border-bottom: 0; }
+    .contact-line:last-child {
+      border-bottom: 0;
+    }
 
     .contact-line strong {
       display: block;
@@ -725,22 +839,25 @@ xml
       margin-top: 28px;
       padding: 21px 24px;
       color: var(--navy-dark);
-      background: rgba(255,255,255,0.52);
+      background: rgba(255, 255, 255, 0.52);
       border-left: 4px solid var(--yellow-dark);
     }
 
-    .contact-note p { margin: 0; }
+    .contact-note p {
+      margin: 0;
+    }
 
     footer {
       padding: 12px 0;
       color: #dce8f2;
       background: var(--navy-deep);
+      border-top: 8px solid var(--yellow);
     }
 
     .footer-content {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
     }
 
     .footer-badge {
@@ -748,21 +865,63 @@ xml
       height: 86px;
       object-fit: contain;
       flex: 0 0 auto;
+      transition: transform 0.25s ease;
     }
 
-    footer strong { color: #ffffff; }
-    footer p { margin: 4px 0; }
-    .small { font-size: 0.87rem; }
+    .footer-badge:hover {
+      transform: scale(1.04);
+    }
+
+    .footer-contacts {
+      margin-top: 8px;
+      color: #aebfcb;
+      font-size: 0.8rem;
+    }
+
+    .footer-contacts a {
+      color: #dce8f2;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    .small {
+      font-size: 0.87rem;
+    }
 
     @media (max-width: 900px) {
-      .menu-grid { grid-template-columns: repeat(2, 1fr); }
-      .quick-actions { grid-template-columns: repeat(2, 1fr); }
-      .quick-action:nth-child(3) { border-left: 1px solid var(--line); }
-      .chief-welcome { grid-template-columns: 130px minmax(0, 1fr); }
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-action:nth-child(3) {
+        border-left: 1px solid var(--line);
+      }
+
       .updates-grid,
-      .contact-section { grid-template-columns: 1fr; gap: 42px; }
-      .resource-grid { grid-template-columns: repeat(2, 1fr); }
-      .slide { min-height: 610px; }
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .slide {
+        min-height: 610px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -779,41 +938,151 @@ xml
         );
       }
 
-      .masthead { min-height: 88px; padding: 14px 0; }
-      .brand { gap: 10px; }
-      .brand-badge { width: 66px; height: 66px; }
-      .brand-department { font-size: 0.61rem; letter-spacing: 0.15em; }
-      .explore-button { min-width: 112px; gap: 8px; padding: 11px 12px; font-size: 0.7rem; }
-      .menu-grid { grid-template-columns: 1fr; padding: 10px 0 18px; }
-      .site-menu a { padding: 12px 13px; }
-      .slide { min-height: 580px; }
-      .slide-content { padding: 0 0 72px; }
-      .slide-text { width: min(400px, 100%); }
-      .carousel-controls { right: 4%; bottom: 23px; gap: 14px; }
-      .carousel-control { font-size: 1.8rem; }
-      main { padding: 52px 0 60px; }
-      .section-heading { display: block; }
-      .section-link { margin-top: 12px; }
-      .public-alert-content { display: block; }
-      .public-alert a { display: inline-block; margin-top: 8px; }
-      .quick-actions { grid-template-columns: 1fr; margin-bottom: 58px; }
-      .quick-action, .quick-action:first-child, .quick-action:nth-child(3) {
+      .wrap {
+        width: min(1440px, 92%);
+      }
+
+      .masthead {
+        min-height: 88px;
+        padding: 14px 0;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-badge {
+        width: 66px;
+        height: 66px;
+      }
+
+      .brand-department {
+        font-size: 0.61rem;
+        letter-spacing: 0.15em;
+      }
+
+      .explore-button {
+        min-width: 112px;
+        gap: 8px;
+        padding: 11px 12px;
+        font-size: 0.7rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        padding: 10px 0 18px;
+      }
+
+      .site-menu a {
+        padding: 12px 13px;
+      }
+
+      .slide {
+        min-height: 580px;
+      }
+
+      .slide-content {
+        padding: 0 0 72px;
+      }
+
+      .slide-text {
+        width: min(400px, 100%);
+      }
+
+      .carousel-controls {
+        right: 4%;
+        bottom: 23px;
+        gap: 14px;
+      }
+
+      .carousel-control {
+        font-size: 1.55rem;
+      }
+
+      .slide-counter {
+        min-width: 40px;
+        font-size: 0.62rem;
+      }
+
+      main {
+        padding: 52px 0 60px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-link {
+        margin-top: 12px;
+      }
+
+      .section-rule {
+        margin-bottom: 24px;
+      }
+
+      .public-alert-content {
+        display: block;
+      }
+
+      .public-alert a {
+        display: inline-block;
+        margin-top: 8px;
+      }
+
+      .quick-actions {
+        grid-template-columns: 1fr;
+        margin-bottom: 58px;
+      }
+
+      .quick-action,
+      .quick-action:first-child,
+      .quick-action:nth-child(3) {
         min-height: 145px;
         border-left: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
-      .chief-welcome { grid-template-columns: 1fr; gap: 22px; }
-      .chief-badge-wrap { justify-items: start; }
-      .chief-badge { width: min(220px, 100%); max-height: 320px; }
-      .updates-grid { margin-bottom: 58px; }
-      .resource-grid { grid-template-columns: 1fr; }
-      .resources-section { margin-bottom: 58px; }
-      .footer-content { align-items: flex-start; }
-      .footer-badge { width: 66px; height: 66px; }
+
+      .chief-welcome {
+        margin-bottom: 58px;
+        padding: 40px 0;
+      }
+
+      .chief-watermark {
+        width: min(520px, 110vw);
+        height: min(520px, 110vw);
+        opacity: 0.05;
+      }
+
+      .updates-grid {
+        margin-bottom: 58px;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resources-section {
+        margin-bottom: 58px;
+      }
+
+      .footer-content {
+        align-items: center;
+      }
+
+      .footer-badge {
+        width: 66px;
+        height: 66px;
+      }
+
+      .footer-contacts {
+        line-height: 1.55;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
@@ -841,7 +1110,11 @@ xml
 
         <button class="explore-button" id="explore-button" type="button" aria-expanded="false" aria-controls="site-menu">
           Explore
-          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </button>
       </div>
     </div>
@@ -861,45 +1134,68 @@ xml
     </nav>
   </header>
 
-  <section class="carousel" aria-label="Gilbertown Police Department featured information" aria-roledescription="carousel">
+  <section class="carousel" id="homepage-carousel" aria-label="Gilbertown Police Department featured information" aria-roledescription="carousel">
     <div class="carousel-track" id="carousel-track">
       <article class="slide slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
-        <div class="slide-content"><div class="slide-text"><h1>Focused on Public Safety</h1></div></div>
+        <div class="slide-content">
+          <div class="slide-text">
+            <h1>Focused on Public Safety</h1>
+          </div>
+        </div>
       </article>
+
       <article class="slide slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
-        <div class="slide-content"><div class="slide-text"><h2>Services &amp; Forms</h2></div></div>
+        <div class="slide-content">
+          <div class="slide-text">
+            <h2>Services &amp; Forms</h2>
+          </div>
+        </div>
       </article>
+
       <article class="slide slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
-        <div class="slide-content"><div class="slide-text"><h2>Stay Connected</h2></div></div>
+        <div class="slide-content">
+          <div class="slide-text">
+            <h2>Stay Connected</h2>
+          </div>
+        </div>
       </article>
     </div>
 
     <div class="carousel-controls" aria-label="Carousel controls">
       <button class="carousel-control" id="previous-slide" type="button" aria-label="Previous slide">&#8592;</button>
+
       <div class="carousel-dots" role="group" aria-label="Choose a slide">
         <button class="carousel-dot" type="button" aria-label="Show slide 1" aria-current="true" data-slide="0"></button>
         <button class="carousel-dot" type="button" aria-label="Show slide 2" aria-current="false" data-slide="1"></button>
         <button class="carousel-dot" type="button" aria-label="Show slide 3" aria-current="false" data-slide="2"></button>
       </div>
+
+      <span class="slide-counter" id="slide-counter" aria-live="polite">01 / 03</span>
+
       <button class="carousel-control" id="next-slide" type="button" aria-label="Next slide">&#8594;</button>
     </div>
   </section>
 
   <section class="public-alert hidden" aria-label="Public notice">
     <div class="wrap public-alert-content">
-      <p class="public-alert-text"><span class="public-alert-label">Public Notice</span>Replace this text with the current approved notice.</p>
+      <p class="public-alert-text">
+        <span class="public-alert-label">Public Notice</span>
+        Replace this text with the current approved notice.
+      </p>
       <a href="news.html">Read Notice &#8594;</a>
     </div>
   </section>
 
   <main class="wrap">
     <section aria-labelledby="quick-actions-heading">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">Public Resources</p>
-          <h2 class="section-title" id="quick-actions-heading">How Can We Help?</h2>
+      <div class="section-rule">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Public Resources</p>
+            <h2 class="section-title" id="quick-actions-heading">How Can We Help?</h2>
+          </div>
+          <a class="section-link" href="services.html">View all services</a>
         </div>
-        <a class="section-link" href="services.html">View all services</a>
       </div>
 
       <div class="quick-actions">
@@ -908,16 +1204,19 @@ xml
           <h3>Request Records</h3>
           <span>Records information &#8594;</span>
         </a>
+
         <a class="quick-action" href="forms.html">
           <small>Downloadable Documents</small>
           <h3>Department Forms</h3>
           <span>View forms &#8594;</span>
         </a>
+
         <a class="quick-action" href="services.html">
           <small>Community Service</small>
           <h3>Vacation Watch</h3>
           <span>Request information &#8594;</span>
         </a>
+
         <a class="quick-action" href="contact.html">
           <small>Non-Emergency Assistance</small>
           <h3>Contact Dispatch</h3>
@@ -927,62 +1226,96 @@ xml
     </section>
 
     <section class="chief-welcome" aria-labelledby="chief-welcome-heading">
-      <div class="chief-badge-wrap">
-        <img class="chief-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
-      </div>
-      <div>
-        <p class="section-kicker">A Message From the Chief</p>
-        <h2 class="section-title" id="chief-welcome-heading">Welcome to the Gilbertown Police Department</h2>
-        <p>Our goal is to provide our community with clear, reliable information about the department, available services, public notices, and ways to contact us. We are committed to serving the Town of Gilbertown with professionalism, fairness, integrity, and respect.</p>
-        <p>This website will continue to grow as we add approved public forms, community resources, safety information, and department updates. I encourage residents to use this site as a source of information and to contact the department when we can be of assistance.</p>
-        <p class="mission-line">To serve and protect the people of Gilbertown through lawful, fair, and professional police service.</p>
-        <p class="chief-signature">Chief Frank Burkett<span>Gilbertown Police Department</span></p>
+      <img class="chief-watermark" src="assets/images/badge.png" alt="" aria-hidden="true">
+
+      <div class="chief-welcome-content">
+        <div class="section-rule">
+          <p class="section-kicker">A Message From the Chief</p>
+          <h2 class="section-title" id="chief-welcome-heading">Welcome to the Gilbertown Police Department</h2>
+        </div>
+
+        <p>
+          Our goal is to provide our community with clear, reliable information about the
+          department, available services, public notices, and ways to contact us. We are
+          committed to serving the Town of Gilbertown with professionalism, fairness,
+          integrity, and respect.
+        </p>
+
+        <p>
+          This website will continue to grow as we add approved public forms, community
+          resources, safety information, and department updates. I encourage residents to
+          use this site as a source of information and to contact the department when we can
+          be of assistance.
+        </p>
+
+        <p class="mission-line">
+          To serve and protect the people of Gilbertown through lawful, fair, and professional police service.
+        </p>
+
+        <p class="chief-signature">
+          Chief Frank Burkett
+          <span>Gilbertown Police Department</span>
+        </p>
       </div>
     </section>
 
     <section class="updates-grid" aria-label="News and community events">
       <div>
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Official Updates</p>
-            <h2 class="section-title">Latest News</h2>
+        <div class="section-rule">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Official Updates</p>
+              <h2 class="section-title">Latest News</h2>
+            </div>
+            <a class="section-link" href="news.html">All news</a>
           </div>
-          <a class="section-link" href="news.html">All news</a>
         </div>
 
         <article class="news-item">
           <p class="news-date">September 18, 2026</p>
           <h3>Website Under Development</h3>
-          <p>The Gilbertown Police Department is developing this official public website to make department information, approved public forms, and public resources easier to find.</p>
+          <p>
+            The Gilbertown Police Department is developing this official public website to
+            make department information, approved public forms, and public resources easier to find.
+          </p>
           <p><a href="news.html">Read news and public notices &#8594;</a></p>
         </article>
 
         <article class="news-item">
           <p class="news-date">Coming Soon</p>
           <h3>Public Forms and Community Resources</h3>
-          <p>Approved public forms, helpful links, safety resources, and community notices will be added as they are ready for publication.</p>
+          <p>
+            Approved public forms, helpful links, safety resources, and community notices
+            will be added as they are ready for publication.
+          </p>
         </article>
       </div>
 
       <aside class="event-panel">
         <p class="section-kicker">Community Calendar</p>
         <h2 class="section-title">Upcoming Events</h2>
+
         <article class="event-item">
           <p class="event-date">No Current Department-Posted Events</p>
           <h3>Please Check Back Soon</h3>
-          <p>Community events and public-safety activities posted by the Gilbertown Police Department will appear here.</p>
+          <p>
+            Community events and public-safety activities posted by the Gilbertown Police
+            Department will appear here.
+          </p>
           <p><a href="events.html">View community events &#8594;</a></p>
         </article>
       </aside>
     </section>
 
     <section class="resources-section" aria-labelledby="resources-heading">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">Public-Safety Resources</p>
-          <h2 class="section-title" id="resources-heading">Helpful Information</h2>
+      <div class="section-rule">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Public-Safety Resources</p>
+            <h2 class="section-title" id="resources-heading">Helpful Information</h2>
+          </div>
+          <a class="section-link" href="links.html">All helpful links</a>
         </div>
-        <a class="section-link" href="links.html">All helpful links</a>
       </div>
 
       <div class="resource-grid">
@@ -991,26 +1324,31 @@ xml
           <h3>Sex Offender Registry</h3>
           <span>Search ALEA registry &#8594;</span>
         </a>
+
         <a class="resource-card" href="https://report.cybertip.org/" target="_blank" rel="noopener noreferrer">
           <small>Specialized Reporting</small>
           <h3>NCMEC CyberTipline</h3>
           <span>Report online exploitation &#8594;</span>
         </a>
+
         <a class="resource-card" href="https://www.alea.gov/" target="_blank" rel="noopener noreferrer">
           <small>State Public Safety</small>
           <h3>Alabama Law Enforcement Agency</h3>
           <span>Visit ALEA &#8594;</span>
         </a>
+
         <a class="resource-card" href="contact.html">
           <small>Local Communications</small>
           <h3>Choctaw County E-911 Dispatch</h3>
           <span>Contact information &#8594;</span>
         </a>
+
         <a class="resource-card" href="links.html">
           <small>Local Government</small>
           <h3>Town &amp; Partner Agency Links</h3>
           <span>Links coming soon &#8594;</span>
         </a>
+
         <a class="resource-card" href="links.html">
           <small>Community Safety</small>
           <h3>Safety Materials</h3>
@@ -1021,33 +1359,72 @@ xml
 
     <section class="contact-section" aria-labelledby="contact-heading">
       <div class="contact-intro">
-        <p class="section-kicker">Contact the Department</p>
-        <h2 class="section-title" id="contact-heading">We Are Here to Help</h2>
-        <p>Use the appropriate number below for emergency and non-emergency needs. This website and email are not monitored for emergency dispatch.</p>
+        <div class="section-rule">
+          <p class="section-kicker">Contact the Department</p>
+          <h2 class="section-title" id="contact-heading">We Are Here to Help</h2>
+        </div>
+
+        <p>
+          Use the appropriate number below for emergency and non-emergency needs. This
+          website and email are not monitored for emergency dispatch.
+        </p>
+
         <a class="section-link" href="contact.html">Full contact information</a>
       </div>
 
       <aside class="contact-panel">
         <h2>Contact Information</h2>
-        <div class="contact-line"><strong>Emergency</strong><a href="tel:911">Call 911</a></div>
-        <div class="contact-line"><strong>Non-Emergency Dispatch</strong><a href="tel:+12054595911">Choctaw County E-911: (205) 459-5911</a></div>
-        <div class="contact-line"><strong>Department Office</strong><a href="tel:+12518432766">(251) 843-2766</a></div>
-        <div class="contact-line"><strong>Office Hours</strong>8:00 a.m.–4:00 p.m.<br>Closed Tuesday, Saturday, and Sunday</div>
-        <div class="contact-line"><strong>Location</strong>40 Front Street<br>Gilbertown, Alabama 36908</div>
+
+        <div class="contact-line">
+          <strong>Emergency</strong>
+          <a href="tel:911">Call 911</a>
+        </div>
+
+        <div class="contact-line">
+          <strong>Non-Emergency Dispatch</strong>
+          <a href="tel:+12054595911">Choctaw County E-911: (205) 459-5911</a>
+        </div>
+
+        <div class="contact-line">
+          <strong>Department Office</strong>
+          <a href="tel:+12518432766">(251) 843-2766</a>
+        </div>
+
+        <div class="contact-line">
+          <strong>Office Hours</strong>
+          8:00 a.m.–4:00 p.m.<br>
+          Closed Tuesday, Saturday, and Sunday
+        </div>
+
+        <div class="contact-line">
+          <strong>Location</strong>
+          40 Front Street<br>
+          Gilbertown, Alabama 36908
+        </div>
       </aside>
     </section>
 
     <section class="contact-note">
-      <p><strong>Important:</strong> Do not use this website, an online form, or email to report an emergency, a crime in progress, or a situation requiring immediate police response. Call 911 for emergencies.</p>
+      <p>
+        <strong>Important:</strong> Do not use this website, an online form, or email to
+        report an emergency, a crime in progress, or a situation requiring immediate police
+        response. Call 911 for emergencies.
+      </p>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-content">
       <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
+
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
         <p class="small">Official public website. Last updated: September 21, 2026.</p>
+        <p class="footer-contacts">
+          Emergency: <a href="tel:911">911</a>
+          &nbsp;|&nbsp;
+          Non-Emergency Dispatch: <a href="tel:+12054595911">(205) 459-5911</a>
+        </p>
       </div>
     </div>
   </footer>
@@ -1061,30 +1438,75 @@ xml
       menuButton.setAttribute('aria-expanded', String(isOpen));
     });
 
+    const carousel = document.getElementById('homepage-carousel');
     const track = document.getElementById('carousel-track');
     const slides = Array.from(document.querySelectorAll('.slide'));
     const dots = Array.from(document.querySelectorAll('.carousel-dot'));
     const previousButton = document.getElementById('previous-slide');
     const nextButton = document.getElementById('next-slide');
+    const slideCounter = document.getElementById('slide-counter');
+
     let currentSlide = 0;
+    let autoRotateTimer;
+    const autoRotateDelay = 8500;
+    const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function showSlide(index) {
       currentSlide = (index + slides.length) % slides.length;
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
       dots.forEach((dot, dotIndex) => {
-        dot.setAttribute(
-          'aria-current',
-          dotIndex === currentSlide ? 'true' : 'false'
-        );
+        dot.setAttribute('aria-current', dotIndex === currentSlide ? 'true' : 'false');
       });
+
+      slideCounter.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
     }
 
-    previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
-    nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+    function stopAutoRotate() {
+      clearInterval(autoRotateTimer);
+    }
+
+    function startAutoRotate() {
+      if (motionReduced) return;
+      stopAutoRotate();
+      autoRotateTimer = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, autoRotateDelay);
+    }
+
+    function interactWithCarousel() {
+      stopAutoRotate();
+      startAutoRotate();
+    }
+
+    previousButton.addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+      interactWithCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+      interactWithCarousel();
+    });
 
     dots.forEach((dot) => {
-      dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide)));
+      dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.slide));
+        interactWithCarousel();
+      });
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+    carousel.addEventListener('focusin', stopAutoRotate);
+    carousel.addEventListener('focusout', startAutoRotate);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoRotate();
+      } else {
+        startAutoRotate();
+      }
     });
 
     document.addEventListener('keydown', (event) => {
@@ -1092,9 +1514,19 @@ xml
 
       if (tag === 'input' || tag === 'textarea') return;
 
-      if (event.key === 'ArrowLeft') showSlide(currentSlide - 1);
-      if (event.key === 'ArrowRight') showSlide(currentSlide + 1);
+      if (event.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+        interactWithCarousel();
+      }
+
+      if (event.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+        interactWithCarousel();
+      }
     });
+
+    showSlide(0);
+    startAutoRotate();
   </script>
 </body>
 </html>
