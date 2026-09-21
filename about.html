@@ -22,6 +22,7 @@
       --ink: #172735;
       --muted: #607080;
       --red: #8e1f26;
+      --emergency-red: #ff3b30;
       --line: rgba(22, 58, 87, 0.24);
       --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
     }
@@ -521,30 +522,39 @@
       color: var(--yellow);
     }
 
- .dispatch-note a {
-  font-weight: 800;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
-}
+    /*
+      These selectors are intentionally more specific than the general
+      link rules below. They control the idle colors inside the navy panel.
+    */
+    .leadership-panel .dispatch-note a[href="tel:911"] {
+      color: var(--emergency-red);
+      font-weight: 800;
+      text-decoration-color: currentColor;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
+    }
 
-.dispatch-note a[href="tel:911"] {
-  color: #ff4d4d;
-}
+    .leadership-panel .dispatch-note a[href="tel:+12054595911"] {
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration-color: currentColor;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
+    }
 
-.dispatch-note a[href="tel:+12054595911"] {
-  color: #ffffff;
-}
-
-.dispatch-note a:hover,
-.dispatch-note a:focus {
-  color: var(--yellow);
-  text-decoration-thickness: 2px;
-  text-decoration-color: currentColor;
-  transform: translateX(2px);
-  outline: 2px solid var(--yellow);
-  outline-offset: 4px;
-}
+    .leadership-panel .dispatch-note a[href="tel:911"]:hover,
+    .leadership-panel .dispatch-note a[href="tel:911"]:focus,
+    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:hover,
+    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:focus {
+      color: var(--yellow);
+      text-decoration-thickness: 2px;
+      text-decoration-color: currentColor;
+      transform: translateX(2px);
+      outline: 2px solid var(--yellow);
+      outline-offset: 4px;
+    }
 
     .emergency-note {
       margin-top: 74px;
@@ -571,6 +581,27 @@
       color: var(--yellow-dark);
       text-decoration-color: currentColor;
       outline: none;
+    }
+
+    /*
+      This comes after the general main-link rule so that the emergency
+      and dispatch telephone numbers keep their requested idle colors.
+    */
+    .leadership-panel .dispatch-note a[href="tel:911"] {
+      color: var(--emergency-red);
+    }
+
+    .leadership-panel .dispatch-note a[href="tel:+12054595911"] {
+      color: #ffffff;
+    }
+
+    .leadership-panel .dispatch-note a[href="tel:911"]:hover,
+    .leadership-panel .dispatch-note a[href="tel:911"]:focus,
+    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:hover,
+    .leadership-panel .dispatch-note a[href="tel:+12054595911"]:focus {
+      color: var(--yellow);
+      outline: 2px solid var(--yellow);
+      outline-offset: 4px;
     }
 
     footer {
