@@ -521,19 +521,30 @@
       color: var(--yellow);
     }
 
-    .dispatch-note a {
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    }
+ .dispatch-note a {
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
+}
 
-    .dispatch-note a:hover,
-    .dispatch-note a:focus {
-      color: var(--yellow);
-      outline: none;
-    }
+.dispatch-note a[href="tel:911"] {
+  color: #ff4d4d;
+}
+
+.dispatch-note a[href="tel:+12054595911"] {
+  color: #ffffff;
+}
+
+.dispatch-note a:hover,
+.dispatch-note a:focus {
+  color: var(--yellow);
+  text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
+  transform: translateX(2px);
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
 
     .emergency-note {
       margin-top: 74px;
