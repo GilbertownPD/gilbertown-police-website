@@ -133,6 +133,15 @@
 
     .emergency-strip a {
       color: #ffffff;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .emergency-strip a:hover,
+    .emergency-strip a:focus {
+      color: var(--yellow);
+      outline: none;
     }
 
     .site-header {
@@ -144,7 +153,7 @@
     }
 
     .masthead {
-      min-height: 104px;
+      min-height: 142px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -156,6 +165,7 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      min-width: 0;
       color: #ffffff;
       text-decoration: none;
     }
@@ -166,14 +176,15 @@
     }
 
     .brand-badge {
-      width: 92px;
-      height: 92px;
+      width: 138px;
+      height: 138px;
       object-fit: contain;
       flex: 0 0 auto;
       transition: transform 0.25s ease;
     }
 
     .brand-text {
+      min-width: 0;
       line-height: 1;
     }
 
@@ -194,6 +205,53 @@
       font-weight: 800;
       letter-spacing: 0.22em;
       text-transform: uppercase;
+    }
+
+    .header-location {
+      display: flex;
+      align-items: center;
+      min-height: 64px;
+      margin-left: auto;
+      padding: 0 28px;
+      color: #dce8f2;
+      border-left: 2px solid rgba(255, 212, 0, 0.85);
+      text-align: left;
+      text-decoration: none;
+      line-height: 1.25;
+      transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
+    }
+
+    .header-location:hover,
+    .header-location:focus {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+      outline: 2px solid var(--yellow);
+      outline-offset: 4px;
+    }
+
+    .header-location strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .header-location span {
+      display: block;
+      margin-top: 6px;
+      color: #dce8f2;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .header-location:hover span,
+    .header-location:focus span {
+      color: #ffffff;
     }
 
     .explore-button {
@@ -488,18 +546,24 @@
     }
 
     .public-alert a {
+      position: relative;
+      padding-bottom: 3px;
       color: var(--yellow);
+      border-bottom: 2px solid transparent;
       text-decoration: none;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       white-space: nowrap;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
     .public-alert a:hover,
     .public-alert a:focus {
       color: #ffffff;
+      border-bottom-color: var(--yellow);
+      transform: translateX(3px);
       outline: none;
     }
 
@@ -592,10 +656,10 @@
       z-index: -1;
       top: 50%;
       left: 50%;
-      width: min(620px, 56vw);
-      height: min(620px, 56vw);
+      width: min(930px, 84vw);
+      height: min(930px, 84vw);
       object-fit: contain;
-      opacity: 0.055;
+      opacity: 0.082;
       pointer-events: none;
       transform: translate(-50%, -50%);
     }
@@ -847,6 +911,28 @@
       margin: 0;
     }
 
+    main a:not(.quick-action):not(.resource-card):not(.section-link) {
+      position: relative;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    main a:not(.quick-action):not(.resource-card):not(.section-link):hover,
+    main a:not(.quick-action):not(.resource-card):not(.section-link):focus {
+      color: var(--yellow-dark);
+      text-decoration-color: currentColor;
+      outline: none;
+    }
+
+    .contact-panel a:hover,
+    .contact-panel a:focus,
+    .event-panel a:hover,
+    .event-panel a:focus {
+      color: #ffffff;
+      text-decoration-color: var(--yellow);
+    }
+
     footer {
       padding: 12px 0;
       color: #dce8f2;
@@ -878,10 +964,19 @@
       font-size: 0.8rem;
     }
 
-    .footer-contacts a {
+    footer a {
       color: #dce8f2;
-      text-decoration: none;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
       font-weight: 700;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: var(--yellow);
+      text-decoration-color: currentColor;
+      outline: none;
     }
 
     footer strong {
@@ -894,6 +989,20 @@
 
     .small {
       font-size: 0.87rem;
+    }
+
+    @media (max-width: 1100px) {
+      .header-location {
+        padding: 0 18px;
+      }
+
+      .header-location strong {
+        font-size: 0.65rem;
+      }
+
+      .header-location span {
+        font-size: 0.57rem;
+      }
     }
 
     @media (max-width: 900px) {
@@ -922,6 +1031,10 @@
       .slide {
         min-height: 610px;
       }
+
+      .header-location {
+        display: none;
+      }
     }
 
     @media (max-width: 560px) {
@@ -943,7 +1056,7 @@
       }
 
       .masthead {
-        min-height: 88px;
+        min-height: 112px;
         padding: 14px 0;
       }
 
@@ -952,8 +1065,8 @@
       }
 
       .brand-badge {
-        width: 66px;
-        height: 66px;
+        width: 99px;
+        height: 99px;
       }
 
       .brand-department {
@@ -1048,9 +1161,9 @@
       }
 
       .chief-watermark {
-        width: min(520px, 110vw);
-        height: min(520px, 110vw);
-        opacity: 0.05;
+        width: min(780px, 136vw);
+        height: min(780px, 136vw);
+        opacity: 0.07;
       }
 
       .updates-grid {
@@ -1102,9 +1215,23 @@
       <div class="masthead">
         <a class="brand" href="index.html" aria-label="Gilbertown Police Department home">
           <img class="brand-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
+
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
             <span class="brand-department">Police Department</span>
+          </span>
+        </a>
+
+        <a
+          class="header-location"
+          href="https://www.gilbertown.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit the official Town of Gilbertown website"
+        >
+          <span>
+            <strong>Town of Gilbertown</strong>
+            <span>Choctaw County · Alabama</span>
           </span>
         </a>
 
@@ -1448,7 +1575,7 @@
 
     let currentSlide = 0;
     let autoRotateTimer;
-    const autoRotateDelay = 8500;
+    const autoRotateDelay = 6375;
     const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function showSlide(index) {
@@ -1468,7 +1595,9 @@
 
     function startAutoRotate() {
       if (motionReduced) return;
+
       stopAutoRotate();
+
       autoRotateTimer = setInterval(() => {
         showSlide(currentSlide + 1);
       }, autoRotateDelay);
