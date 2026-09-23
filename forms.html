@@ -449,6 +449,27 @@
       font-size: 0.92rem;
     }
 
+    .forms-instructions p + p {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .forms-instructions a {
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .forms-instructions a:hover,
+    .forms-instructions a:focus {
+      color: var(--yellow);
+      text-decoration-color: currentColor;
+      outline: none;
+    }
+
     .forms-list {
       border-top: 1px solid var(--line);
     }
@@ -490,47 +511,64 @@
       margin: 14px 0 0;
     }
 
-    .form-status {
-      min-width: 150px;
-      padding: 10px 14px;
+    .form-item .form-note {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .form-download {
+      min-width: 180px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 16px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid var(--line);
+      background: var(--yellow);
+      border: 2px solid var(--yellow);
       text-align: center;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .form-status::before {
-      content: "Document";
-      display: block;
-      margin-bottom: 3px;
-      color: var(--yellow-dark);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-    }
-
-    .form-status span {
-      display: block;
+      text-decoration: none;
       font-size: 0.75rem;
-      letter-spacing: 0.04em;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      line-height: 1.25;
+      text-transform: uppercase;
+      transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .form-status--soon {
-      color: var(--navy-dark);
+    .form-download::after {
+      content: "↓";
+      font-size: 1.15rem;
+      line-height: 1;
     }
 
-    .form-item:hover .form-status {
+    .form-download:hover,
+    .form-download:focus {
       color: #ffffff;
       background: var(--navy);
       border-color: var(--navy);
-      transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      transform: translateY(-3px);
+      box-shadow: 0 9px 22px rgba(8, 28, 45, 0.16);
+      outline: 2px solid var(--yellow-dark);
+      outline-offset: 4px;
     }
 
-    .form-item:hover .form-status::before {
-      color: var(--yellow);
+    .form-download:focus {
+      outline-color: var(--navy);
+    }
+
+    .complaint-note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      color: #6a171d;
+      background: rgba(255, 255, 255, 0.46);
+      border-left: 4px solid var(--red);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .complaint-note strong {
+      color: var(--red);
     }
 
     .emergency-note {
@@ -546,16 +584,16 @@
       margin: 0;
     }
 
-    main a {
+    .emergency-note a {
       color: var(--navy);
       font-weight: 800;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
-    main a:hover,
-    main a:focus {
+    .emergency-note a:hover,
+    .emergency-note a:focus {
       color: var(--yellow-dark);
       text-decoration-color: currentColor;
       outline: none;
@@ -664,11 +702,11 @@
         background: linear-gradient(
           180deg,
           #ffd400 0,
-          #ffd400 82rem,
-          #ffe65b 116rem,
-          #fff1a4 152rem,
-          #fff9dd 192rem,
-          #fbfaf5 236rem,
+          #ffd400 92rem,
+          #ffe65b 130rem,
+          #fff1a4 170rem,
+          #fff9dd 214rem,
+          #fbfaf5 262rem,
           #fbfaf5 100%
         );
       }
@@ -760,10 +798,13 @@
         padding: 28px 0 30px;
       }
 
-      .form-status {
-        width: fit-content;
-        min-width: 145px;
-        margin-top: 20px;
+      .form-download {
+        width: 100%;
+        margin-top: 21px;
+      }
+
+      .complaint-note {
+        padding: 15px;
       }
 
       .emergency-note {
@@ -859,7 +900,7 @@
       <p class="section-kicker">Public Documents</p>
       <h1 id="page-heading">Department Forms</h1>
       <p>
-        Approved forms and public documents from the Gilbertown Police Department.
+        Download approved public forms from the Gilbertown Police Department.
       </p>
     </div>
   </section>
@@ -873,23 +914,28 @@
         </div>
 
         <p>
-          Approved public forms will be available here for download. Please print, complete, and
-          bring forms to the Gilbertown Police Department office unless the form itself provides
-          different instructions.
+          Download, print, and complete the appropriate form. Follow the submission instructions
+          on the form and below. Forms are not monitored for emergency reporting.
         </p>
 
         <p>
-          Forms are not monitored for emergency reporting. For an emergency or crime in progress,
-          call 911.
+          For an emergency or crime in progress, call 911.
         </p>
       </div>
 
       <aside class="forms-instructions">
-        <strong>How to Use Forms</strong>
+        <strong>Submitting Most Forms</strong>
         <p>
-          Downloadable forms will be posted as they are approved for public use. Follow the
-          submission instructions printed on each form and contact the department office if you
-          have questions about an available document.
+          Unless a form states otherwise, completed forms may be delivered to the Chief of Police
+          in person, left with the Town Clerk for delivery to the Chief, mailed to 40 Front Street,
+          Gilbertown, Alabama 36908, or emailed to
+          <a href="mailto:gilbertownchief@outlook.com">gilbertownchief@outlook.com</a>.
+        </p>
+
+        <p>
+          <strong>Complaint Forms:</strong> Must be delivered in person by the complainant with
+          an original signature. Complaint Forms may not be submitted by email or through this
+          website.
         </p>
       </aside>
     </section>
@@ -899,28 +945,35 @@
         <div class="form-item-content">
           <h2>Public Records Request Form</h2>
           <p>
-            This form will be used to request public records from the Gilbertown Police
-            Department. Requests are reviewed before records are released.
+            Use this form to request public records from the Gilbertown Police Department.
+            Requests are reviewed before records are released.
+          </p>
+          <p class="form-note">
+            No processing fees are charged at this time. Release of records remains subject to
+            applicable law.
           </p>
         </div>
 
-        <div class="form-status form-status--soon" aria-label="Form coming soon">
-          <span>Coming Soon</span>
-        </div>
+        <a class="form-download" href="assets/forms/public-records-request-form.pdf" target="_blank" rel="noopener noreferrer">
+          Download PDF
+        </a>
       </article>
 
       <article class="form-item">
         <div class="form-item-content">
           <h2>Accident Report Request Form</h2>
           <p>
-            This form will be used for accident-report requests until a separate online
-            accident-report resource is available.
+            Use this form to request an accident report through the Gilbertown Police Department
+            records-request process.
+          </p>
+          <p class="form-note">
+            Submission of a request does not guarantee that a report is available or may be released.
           </p>
         </div>
 
-        <div class="form-status form-status--soon" aria-label="Form coming soon">
-          <span>Coming Soon</span>
-        </div>
+        <a class="form-download" href="assets/forms/accident-report-request-form.pdf" target="_blank" rel="noopener noreferrer">
+          Download PDF
+        </a>
       </article>
 
       <article class="form-item">
@@ -928,41 +981,52 @@
           <h2>Commendation Form</h2>
           <p>
             Use this form to recognize professional service by a Gilbertown Police Department
-            employee.
+            employee or to share positive feedback about a department interaction.
           </p>
         </div>
 
-        <div class="form-status form-status--soon" aria-label="Form coming soon">
-          <span>Coming Soon</span>
-        </div>
+        <a class="form-download" href="assets/forms/commendation-form.pdf" target="_blank" rel="noopener noreferrer">
+          Download PDF
+        </a>
       </article>
 
       <article class="form-item">
         <div class="form-item-content">
           <h2>Complaint Form</h2>
           <p>
-            Use this form to submit a formal complaint for department review. This form is not
-            for emergencies.
+            Use this form to submit a formal complaint for department review. All fields must be
+            completed by the complainant. Anonymous complaints are not accepted through this form.
+          </p>
+
+          <p class="complaint-note">
+            <strong>In-person submission required:</strong> The complainant must personally
+            deliver the completed Complaint Form to the Chief of Police with an original signature.
+            If the Chief is unavailable, the form may be left and the Chief will contact the
+            complainant at his convenience. Do not email this form.
           </p>
         </div>
 
-        <div class="form-status form-status--soon" aria-label="Form coming soon">
-          <span>Coming Soon</span>
-        </div>
+        <a class="form-download" href="assets/forms/complaint-form.pdf" target="_blank" rel="noopener noreferrer">
+          Download PDF
+        </a>
       </article>
 
       <article class="form-item">
         <div class="form-item-content">
           <h2>Vacation Watch Request Form</h2>
           <p>
-            Use this form to request vacation watch service. Notify the department when you have
-            returned home so the request can be closed.
+            Use this form to request vacation-watch attention for a residence within the
+            Gilbertown Police Department service area.
+          </p>
+          <p class="form-note">
+            Submit the completed form before leaving town whenever possible, and notify the
+            department when you return so the request can be closed.
           </p>
         </div>
 
-        <div class="form-status form-status--soon" aria-label="Form coming soon">
-          <span>Coming Soon</span>
-        </div>
+        <a class="form-download" href="assets/forms/vacation-watch-request-form.pdf" target="_blank" rel="noopener noreferrer">
+          Download PDF
+        </a>
       </article>
     </section>
 
@@ -981,7 +1045,7 @@
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
-        <p class="small">Official public website. Last updated: September 21, 2026.</p>
+        <p class="small">Official public website. Last updated: September 23, 2026.</p>
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
           &nbsp;|&nbsp;
