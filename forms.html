@@ -516,8 +516,15 @@
       font-size: 0.87rem;
     }
 
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
     .form-download {
-      min-width: 180px;
+      min-width: 150px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -554,6 +561,20 @@
     }
 
     .form-download:focus {
+      outline-color: var(--navy);
+    }
+
+    .form-download--fillable {
+      color: #ffffff;
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .form-download--fillable:hover,
+    .form-download--fillable:focus {
+      color: var(--navy-dark);
+      background: #fff17c;
+      border-color: #fff17c;
       outline-color: var(--navy);
     }
 
@@ -695,6 +716,10 @@
       .page-banner-content {
         padding: 48px 0 52px;
       }
+
+      .form-actions {
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 560px) {
@@ -702,11 +727,11 @@
         background: linear-gradient(
           180deg,
           #ffd400 0,
-          #ffd400 92rem,
-          #ffe65b 130rem,
-          #fff1a4 170rem,
-          #fff9dd 214rem,
-          #fbfaf5 262rem,
+          #ffd400 98rem,
+          #ffe65b 138rem,
+          #fff1a4 180rem,
+          #fff9dd 226rem,
+          #fbfaf5 276rem,
           #fbfaf5 100%
         );
       }
@@ -798,9 +823,15 @@
         padding: 28px 0 30px;
       }
 
-      .form-download {
-        width: 100%;
+      .form-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
         margin-top: 21px;
+      }
+
+      .form-actions .form-download {
+        width: 100%;
       }
 
       .complaint-note {
@@ -914,12 +945,14 @@
         </div>
 
         <p>
-          Download, print, and complete the appropriate form. Follow the submission instructions
-          on the form and below. Forms are not monitored for emergency reporting.
+          Download, print, and complete the appropriate form. Select <strong>Fillable PDF</strong>
+          to complete a form with a keyboard and save a copy to your device, or select
+          <strong>Print PDF</strong> to print a blank form for handwriting.
         </p>
 
         <p>
-          For an emergency or crime in progress, call 911.
+          Forms are not monitored for emergency reporting. For an emergency or crime in progress,
+          call 911.
         </p>
       </div>
 
@@ -954,9 +987,14 @@
           </p>
         </div>
 
-        <a class="form-download" href="assets/Forms/public-records-request-form.pdf" target="_blank" rel="noopener noreferrer">
-          Download PDF
-        </a>
+        <div class="form-actions">
+          <a class="form-download" href="assets/Forms/public-records-request-form.pdf" target="_blank" rel="noopener noreferrer">
+            Print PDF
+          </a>
+          <a class="form-download form-download--fillable" href="assets/Forms/public-records-request-form-fillable-4.pdf" target="_blank" rel="noopener noreferrer">
+            Fillable PDF
+          </a>
+        </div>
       </article>
 
       <article class="form-item">
@@ -971,9 +1009,14 @@
           </p>
         </div>
 
-        <a class="form-download" href="assets/Forms/accident-report-request-form.pdf" target="_blank" rel="noopener noreferrer">
-          Download PDF
-        </a>
+        <div class="form-actions">
+          <a class="form-download" href="assets/Forms/accident-report-request-form.pdf" target="_blank" rel="noopener noreferrer">
+            Print PDF
+          </a>
+          <a class="form-download form-download--fillable" href="assets/Forms/accident-report-request-form-fillable.pdf" target="_blank" rel="noopener noreferrer">
+            Fillable PDF
+          </a>
+        </div>
       </article>
 
       <article class="form-item">
@@ -985,9 +1028,14 @@
           </p>
         </div>
 
-        <a class="form-download" href="assets/Forms/commendation-form.pdf" target="_blank" rel="noopener noreferrer">
-          Download PDF
-        </a>
+        <div class="form-actions">
+          <a class="form-download" href="assets/Forms/commendation-form.pdf" target="_blank" rel="noopener noreferrer">
+            Print PDF
+          </a>
+          <a class="form-download form-download--fillable" href="assets/Forms/commendation-form-fillable-2.pdf" target="_blank" rel="noopener noreferrer">
+            Fillable PDF
+          </a>
+        </div>
       </article>
 
       <article class="form-item">
@@ -1004,11 +1052,22 @@
             If the Chief is unavailable, the form may be left and the Chief will contact the
             complainant at his convenience. Do not email this form.
           </p>
+
+          <p class="form-note">
+            The Fillable PDF may be completed on a computer for convenience, but it must be
+            printed, signed in original ink, and personally delivered by the complainant to the
+            Chief of Police.
+          </p>
         </div>
 
-        <a class="form-download" href="assets/Forms/complaint-form.pdf" target="_blank" rel="noopener noreferrer">
-          Download PDF
-        </a>
+        <div class="form-actions">
+          <a class="form-download" href="assets/Forms/complaint-form.pdf" target="_blank" rel="noopener noreferrer">
+            Print PDF
+          </a>
+          <a class="form-download form-download--fillable" href="assets/Forms/complaint-form-fillable-3.pdf" target="_blank" rel="noopener noreferrer">
+            Fillable PDF
+          </a>
+        </div>
       </article>
 
       <article class="form-item">
@@ -1024,9 +1083,14 @@
           </p>
         </div>
 
-        <a class="form-download" href="assets/Forms/vacation-watch-request-form.pdf" target="_blank" rel="noopener noreferrer">
-          Download PDF
-        </a>
+        <div class="form-actions">
+          <a class="form-download" href="assets/Forms/vacation-watch-request-form.pdf" target="_blank" rel="noopener noreferrer">
+            Print PDF
+          </a>
+          <a class="form-download form-download--fillable" href="assets/Forms/vacation-watch-request-form-fillable-5.pdf" target="_blank" rel="noopener noreferrer">
+            Fillable PDF
+          </a>
+        </div>
       </article>
     </section>
 
