@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Public services provided by the Gilbertown Police Department.">
+  <meta name="description" content="Public services and court information from the Gilbertown Police Department.">
   <title>Services | Gilbertown Police Department</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,6 @@
       --ink: #172735;
       --muted: #607080;
       --red: #8e1f26;
-      --emergency-red: #ff3b30;
       --line: rgba(22, 58, 87, 0.24);
       --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
     }
@@ -42,11 +41,11 @@
       background: linear-gradient(
         180deg,
         #ffd400 0,
-        #ffd400 48rem,
-        #ffe451 78rem,
-        #fff19d 112rem,
-        #fff9dd 150rem,
-        #fbfaf5 190rem,
+        #ffd400 46rem,
+        #ffe451 76rem,
+        #fff19d 108rem,
+        #fff9dd 144rem,
+        #fbfaf5 182rem,
         #fbfaf5 100%
       );
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
@@ -72,62 +71,6 @@
       margin: 0 auto;
     }
 
-    .section-rule {
-      position: relative;
-      margin-bottom: 30px;
-      padding-top: 25px;
-      border-top: 2px solid var(--navy);
-    }
-
-    .section-rule::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: 0;
-      width: 105px;
-      height: 5px;
-      background: var(--yellow-dark);
-    }
-
-    .section-kicker {
-      margin: 0 0 7px;
-      color: var(--navy);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin: 0;
-      color: var(--navy-dark);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.03;
-      letter-spacing: -0.04em;
-    }
-
-    .section-link {
-      display: inline-block;
-      padding-bottom: 5px;
-      color: var(--navy-dark);
-      border-bottom: 2px solid var(--navy-dark);
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .section-link:hover,
-    .section-link:focus {
-      color: var(--yellow-dark);
-      border-color: var(--yellow-dark);
-      transform: translateX(3px);
-      outline: none;
-    }
-
     .emergency-strip {
       width: 100%;
       padding: 9px 18px;
@@ -143,7 +86,6 @@
       color: #ffffff;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
     .emergency-strip a:hover,
@@ -365,6 +307,7 @@
     .site-menu.open a:nth-child(7) { transition-delay: 0.52s; }
     .site-menu.open a:nth-child(8) { transition-delay: 0.58s; }
     .site-menu.open a:nth-child(9) { transition-delay: 0.64s; }
+    .site-menu.open a:nth-child(10) { transition-delay: 0.70s; }
 
     .site-menu a:hover,
     .site-menu a:focus,
@@ -430,28 +373,113 @@
       padding: 72px 0 80px;
     }
 
-    .services-intro {
-      max-width: 890px;
-      margin-bottom: 70px;
+    .section-rule {
+      position: relative;
+      margin-bottom: 30px;
+      padding-top: 25px;
+      border-top: 2px solid var(--navy);
     }
 
-    .services-intro p {
-      max-width: 780px;
+    .section-rule::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 105px;
+      height: 5px;
+      background: var(--yellow-dark);
+    }
+
+    .section-kicker {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
       margin: 0;
-      font-size: 1.03rem;
+      color: var(--navy-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
     }
 
-    .services-list {
+    .services-intro {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      column-gap: clamp(44px, 6vw, 110px);
-      row-gap: 0;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: clamp(42px, 6vw, 100px);
+      align-items: start;
+      margin-bottom: 72px;
+    }
+
+    .services-intro-copy {
+      max-width: 860px;
+    }
+
+    .services-intro-copy p {
+      max-width: 790px;
+      margin: 0 0 18px;
+    }
+
+    .services-note {
+      padding: 28px;
+      color: #ffffff;
+      background: var(--navy);
+      border-top: 6px solid var(--yellow);
+      box-shadow: var(--shadow);
+    }
+
+    .services-note strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--yellow);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .services-note p {
+      margin: 0;
+      color: #dce8f2;
+      font-size: 0.92rem;
+    }
+
+    .services-note p + p {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .services-note a {
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .services-note a:hover,
+    .services-note a:focus {
+      color: var(--yellow);
+      outline: none;
+    }
+
+    .service-list {
+      border-top: 1px solid var(--line);
     }
 
     .service-item {
       position: relative;
-      padding: 31px 0 34px;
-      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 34px;
+      align-items: center;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .service-item::before {
@@ -459,9 +487,13 @@
       position: absolute;
       top: -1px;
       left: 0;
-      width: 74px;
+      width: 78px;
       height: 4px;
       background: var(--yellow-dark);
+    }
+
+    .service-item-content {
+      max-width: 850px;
     }
 
     .service-item h2 {
@@ -474,106 +506,105 @@
     }
 
     .service-item p {
-      max-width: 710px;
-      margin: 16px 0 0;
+      margin: 14px 0 0;
     }
 
-    .service-item p + p {
-      margin-top: 14px;
+    .service-item .service-note {
+      color: var(--muted);
+      font-size: 0.87rem;
     }
 
-    .service-item a {
-      color: var(--navy);
-      font-weight: 800;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .service-item a:hover,
-    .service-item a:focus {
-      color: var(--yellow-dark);
-      text-decoration-color: currentColor;
-      outline: none;
-    }
-
-    .service-item a[href="forms.html"] {
-      display: inline-block;
-      margin-top: 5px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid currentColor;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
+    .service-action {
+      min-width: 160px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 16px;
+      color: #ffffff;
+      background: var(--navy);
+      border: 2px solid var(--navy);
+      text-align: center;
       text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      line-height: 1.25;
       text-transform: uppercase;
+      transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .service-item a[href="forms.html"]:hover,
-    .service-item a[href="forms.html"]:focus {
-      transform: translateX(3px);
+    .service-action::after {
+      content: "→";
+      font-size: 1.1rem;
+      line-height: 1;
     }
 
-    .service-item a[href^="tel:"] {
-      color: var(--navy);
+    .service-action:hover,
+    .service-action:focus {
+      color: var(--navy-dark);
+      background: #fff17c;
+      border-color: #fff17c;
+      transform: translateY(-3px);
+      box-shadow: 0 9px 22px rgba(8, 28, 45, 0.16);
+      outline: 2px solid var(--navy);
+      outline-offset: 4px;
     }
 
-    .service-item a[href^="tel:"]:hover,
-    .service-item a[href^="tel:"]:focus {
-      color: var(--yellow-dark);
-    }
-
-    .service-item--featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: clamp(35px, 6vw, 100px);
-      margin-bottom: 20px;
-      padding-top: 40px;
-    }
-
-    .service-item--featured .service-copy {
-      max-width: 870px;
-    }
-
-    .service-note {
-      align-self: start;
-      padding: 28px;
+    .court-section {
+      margin-top: 74px;
+      padding: 38px;
       color: #ffffff;
       background: var(--navy);
       border-top: 6px solid var(--yellow);
       box-shadow: var(--shadow);
     }
 
-    .service-note p {
-      max-width: none;
-      margin: 0;
-      color: #dce8f2;
-      font-size: 0.92rem;
+    .court-section .section-kicker {
+      color: var(--yellow);
     }
 
-    .service-note strong {
+    .court-section .section-title {
+      color: #ffffff;
+    }
+
+    .court-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+      gap: 52px;
+      align-items: start;
+      margin-top: 25px;
+    }
+
+    .court-section p {
+      margin: 0 0 16px;
+      color: #dce8f2;
+    }
+
+    .court-details {
+      padding: 25px;
+      color: var(--navy-dark);
+      background: #ffffff;
+      border-left: 5px solid var(--yellow);
+    }
+
+    .court-details strong {
       display: block;
-      margin-bottom: 9px;
-      color: var(--yellow);
-      font-size: 0.72rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 0.73rem;
       font-weight: 800;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    .service-note a {
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    .court-details p {
+      margin: 0 0 17px;
+      color: var(--ink);
     }
 
-    .service-note a:hover,
-    .service-note a:focus {
-      color: var(--yellow);
-      text-decoration-color: currentColor;
-      outline: none;
+    .court-details p:last-child {
+      margin-bottom: 0;
     }
 
     .emergency-note {
@@ -594,13 +625,11 @@
       font-weight: 800;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
     .emergency-note a:hover,
     .emergency-note a:focus {
       color: var(--yellow-dark);
-      text-decoration-color: currentColor;
       outline: none;
     }
 
@@ -642,13 +671,11 @@
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
       font-weight: 700;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
     footer a:hover,
     footer a:focus {
       color: var(--yellow);
-      text-decoration-color: currentColor;
       outline: none;
     }
 
@@ -673,15 +700,12 @@
         display: none;
       }
 
-      .services-list {
+      .services-intro,
+      .court-grid {
         grid-template-columns: 1fr;
       }
 
-      .service-item--featured {
-        grid-template-columns: 1fr;
-      }
-
-      .service-note {
+      .services-note {
         max-width: 680px;
       }
 
@@ -704,6 +728,10 @@
       .page-banner-content {
         padding: 48px 0 52px;
       }
+
+      .service-action {
+        min-width: 145px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -711,11 +739,11 @@
         background: linear-gradient(
           180deg,
           #ffd400 0,
-          #ffd400 90rem,
-          #ffe65b 126rem,
-          #fff1a4 166rem,
-          #fff9dd 208rem,
-          #fbfaf5 252rem,
+          #ffd400 98rem,
+          #ffe65b 138rem,
+          #fff1a4 180rem,
+          #fff9dd 226rem,
+          #fbfaf5 276rem,
           #fbfaf5 100%
         );
       }
@@ -795,19 +823,34 @@
       }
 
       .services-intro {
-        margin-bottom: 50px;
+        margin-bottom: 52px;
+      }
+
+      .services-note {
+        padding: 25px;
       }
 
       .service-item {
-        padding: 28px 0 31px;
+        display: block;
+        padding: 28px 0 30px;
       }
 
-      .service-item--featured {
-        padding-top: 33px;
+      .service-action {
+        width: 100%;
+        margin-top: 21px;
       }
 
-      .service-note {
-        padding: 25px;
+      .court-section {
+        margin-top: 56px;
+        padding: 26px;
+      }
+
+      .court-grid {
+        gap: 28px;
+      }
+
+      .court-details {
+        padding: 21px;
       }
 
       .emergency-note {
@@ -891,140 +934,147 @@
         <a href="forms.html">Forms</a>
         <a href="news.html">News &amp; Notices</a>
         <a href="events.html">Community Events</a>
-<a href="links.html">Helpful Links</a>
-<a href="safety-materials.html">Safety Materials</a>
-<a href="tips.html">Submit a Tip</a>
-<a href="contact.html">Contact</a>
+        <a href="links.html">Helpful Links</a>
+        <a href="safety-materials.html">Safety Materials</a>
+        <a href="tips.html">Submit a Tip</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
   <section class="page-banner" aria-labelledby="page-heading">
     <div class="wrap page-banner-content">
-      <p class="section-kicker">Public Information</p>
+      <p class="section-kicker">Public Services</p>
       <h1 id="page-heading">Department Services</h1>
       <p>
-        Information about services, requests, and public resources available through the Gilbertown Police Department.
+        Information about common public services, records requests, vacation watch requests,
+        and Gilbertown Municipal Court.
       </p>
     </div>
   </section>
 
   <main class="wrap">
     <section class="services-intro" aria-labelledby="services-intro-heading">
-      <div class="section-rule">
-        <p class="section-kicker">How We Can Help</p>
-        <h2 class="section-title" id="services-intro-heading">Services for the Public</h2>
-      </div>
-
-      <p>
-        This page provides information about public services offered by the Gilbertown Police
-        Department. Downloadable forms are listed separately on the <a href="forms.html">Forms page</a>.
-      </p>
-    </section>
-
-    <section class="services-list" aria-label="Department services">
-      <article class="service-item service-item--featured">
-        <div class="service-copy">
-          <h2>Public Records Requests</h2>
-          <p>
-            The Gilbertown Police Department will make a public-records request form available
-            on this website. A completed form may be printed, completed, and brought to the
-            Gilbertown Police Department for review.
-          </p>
-          <p>
-            Each request will be reviewed before records are released. Records may be released
-            when permitted by law and when the requested records are available. Some records may
-            be withheld, redacted, or unavailable because of legal exemptions, privacy
-            considerations, investigative status, or other lawful reasons. If records can be
-            released, the department will provide them through the method requested when
-            reasonably possible.
-          </p>
-          <p><a href="forms.html">View available forms &#8594;</a></p>
+      <div class="services-intro-copy">
+        <div class="section-rule">
+          <p class="section-kicker">Public Information</p>
+          <h2 class="section-title" id="services-intro-heading">How We Can Help</h2>
         </div>
 
-        <aside class="service-note">
-          <strong>Request Information</strong>
+        <p>
+          The Gilbertown Police Department provides public information and services to help
+          residents access department resources and request assistance through the appropriate
+          process.
+        </p>
+
+        <p>
+          Select a service below for more information. Do not use this website, email, or
+          public forms to report emergencies, crimes in progress, or situations requiring
+          an immediate police response.
+        </p>
+      </div>
+
+      <aside class="services-note">
+        <strong>Emergency Reporting</strong>
+        <p>
+          For an emergency or crime in progress, call <a href="tel:911">911</a>.
+        </p>
+
+        <p>
+          For non-emergency dispatch information, visit the
+          <a href="contact.html">Contact page</a>.
+        </p>
+      </aside>
+    </section>
+
+    <section class="service-list" aria-label="Department services">
+      <article class="service-item">
+        <div class="service-item-content">
+          <h2>Records Request</h2>
           <p>
-            Public-records forms and other approved department documents are available on the
-            Forms page as they are prepared for publication.
+            Use the department’s Records Request form to request public records or accident
+            reports from the Gilbertown Police Department. Requests are reviewed before records
+            are released, and release remains subject to applicable law.
           </p>
-          <p><a href="forms.html">Go to forms &#8594;</a></p>
+          <p class="service-note">
+            The same Records Request form is used for public records requests and accident
+            report requests.
+          </p>
+        </div>
+
+        <a class="service-action" href="forms.html">
+          Go to Forms
+        </a>
+      </article>
+
+      <article class="service-item">
+        <div class="service-item-content">
+          <h2>Vacation Watch</h2>
+          <p>
+            Vacation Watch allows residents to request additional police attention to a home
+            while they are away. Submit a request before leaving town whenever possible and
+            notify the department when you return so the request can be closed.
+          </p>
+          <p class="service-note">
+            A Vacation Watch request does not guarantee continuous monitoring and is not a
+            substitute for emergency services. Call 911 for emergencies.
+          </p>
+        </div>
+
+        <a class="service-action" href="forms.html">
+          Go to Forms
+        </a>
+      </article>
+    </section>
+
+    <section class="court-section" aria-labelledby="court-heading">
+      <div class="section-rule">
+        <p class="section-kicker">Court Information</p>
+        <h2 class="section-title" id="court-heading">Gilbertown Municipal Court</h2>
+      </div>
+
+      <div class="court-grid">
+        <div>
+          <p>
+            Gilbertown Municipal Court is held on the <strong>third Thursday of each month
+            at 5:00 p.m.</strong> at <strong>Gilbertown City Hall</strong>. This schedule
+            applies to both traffic court and criminal court matters.
+          </p>
+
+          <p>
+            Your citation, summons, or other court paperwork may include additional instructions
+            or a specific appearance date. Follow the instructions on your paperwork and contact
+            the appropriate court or clerk’s office before your scheduled court date if you have
+            questions about a court matter.
+          </p>
+        </div>
+
+        <aside class="court-details">
+          <strong>Court Schedule</strong>
+          <p>
+            <strong>When:</strong><br>
+            Third Thursday of each month<br>
+            5:00 p.m.
+          </p>
+
+          <p>
+            <strong>Where:</strong><br>
+            Gilbertown City Hall
+          </p>
+
+          <p>
+            <strong>Matters:</strong><br>
+            Traffic Court and Criminal Court
+          </p>
         </aside>
-      </article>
-
-      <article class="service-item">
-        <h2>Accident Reports</h2>
-        <p>
-          Accident-report requests may currently be made using the department’s records-request
-          process. A separate online accident-report request resource is planned for the future.
-          When available, a link and instructions will be posted on this website.
-        </p>
-      </article>
-
-      <article class="service-item">
-        <h2>Commendations and Complaints</h2>
-        <p>
-          The Gilbertown Police Department welcomes commendations regarding professional service
-          and takes complaints seriously. Forms will be available on this website for printing
-          and completion. Completed forms may be brought to the department office for review and
-          processing.
-        </p>
-        <p>
-          A commendation or complaint form is not for emergency reporting. For an emergency or
-          crime in progress, call 911.
-        </p>
-      </article>
-
-      <article class="service-item">
-        <h2>Vacation Watch Requests</h2>
-        <p>
-          The Gilbertown Police Department offers vacation-watch requests for residents within
-          the department’s service area. A request form will be available for printing and
-          completion. Please submit the completed form to the department before leaving town
-          whenever possible.
-        </p>
-        <p>
-          Residents are asked to notify the department when they have returned home so the
-          request can be closed. Vacation-watch requests do not guarantee continuous
-          surveillance or prevent criminal activity. Residents should secure their homes,
-          arrange for mail and package collection, and report suspicious activity by calling the
-          appropriate dispatch number.
-        </p>
-      </article>
-
-      <article class="service-item">
-        <h2>Employment and Volunteer Information</h2>
-        <p>
-          Applications for employment and volunteer opportunities are available at the
-          Gilbertown Police Department office. Applications may be obtained and submitted in
-          person.
-        </p>
-        <p>
-          The availability of an application does not mean that a position is currently open.
-          Employment opportunities and application deadlines will be posted when applicable.
-        </p>
-      </article>
-
-      <article class="service-item">
-        <h2>Court Information</h2>
-        <p>
-          For general court-related questions, contact the Court Clerk at the department office
-          number: <a href="tel:+12518432766">(251) 843-2766</a>. The Court Clerk can provide
-          appropriate information about court matters.
-        </p>
-        <p>
-          The Gilbertown Police Department does not provide legal advice, make court decisions,
-          or control court scheduling, fines, payments, or case outcomes.
-        </p>
-      </article>
+      </div>
     </section>
 
     <section class="emergency-note" aria-label="Emergency reporting reminder">
       <p>
-        <strong>Emergency notice:</strong> Do not use this website, a form, or email for
-        emergency reporting, crimes in progress, or urgent police assistance. Call
-        <a href="tel:911">911</a>. For non-emergency dispatch, call Choctaw County E-911
-        Dispatch at <a href="tel:+12054595911">(205) 459-5911</a>.
+        <strong>Important:</strong> Do not use a form, email, or this website to report an
+        emergency, a crime in progress, or urgent police assistance. Call
+        <a href="tel:911">911</a>.
       </p>
     </section>
   </main>
@@ -1035,7 +1085,7 @@
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
-        <p class="small">Official public website. Last updated: September 21, 2026.</p>
+        <p class="small">Official public website. Last updated: September 24, 2026.</p>
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
           &nbsp;|&nbsp;
