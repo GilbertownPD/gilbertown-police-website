@@ -413,9 +413,17 @@
       );
     }
 
-    .slide-1 { background-image: url("assets/images/carousel-about.jpeg"); }
-    .slide-2 { background-image: url("assets/images/carousel-services.jpeg"); }
-    .slide-3 { background-image: url("assets/images/carousel-community.jpeg"); }
+    .slide-1 {
+      background-image: url("assets/images/carousel-about.jpeg");
+    }
+
+    .slide-2 {
+      background-image: url("assets/images/carousel-services.jpeg");
+    }
+
+    .slide-3 {
+      background-image: url("assets/images/carousel-community.jpeg");
+    }
 
     .slide-content {
       position: relative;
@@ -769,19 +777,28 @@
       box-shadow: var(--shadow);
     }
 
-    .event-panel .section-kicker,
-    .event-panel .event-date,
-    .event-panel .event-item a {
+    .event-panel .section-kicker {
       color: var(--yellow);
     }
 
-    .event-panel .section-title,
-    .event-panel .event-item h3 {
+    .event-panel .section-title {
       color: #ffffff;
     }
 
     .event-panel .event-item {
       border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .event-panel .event-date {
+      color: var(--yellow);
+    }
+
+    .event-panel .event-item h3 {
+      color: #ffffff;
+    }
+
+    .event-panel .event-item a {
+      color: var(--yellow);
     }
 
     .resources-section {
@@ -1470,10 +1487,10 @@
           <span>Visit ALEA &#8594;</span>
         </a>
 
-        <a class="resource-card" href="contact.html">
-          <small>Local Communications</small>
-          <h3>Choctaw County E-911 Dispatch</h3>
-          <span>Contact information &#8594;</span>
+        <a class="resource-card" href="events.html">
+          <small>Community Information</small>
+          <h3>Community Events</h3>
+          <span>View upcoming events &#8594;</span>
         </a>
 
         <a class="resource-card" href="links.html">
@@ -1482,7 +1499,7 @@
           <span>Links coming soon &#8594;</span>
         </a>
 
-        <a class="resource-card" href="links.html">
+        <a class="resource-card" href="safety-materials.html">
           <small>Community Safety</small>
           <h3>Safety Materials</h3>
           <span>Resources coming soon &#8594;</span>
@@ -1647,21 +1664,4 @@
     document.addEventListener('keydown', (event) => {
       const tag = document.activeElement.tagName.toLowerCase();
 
-      if (tag === 'input' || tag === 'textarea') return;
-
-      if (event.key === 'ArrowLeft') {
-        showSlide(currentSlide - 1);
-        interactWithCarousel();
-      }
-
-      if (event.key === 'ArrowRight') {
-        showSlide(currentSlide + 1);
-        interactWithCarousel();
-      }
-    });
-
-    showSlide(0);
-    startAutoRotate();
-  </script>
-</body>
-</html>
+      if (tag === 'input' ||
