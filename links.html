@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Helpful public safety and government links from the Gilbertown Police Department.">
+  <meta name="description" content="Helpful local, county, state, federal, and public-safety links for Gilbertown and Choctaw County residents.">
   <title>Helpful Links | Gilbertown Police Department</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,11 +41,11 @@
       background: linear-gradient(
         180deg,
         #ffd400 0,
-        #ffd400 46rem,
-        #ffe451 76rem,
-        #fff19d 108rem,
-        #fff9dd 144rem,
-        #fbfaf5 182rem,
+        #ffd400 54rem,
+        #ffe451 88rem,
+        #fff19d 132rem,
+        #fff9dd 190rem,
+        #fbfaf5 250rem,
         #fbfaf5 100%
       );
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
@@ -71,41 +71,6 @@
       margin: 0 auto;
     }
 
-    .section-rule {
-      position: relative;
-      margin-bottom: 30px;
-      padding-top: 25px;
-      border-top: 2px solid var(--navy);
-    }
-
-    .section-rule::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: 0;
-      width: 105px;
-      height: 5px;
-      background: var(--yellow-dark);
-    }
-
-    .section-kicker {
-      margin: 0 0 7px;
-      color: var(--navy);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin: 0;
-      color: var(--navy-dark);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.03;
-      letter-spacing: -0.04em;
-    }
-
     .emergency-strip {
       width: 100%;
       padding: 9px 18px;
@@ -121,7 +86,6 @@
       color: #ffffff;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
     .emergency-strip a:hover,
@@ -343,6 +307,7 @@
     .site-menu.open a:nth-child(7) { transition-delay: 0.52s; }
     .site-menu.open a:nth-child(8) { transition-delay: 0.58s; }
     .site-menu.open a:nth-child(9) { transition-delay: 0.64s; }
+    .site-menu.open a:nth-child(10) { transition-delay: 0.70s; }
 
     .site-menu a:hover,
     .site-menu a:focus,
@@ -408,174 +373,231 @@
       padding: 72px 0 80px;
     }
 
-    .links-intro {
-      max-width: 880px;
-      margin-bottom: 68px;
+    .section-block {
+      margin-bottom: 78px;
     }
 
-    .links-intro p {
-      max-width: 780px;
+    .section-rule {
+      position: relative;
+      margin-bottom: 30px;
+      padding-top: 25px;
+      border-top: 2px solid var(--navy);
+    }
+
+    .section-rule::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 105px;
+      height: 5px;
+      background: var(--yellow-dark);
+    }
+
+    .section-kicker {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
       margin: 0;
-      font-size: 1.03rem;
+      color: var(--navy-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
     }
 
-    .directory-grid {
+    .section-intro {
+      max-width: 880px;
+      margin: 0 0 28px;
+    }
+
+    .link-groups {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 clamp(44px, 6vw, 110px);
+      gap: 40px;
     }
 
-    .resource-group {
-      position: relative;
-      padding: 32px 0 36px;
+    .link-group {
+      min-width: 0;
+    }
+
+    .link-group h3 {
+      margin: 0 0 17px;
+      color: var(--navy);
+      font-size: 0.83rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .agency-list {
       border-top: 1px solid var(--line);
     }
 
-    .resource-group::before {
+    .agency-card {
+      position: relative;
+      padding: 24px 0 25px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .agency-card::before {
       content: "";
       position: absolute;
       top: -1px;
       left: 0;
-      width: 78px;
+      width: 72px;
       height: 4px;
       background: var(--yellow-dark);
     }
 
-    .resource-group h2 {
+    .agency-card h4 {
       margin: 0;
       color: var(--navy-dark);
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(1.65rem, 2.7vw, 2.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
+      font-size: 1.42rem;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
     }
 
-    .resource-group p {
-      max-width: 710px;
-      margin: 16px 0 0;
-    }
-
-    .resource-list {
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .resource-list li {
-      position: relative;
-      margin: 0;
-      padding: 15px 0 15px 24px;
-      border-top: 1px solid rgba(22, 58, 87, 0.14);
-    }
-
-    .resource-list li:last-child {
-      border-bottom: 1px solid rgba(22, 58, 87, 0.14);
-    }
-
-    .resource-list li::before {
-      content: "→";
-      position: absolute;
-      top: 15px;
-      left: 0;
-      color: var(--yellow-dark);
-      font-weight: 800;
-    }
-
-    .resource-list strong {
+    .agency-card h4 a {
       color: var(--navy-dark);
-    }
-
-    .resource-list a {
-      color: var(--navy);
-      font-weight: 800;
       text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .resource-list a:hover,
-    .resource-list a:focus {
-      color: var(--yellow-dark);
-      text-decoration-color: currentColor;
-      outline: none;
-    }
-
-    .external-link::after {
-      content: " ↗";
-      display: inline-block;
-      margin-left: 3px;
-      font-size: 0.82em;
-      transition: transform 0.2s ease;
-    }
-
-    .external-link:hover::after,
-    .external-link:focus::after {
-      transform: translate(2px, -2px);
-    }
-
-    .resource-group--wide {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-      gap: clamp(36px, 6vw, 100px);
-      align-items: start;
-    }
-
-    .resource-group--wide .resource-group-copy {
-      max-width: 830px;
-    }
-
-    .resource-note {
-      padding: 28px;
-      color: #ffffff;
-      background: var(--navy);
-      border-top: 6px solid var(--yellow);
-      box-shadow: var(--shadow);
-    }
-
-    .resource-note strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--yellow);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .resource-note p {
-      max-width: none;
-      margin: 0;
-      color: #dce8f2;
-      font-size: 0.92rem;
-    }
-
-    .emergency-note {
-      margin-top: 74px;
-      padding: 24px 28px;
-      color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.52);
-      border-left: 4px solid var(--yellow-dark);
-    }
-
-    .emergency-note p {
-      max-width: 1080px;
-      margin: 0;
-    }
-
-    .emergency-note a {
-      color: var(--navy);
-      font-weight: 800;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+      text-underline-offset: 4px;
       transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
-    .emergency-note a:hover,
-    .emergency-note a:focus {
+    .agency-card h4 a:hover,
+    .agency-card h4 a:focus {
       color: var(--yellow-dark);
-      text-decoration-color: currentColor;
       outline: none;
+    }
+
+    .agency-description {
+      margin: 10px 0 0;
+      color: var(--ink);
+      font-size: 0.93rem;
+    }
+
+    .agency-details {
+      display: grid;
+      gap: 8px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .agency-details p {
+      margin: 0;
+    }
+
+    .detail-label {
+      display: inline-block;
+      min-width: 72px;
+      margin-right: 6px;
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 8px 12px;
+      color: #ffffff;
+      background: var(--navy);
+      border: 2px solid var(--navy);
+      text-decoration: none;
+      font-weight: 800;
+      line-height: 1.2;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .phone-link:hover,
+    .phone-link:focus {
+      color: var(--navy-dark);
+      background: var(--yellow);
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    .inline-phone {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 10px;
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .inline-phone:hover,
+    .inline-phone:focus {
+      color: var(--navy-dark);
+      background: #fff17c;
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    .agency-note {
+      margin: 13px 0 0;
+      padding: 12px 14px;
+      color: var(--navy-dark);
+      background: rgba(255, 255, 255, 0.48);
+      border-left: 4px solid var(--yellow-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .emergency-section-note {
+      margin: 0 0 28px;
+      padding: 18px 20px;
+      color: #ffffff;
+      background: var(--navy);
+      border-left: 5px solid var(--yellow);
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      margin-top: 8px;
+      padding: 28px;
+      color: #ffffff;
+      background: var(--navy-deep);
+      border-top: 6px solid var(--yellow);
+    }
+
+    .disclaimer h2 {
+      margin: 0 0 12px;
+      color: var(--yellow);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.55rem;
+      line-height: 1.1;
+    }
+
+    .disclaimer p {
+      max-width: 1100px;
+      margin: 0;
+      color: #dce8f2;
+    }
+
+    .disclaimer .last-updated {
+      margin-top: 16px;
+      color: #ffffff;
+      font-size: 0.83rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
     footer {
@@ -616,13 +638,11 @@
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
       font-weight: 700;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
     footer a:hover,
     footer a:focus {
       color: var(--yellow);
-      text-decoration-color: currentColor;
       outline: none;
     }
 
@@ -647,18 +667,6 @@
         display: none;
       }
 
-      .directory-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .resource-group--wide {
-        grid-template-columns: 1fr;
-      }
-
-      .resource-note {
-        max-width: 680px;
-      }
-
       .page-banner::after {
         right: -6%;
         width: min(500px, 55vw);
@@ -675,6 +683,11 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .link-groups {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
       .page-banner-content {
         padding: 48px 0 52px;
       }
@@ -685,11 +698,11 @@
         background: linear-gradient(
           180deg,
           #ffd400 0,
-          #ffd400 82rem,
-          #ffe65b 116rem,
-          #fff1a4 152rem,
-          #fff9dd 192rem,
-          #fbfaf5 236rem,
+          #ffd400 116rem,
+          #ffe65b 170rem,
+          #fff1a4 242rem,
+          #fff9dd 328rem,
+          #fbfaf5 420rem,
           #fbfaf5 100%
         );
       }
@@ -764,25 +777,29 @@
         padding: 54px 0 62px;
       }
 
+      .section-block {
+        margin-bottom: 58px;
+      }
+
       .section-rule {
         margin-bottom: 24px;
       }
 
-      .links-intro {
-        margin-bottom: 50px;
+      .agency-card {
+        padding: 22px 0 24px;
       }
 
-      .resource-group {
-        padding: 28px 0 31px;
+      .agency-card h4 {
+        font-size: 1.32rem;
       }
 
-      .resource-note {
-        padding: 25px;
+      .phone-link {
+        width: 100%;
+        justify-content: center;
       }
 
-      .emergency-note {
-        margin-top: 56px;
-        padding: 20px;
+      .disclaimer {
+        padding: 22px;
       }
 
       .footer-content {
@@ -861,10 +878,10 @@
         <a href="forms.html">Forms</a>
         <a href="news.html">News &amp; Notices</a>
         <a href="events.html">Community Events</a>
-<a href="links.html">Helpful Links</a>
-<a href="safety-materials.html">Safety Materials</a>
-<a href="tips.html">Submit a Tip</a>
-<a href="contact.html">Contact</a>
+        <a href="links.html" aria-current="page">Helpful Links</a>
+        <a href="safety-materials.html">Safety Materials</a>
+        <a href="tips.html">Submit a Tip</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
@@ -874,92 +891,748 @@
       <p class="section-kicker">Public Resources</p>
       <h1 id="page-heading">Helpful Links</h1>
       <p>
-        Public-safety, government, and specialized reporting resources for the Gilbertown community.
+        Local, county, state, federal, and public-safety resources for Gilbertown and Choctaw County residents.
       </p>
     </div>
   </section>
 
   <main class="wrap">
-    <section class="links-intro" aria-labelledby="links-intro-heading">
+    <section class="section-block" aria-labelledby="gilbertown-heading">
       <div class="section-rule">
-        <p class="section-kicker">Resource Directory</p>
-        <h2 class="section-title" id="links-intro-heading">Public Information &amp; Assistance</h2>
+        <p class="section-kicker">Section 1</p>
+        <h2 class="section-title" id="gilbertown-heading">Gilbertown</h2>
       </div>
 
-      <p>
-        The following links are provided as public resources. External websites are maintained by
-        their respective organizations.
-      </p>
+      <div class="link-groups">
+        <section class="link-group" aria-labelledby="town-government-heading">
+          <h3 id="town-government-heading">Town Government &amp; Utilities</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.gilbertown.org/" target="_blank" rel="noopener noreferrer">
+                  Town of Gilbertown
+                </a>
+              </h4>
+              <p class="agency-description">Official town website: town hall, council, services, news.</p>
+              <div class="agency-details">
+                <p><span class="detail-label">Address</span>Gilbertown, AL 36908</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>Utilities Board of the Town of Gilbertown</h4>
+              <p class="agency-description">Water/utility service, billing, and service questions.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12518432577" aria-label="Call Utilities Board of the Town of Gilbertown">
+                    (251) 843-2577
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>13217 Choctaw Ave, Gilbertown, AL 36908</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://utilitiesboardofgilbertown.nexbillpayonline.com/" target="_blank" rel="noopener noreferrer">
+                  Utilities Board — Pay Your Bill Online
+                </a>
+              </h4>
+              <p class="agency-description">Online bill payment portal.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12518432577" aria-label="Call Utilities Board of the Town of Gilbertown">
+                    (251) 843-2577
+                  </a>
+                </p>
+              </div>
+              <p class="agency-note">
+                If you have been disconnected, call the Utilities Board office after paying online.
+                Service is not restored until the office is notified.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="link-group" aria-labelledby="gilbertown-schools-heading">
+          <h3 id="gilbertown-schools-heading">Schools &amp; Education</h3>
+
+          <div class="agency-list">
+            <!-- VERIFY -->
+            <article class="agency-card">
+              <h4>
+                <a href="https://sces.choctawal.org" target="_blank" rel="noopener noreferrer">
+                  Southern Choctaw Elementary School
+                </a>
+              </h4>
+              <p class="agency-description">Public elementary school (Choctaw County Schools).</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12512066922" aria-label="Call Southern Choctaw Elementary School">
+                    (251) 206-6922
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>10935 Highway 17, Gilbertown, AL 36908</p>
+              </div>
+            </article>
+
+            <!-- VERIFY -->
+            <article class="agency-card">
+              <h4>
+                <a href="https://schs.choctawal.org" target="_blank" rel="noopener noreferrer">
+                  Southern Choctaw High School
+                </a>
+              </h4>
+              <p class="agency-description">Public high school (Choctaw County Schools).</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12512066924" aria-label="Call Southern Choctaw High School">
+                    (251) 206-6924
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>10941 Highway 17, Gilbertown, AL 36908</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.coastalalabama.edu/about/locations/gilbertown/" target="_blank" rel="noopener noreferrer">
+                  Coastal Alabama Community College – Gilbertown Campus
+                </a>
+              </h4>
+              <p class="agency-description">Community college campus.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12518435265" aria-label="Call Coastal Alabama Community College Gilbertown Campus">
+                    (251) 843-5265
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>251 College Street, Gilbertown, AL 36908</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="link-groups" style="margin-top: 42px;">
+        <section class="link-group" aria-labelledby="gilbertown-community-heading">
+          <h3 id="gilbertown-community-heading">Community</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.facebook.com/profile.php?id=100064279411439" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Historical Museum
+                </a>
+              </h4>
+              <p class="agency-description">
+                Local history museum with fossils, Native American artifacts, a pioneer log cabin,
+                and Alabama's first oil well exhibit. Free admission. Hours listed as Wednesdays
+                and Saturdays; call ahead.
+              </p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12518432501" aria-label="Call Choctaw County Historical Museum">
+                    (251) 843-2501
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>40 Melvin Road (at Hwy 17), Gilbertown, AL 36908</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
     </section>
 
-    <section class="directory-grid" aria-label="Helpful public-safety links">
-      <section class="resource-group">
-        <h2>Emergency and Dispatch</h2>
+    <section class="section-block" aria-labelledby="county-heading">
+      <div class="section-rule">
+        <p class="section-kicker">Section 2</p>
+        <h2 class="section-title" id="county-heading">Choctaw County</h2>
+      </div>
 
-        <ul class="resource-list">
-          <li><strong>Emergency:</strong> Call 911</li>
-          <li>
-            <strong>Non-Emergency Dispatch:</strong> Choctaw County E-911 Dispatch,
-            <a href="tel:+12054595911">(205) 459-5911</a>
-          </li>
-        </ul>
-      </section>
+      <div class="link-groups">
+        <section class="link-group" aria-labelledby="county-government-heading">
+          <h3 id="county-government-heading">County Government</h3>
 
-      <section class="resource-group">
-        <h2>State Public-Safety Resources</h2>
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.choctawcountyal.org/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Commission
+                </a>
+              </h4>
+              <p class="agency-description">Official county website: commission, probate, revenue commissioner, county offices.</p>
+              <div class="agency-details">
+                <p><span class="detail-label">Address</span>Choctaw County Courthouse, 117 S Mulberry Ave, Butler, AL 36904</p>
+              </div>
+            </article>
 
-        <ul class="resource-list">
-          <li>
-            <a class="external-link" href="https://www.alea.gov/" target="_blank" rel="noopener noreferrer">
-              Alabama Law Enforcement Agency (ALEA)
-            </a>
-          </li>
-          <li>
-            <a class="external-link" href="https://app.alea.gov/Community/" target="_blank" rel="noopener noreferrer">
-              Alabama Sex Offender Registry
-            </a>
-          </li>
-        </ul>
-      </section>
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.butleralabama.org/" target="_blank" rel="noopener noreferrer">
+                  Town of Butler (County Seat)
+                </a>
+              </h4>
+              <p class="agency-description">Official town website.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054593795" aria-label="Call Town of Butler City Hall">
+                    (205) 459-3795
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>222 S Mulberry Ave, Butler, AL 36904</p>
+              </div>
+            </article>
+          </div>
+        </section>
 
-      <section class="resource-group">
-        <h2>Specialized Reporting</h2>
+        <section class="link-group" aria-labelledby="county-public-safety-heading">
+          <h3 id="county-public-safety-heading">Law Enforcement &amp; Public Safety</h3>
 
-        <ul class="resource-list">
-          <li>
-            <a class="external-link" href="https://report.cybertip.org/" target="_blank" rel="noopener noreferrer">
-              NCMEC CyberTipline
-            </a>
-            — report suspected online child sexual exploitation.
-          </li>
-        </ul>
-      </section>
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="http://www.choctawso.com/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">
+                County law enforcement: news, sex offender registry, inmate list, most wanted,
+                online tip form, alerts.
+              </p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054592166" aria-label="Call Choctaw County Sheriff's Office">
+                    (205) 459-2166
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>117 S Mulberry Ave, Suite 11, Butler, AL 36904</p>
+              </div>
+            </article>
 
-      <section class="resource-group resource-group--wide">
-        <div class="resource-group-copy">
-          <h2>Local Government and Partner Agencies</h2>
-          <p>
-            Official links for local government and partner agencies will be added after they
-            are verified.
-          </p>
-        </div>
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.choctawso.com/jail-visitation/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Jail — Visitation
+                </a>
+              </h4>
+              <p class="agency-description">Jail visitation information.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054592166" aria-label="Call Choctaw County Jail">
+                    (205) 459-2166
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>117 S Mulberry Ave, Suite 11, Butler, AL 36904</p>
+              </div>
+            </article>
 
-        <aside class="resource-note">
-          <strong>Official Information</strong>
-          <p>
-            The Gilbertown Police Department will add verified public links as information is
-            approved for publication.
-          </p>
-        </aside>
-      </section>
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.choctawso.com/whos-in-jail/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Jail — Who's In Jail
+                </a>
+              </h4>
+              <p class="agency-description">Current inmate listing.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054592166" aria-label="Call Choctaw County Jail">
+                    (205) 459-2166
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>117 S Mulberry Ave, Suite 11, Butler, AL 36904</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.choctawcountyal.org/emergency-management/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Emergency Management Agency (EMA)
+                </a>
+              </h4>
+              <p class="agency-description">
+                Disaster preparedness, severe weather, and emergency information. A free
+                "Choctaw County EMA AL" app is available on Google Play and the App Store.
+              </p>
+              <div class="agency-details">
+                <p><span class="detail-label">Address</span>Butler, AL 36904</p>
+              </div>
+            </article>
+
+            <!-- VERIFY -->
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.choctawcountyal.org/e911-office/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County E-911 Office
+                </a>
+              </h4>
+              <p class="agency-description">
+                911 dispatch; also assigns physical/street addresses for properties without one.
+              </p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Emergency</span>
+                  <a class="phone-link" href="tel:911" aria-label="Call 911 for an emergency">
+                    9-1-1
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>123 S Hamburg Ave, Butler, AL 36904</p>
+              </div>
+            </article>
+
+            <!-- VERIFY -->
+            <article class="agency-card">
+              <h4>Choctaw County EMS (Ambulance)</h4>
+              <p class="agency-description">Emergency medical services / ambulance. For emergencies, call 9-1-1.</p>
+              <div class="agency-details">
+                <p><span class="detail-label">Phone</span>Chief to supply the correct non-emergency number.</p>
+                <p><span class="detail-label">Stations</span>311 W Pushmataha St, Butler and 68 E High St, Gilbertown</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="link-groups" style="margin-top: 42px;">
+        <section class="link-group" aria-labelledby="county-courts-heading">
+          <h3 id="county-courts-heading">Courts &amp; Prosecution</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://choctaw.alacourt.gov/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Circuit Clerk (First Judicial Circuit)
+                </a>
+              </h4>
+              <p class="agency-description">Court information, clerk's office, e-notice registration.</p>
+              <div class="agency-details">
+                <p><span class="detail-label">Address</span>Choctaw County Courthouse, Butler, AL 36904</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://daoffice.org/" target="_blank" rel="noopener noreferrer">
+                  First Judicial Circuit District Attorney
+                </a>
+              </h4>
+              <p class="agency-description">
+                Prosecutes felony, misdemeanor, and juvenile cases in Choctaw, Clarke, and
+                Washington counties; victim services, restitution, pre-trial diversion.
+              </p>
+              <div class="agency-details">
+                <p><span class="detail-label">Address</span>P.O. Box 850, Grove Hill, AL 36451</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="link-group" aria-labelledby="county-health-heading">
+          <h3 id="county-health-heading">Health &amp; Human Services</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.ochsner.org/locations/ochsner-choctaw-general/" target="_blank" rel="noopener noreferrer">
+                  Ochsner Choctaw General Hospital
+                </a>
+              </h4>
+              <p class="agency-description">Local hospital with 24/7 emergency department.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054599100" aria-label="Call Ochsner Choctaw General Hospital">
+                    (205) 459-9100
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>401 Vanity Fair Ave, Butler, AL 36904</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.alabamapublichealth.gov/choctaw/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Health Department
+                </a>
+              </h4>
+              <p class="agency-description">
+                WIC, clinical, environmental, and home care services; certified birth, death,
+                marriage, and divorce records.
+              </p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054594026" aria-label="Call Choctaw County Health Department">
+                    (205) 459-4026
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>1001 S Mulberry Ave, Butler, AL 36904</p>
+              </div>
+            </article>
+
+            <!-- VERIFY -->
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.wamhc.org/" target="_blank" rel="noopener noreferrer">
+                  West Alabama Mental Health – Choctaw Counseling Center
+                </a>
+              </h4>
+              <p class="agency-description">Outpatient mental health and substance use services.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+18002392901" aria-label="Call West Alabama Mental Health">
+                    1-800-239-2901
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>Rogers Street, Butler, AL 36904</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="link-groups" style="margin-top: 42px;">
+        <section class="link-group" aria-labelledby="county-schools-heading">
+          <h3 id="county-schools-heading">Schools</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.choctawal.org/" target="_blank" rel="noopener noreferrer">
+                  Choctaw County Schools (Central Office)
+                </a>
+              </h4>
+              <p class="agency-description">Public school district.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12054593031" aria-label="Call Choctaw County Schools Central Office">
+                    (205) 459-3031
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>107 Tom Orr Drive, Butler, AL 36904</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
     </section>
 
-    <section class="emergency-note" aria-label="Emergency reporting reminder">
-      <p>
-        <strong>Important:</strong> Do not use this website, an online form, or email to report
-        an emergency, a crime in progress, or a situation requiring immediate police response.
-        Call <a href="tel:911">911</a> for emergencies.
+    <section class="section-block" aria-labelledby="state-heading">
+      <div class="section-rule">
+        <p class="section-kicker">Section 3</p>
+        <h2 class="section-title" id="state-heading">State &amp; Federal Agencies and Assistance</h2>
+      </div>
+
+      <div class="link-groups">
+        <section class="link-group" aria-labelledby="state-safety-heading">
+          <h3 id="state-safety-heading">Law Enforcement &amp; Public Safety</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.alea.gov/" target="_blank" rel="noopener noreferrer">
+                  Alabama Law Enforcement Agency (ALEA)
+                </a>
+              </h4>
+              <p class="agency-description">State troopers, driver licenses, state investigations.</p>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.alea.gov/" target="_blank" rel="noopener noreferrer">
+                  Alabama Sex Offender Registry (ALEA)
+                </a>
+              </h4>
+              <p class="agency-description">Statewide registered sex offender search.</p>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://ema.alabama.gov/" target="_blank" rel="noopener noreferrer">
+                  Alabama Emergency Management Agency
+                </a>
+              </h4>
+              <p class="agency-description">Statewide emergency information; sign up for free ALert emergency alerts.</p>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.weather.gov/mob/" target="_blank" rel="noopener noreferrer">
+                  National Weather Service – Mobile, AL
+                </a>
+              </h4>
+              <p class="agency-description">Official forecasts and warnings for Choctaw County.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="link-group" aria-labelledby="state-courts-heading">
+          <h3 id="state-courts-heading">Courts &amp; Victim Services</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.alacourt.gov/" target="_blank" rel="noopener noreferrer">
+                  Alabama Judicial System (Alacourt)
+                </a>
+              </h4>
+              <p class="agency-description">Statewide court information, forms, e-filing.</p>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://acvcc.alabama.gov/resources/choctaw-county-resources/" target="_blank" rel="noopener noreferrer">
+                  Alabama Crime Victims' Compensation Commission
+                </a>
+              </h4>
+              <p class="agency-description">Financial help for crime victims; Choctaw County resources page.</p>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.vinelink.com/" target="_blank" rel="noopener noreferrer">
+                  VINELink
+                </a>
+              </h4>
+              <p class="agency-description">Free offender custody status and release notifications for victims.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="link-groups" style="margin-top: 42px;">
+        <section class="link-group" aria-labelledby="state-health-heading">
+          <h3 id="state-health-heading">Health, Crisis &amp; Family Assistance</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.poisonhelp.org/" target="_blank" rel="noopener noreferrer">
+                  Poison Control Center
+                </a>
+              </h4>
+              <p class="agency-description">24/7 free, confidential poison help. National line routes callers to the Alabama center.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+18002221222" aria-label="Call Poison Control Center">
+                    1-800-222-1222
+                  </a>
+                </p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">
+                  988 Suicide &amp; Crisis Lifeline
+                </a>
+              </h4>
+              <p class="agency-description">24/7 free, confidential crisis support by call, text, or chat.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:988" aria-label="Call or text 988 Suicide and Crisis Lifeline">
+                    988
+                  </a>
+                </p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://dhr.alabama.gov/" target="_blank" rel="noopener noreferrer">
+                  Alabama Department of Human Resources (DHR)
+                </a>
+              </h4>
+              <p class="agency-description">Child and elder abuse reporting, food assistance, family services.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="surrounding-heading">
+      <div class="section-rule">
+        <p class="section-kicker">Section 4</p>
+        <h2 class="section-title" id="surrounding-heading">Surrounding Counties: Sheriff's Offices</h2>
+      </div>
+
+      <p class="emergency-section-note">
+        For emergencies anywhere, call 9-1-1. Numbers below are for each sheriff's office.
       </p>
+
+      <div class="link-groups">
+        <section class="link-group" aria-labelledby="alabama-sheriffs-heading">
+          <h3 id="alabama-sheriffs-heading">Alabama</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="https://clarkecountyal.com/" target="_blank" rel="noopener noreferrer">
+                  Clarke County (AL) Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's office.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12512754254" aria-label="Call Clarke County Alabama Sheriff's Office">
+                    (251) 275-4254
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>149 Clark St, Grove Hill, AL 36451</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="http://www.washcoso.com/" target="_blank" rel="noopener noreferrer">
+                  Washington County (AL) Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's office.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12518472202" aria-label="Call Washington County Alabama Sheriff's Office">
+                    (251) 847-2202
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>45 Court St, Chatom, AL 36518</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.marengosheriff.com/" target="_blank" rel="noopener noreferrer">
+                  Marengo County Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's office.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+13342954208" aria-label="Call Marengo County Sheriff's Office">
+                    (334) 295-4208
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>101 Dunn St, Linden, AL 36748</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://sumtercountyal.com/sheriffjail/" target="_blank" rel="noopener noreferrer">
+                  Sumter County (AL) Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's office.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+12056527984" aria-label="Call Sumter County Alabama Sheriff's Office">
+                    (205) 652-7984
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>118 Hospital Dr, Livingston, AL 35470</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="link-group" aria-labelledby="mississippi-sheriffs-heading">
+          <h3 id="mississippi-sheriffs-heading">Mississippi Bordering Counties</h3>
+
+          <div class="agency-list">
+            <article class="agency-card">
+              <h4>
+                <a href="http://www.waynecoso.org/" target="_blank" rel="noopener noreferrer">
+                  Wayne County (MS) Sheriff's Department
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's department.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Office</span>
+                  <a class="phone-link" href="tel:+16017353801" aria-label="Call Wayne County Mississippi Sheriff's Department office">
+                    (601) 735-3801
+                  </a>
+                </p>
+                <p>
+                  <span class="detail-label">Emergency</span>
+                  <a class="inline-phone" href="tel:+16017352323" aria-label="Call Wayne County Mississippi Sheriff's Department emergency line">
+                    (601) 735-2323
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>613 Court St, Waynesboro, MS 39367</p>
+              </div>
+            </article>
+
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.clarkecountyms.gov/sheriff/" target="_blank" rel="noopener noreferrer">
+                  Clarke County (MS) Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's office.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+16017765252" aria-label="Call Clarke County Mississippi Sheriff's Office">
+                    (601) 776-5252
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>444 W Donald St, Quitman, MS 39355</p>
+              </div>
+            </article>
+
+            <!-- VERIFY -->
+            <article class="agency-card">
+              <h4>
+                <a href="https://www.lauderdaleso.org/" target="_blank" rel="noopener noreferrer">
+                  Lauderdale County (MS) Sheriff's Office
+                </a>
+              </h4>
+              <p class="agency-description">County sheriff's office.</p>
+              <div class="agency-details">
+                <p>
+                  <span class="detail-label">Phone</span>
+                  <a class="phone-link" href="tel:+16014829806" aria-label="Call Lauderdale County Mississippi Sheriff's Office">
+                    (601) 482-9806
+                  </a>
+                </p>
+                <p><span class="detail-label">Address</span>2001 5th St, Meridian, MS 39301</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="disclaimer" aria-labelledby="disclaimer-heading">
+      <h2 id="disclaimer-heading">Website Disclaimer</h2>
+      <p>
+        The Gilbertown Police Department provides these links as a public courtesy. Linked
+        websites are operated by other agencies and organizations; the Gilbertown Police
+        Department does not control and is not responsible for their content. Phone numbers
+        and links are believed accurate as of the date shown and may change. In an emergency,
+        call 9-1-1.
+      </p>
+      <p class="last-updated">Last updated: September 24, 2026</p>
     </section>
   </main>
 
@@ -969,7 +1642,7 @@
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
-        <p class="small">Official public website. Last updated: September 21, 2026.</p>
+        <p class="small">Official public website. Last updated: September 24, 2026.</p>
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
           &nbsp;|&nbsp;
