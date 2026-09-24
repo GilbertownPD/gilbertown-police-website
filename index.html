@@ -1664,4 +1664,21 @@
     document.addEventListener('keydown', (event) => {
       const tag = document.activeElement.tagName.toLowerCase();
 
-      if (tag === 'input' ||
+      if (tag === 'input' || tag === 'textarea') return;
+
+      if (event.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+        interactWithCarousel();
+      }
+
+      if (event.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+        interactWithCarousel();
+      }
+    });
+
+    showSlide(0);
+    startAutoRotate();
+  </script>
+</body>
+</html>
