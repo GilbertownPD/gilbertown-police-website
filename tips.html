@@ -596,6 +596,41 @@
       outline: none;
     }
 
+    .submit-button:disabled {
+      cursor: wait;
+      opacity: 0.7;
+      transform: none;
+    }
+
+    .hp-field {
+      display: none !important;
+    }
+
+    .form-status {
+      margin: 16px 0 0;
+      color: var(--navy-dark);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .form-status:empty {
+      display: none;
+    }
+
+    .form-status.is-success {
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.7);
+      border-left: 4px solid var(--navy);
+    }
+
+    .form-status.is-error {
+      padding: 12px 14px;
+      color: var(--red);
+      background: rgba(255, 255, 255, 0.7);
+      border-left: 4px solid var(--red);
+    }
+
     .tip-guidance-panel {
       padding: 30px;
       color: #ffffff;
@@ -1087,7 +1122,20 @@
       </div>
 
       <div class="tip-form-layout">
-        <form class="tip-form" action="#" method="post">
+        <form
+          class="tip-form"
+          id="tip-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <!-- Web3Forms access key (sends tips to the department tip inbox) -->
+          <input type="hidden" name="access_key" value="c2108157-2f3f-45fe-8be7-87186b46df59">
+          <input type="hidden" name="subject" value="New tip submitted - Gilbertown PD website">
+          <input type="hidden" name="from_name" value="Gilbertown PD Tip Form">
+
+          <!-- Honeypot spam trap: hidden from people, filled in by bots -->
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="form-row">
             <div class="form-group">
               <label for="tip-name">Your name <span aria-hidden="true">(optional)</span></label>
@@ -1135,9 +1183,11 @@
 
           <br>
 
-          <button class="submit-button" type="submit">
+          <button class="submit-button" id="tip-submit" type="submit">
             Submit Non-Emergency Tip
           </button>
+
+          <p id="tip-form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <aside class="tip-guidance-panel">
@@ -1296,6 +1346,46 @@
     menuButton.addEventListener("click", () => {
       const isOpen = siteMenu.classList.toggle("open");
       menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    const tipForm = document.getElementById("tip-form");
+    const tipStatus = document.getElementById("tip-form-status");
+    const tipSubmit = document.getElementById("tip-submit");
+    const failMessage =
+      "Something went wrong sending this tip. Please try again, or call the office at (251) 843-2766.";
+
+    function showStatus(message, type) {
+      tipStatus.textContent = message;
+      tipStatus.className = "form-status" + (type ? " is-" + type : "");
+    }
+
+    tipForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      tipSubmit.disabled = true;
+      showStatus("Sending...", "");
+
+      try {
+        const response = await fetch(tipForm.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(tipForm),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          tipForm.reset();
+          showStatus(
+            "Thank you. Your information has been submitted to the Gilbertown Police Department.",
+            "success"
+          );
+        } else {
+          showStatus(failMessage, "error");
+        }
+      } catch (error) {
+        showStatus(failMessage, "error");
+      } finally {
+        tipSubmit.disabled = false;
+      }
     });
   </script>
 </body>
