@@ -8,139 +8,41 @@
     content="Submit a non-emergency tip to the Gilbertown Police Department. Call 911 for emergencies and crimes in progress."
   >
   <title>Submit a Tip | Gilbertown Police Department</title>
+  <link rel="canonical" href="https://www.gilbertownpd.gov/tips.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#163a57">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gilbertown Police Department">
+  <meta property="og:title" content="Submit a Tip | Gilbertown Police Department">
+  <meta property="og:description" content="Submit a non-emergency tip to the Gilbertown Police Department. Call 911 for emergencies and crimes in progress.">
+  <meta property="og:url" content="https://www.gilbertownpd.gov/tips.html">
+  <meta property="og:image" content="https://www.gilbertownpd.gov/assets/images/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gilbertown Police Department badge with the website address gilbertownpd.gov">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="assets/css/site.css">
+
   <style>
-    :root {
-      --navy: #163a57;
-      --navy-dark: #0d263b;
-      --navy-deep: #081c2d;
-      --navy-menu: #1c4666;
-      --yellow: #ffd400;
-      --yellow-dark: #bc8b00;
-      --ivory: #fbfaf5;
-      --ink: #172735;
-      --muted: #607080;
-      --red: #8e1f26;
-      --line: rgba(22, 58, 87, 0.24);
-      --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       min-width: 0;
       margin: 0;
       color: var(--ink);
-      background: linear-gradient(
-        180deg,
-        #ffd400 0,
-        #ffd400 56rem,
-        #ffe451 96rem,
-        #fff19d 145rem,
-        #fff9dd 195rem,
-        #fbfaf5 245rem,
-        #fbfaf5 100%
-      );
+      background: linear-gradient( 180deg, #ffd400 0, #ffd400 56rem, #ffe451 96rem, #fff19d 145rem, #fff9dd 195rem, #fbfaf5 245rem, #fbfaf5 100% );
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button,
-    a,
-    input,
-    textarea {
+    button, a, input, textarea {
       font: inherit;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .wrap {
-      width: min(96vw, 1920px);
-      margin: 0 auto;
-    }
-
-    .section-rule {
-      position: relative;
-      margin-bottom: 30px;
-      padding-top: 25px;
-      border-top: 2px solid var(--navy);
-    }
-
-    .section-rule::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: 0;
-      width: 105px;
-      height: 5px;
-      background: var(--yellow-dark);
-    }
-
-    .section-kicker {
-      margin: 0 0 7px;
-      color: var(--navy);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin: 0;
-      color: var(--navy-dark);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.03;
-      letter-spacing: -0.04em;
-    }
-
-    .section-link {
-      display: inline-block;
-      padding-bottom: 5px;
-      color: var(--navy-dark);
-      border-bottom: 2px solid var(--navy-dark);
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .section-link:hover,
-    .section-link:focus {
-      color: var(--yellow-dark);
-      border-color: var(--yellow-dark);
-      transform: translateX(3px);
-      outline: none;
-    }
-
-    .emergency-strip {
-      width: 100%;
-      padding: 9px 18px;
-      color: #ffffff;
-      background: var(--red);
-      text-align: center;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
     }
 
     .emergency-strip a {
@@ -150,248 +52,9 @@
       transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
-    .emergency-strip a:hover,
-    .emergency-strip a:focus {
-      color: var(--yellow);
-      outline: none;
-    }
-
-    .site-header {
-      position: relative;
-      z-index: 20;
-      width: 100%;
-      color: #ffffff;
-      background: var(--navy);
-      border-bottom: 10px solid var(--yellow);
-    }
-
-    .masthead {
-      min-height: 154px;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 24px;
-      padding: 8px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      min-width: 0;
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .brand:hover .brand-badge,
-    .brand:focus .brand-badge {
-      transform: scale(1.04);
-    }
-
-    .brand-badge {
-      width: 138px;
-      height: 138px;
-      max-width: none;
-      object-fit: contain;
-      flex: 0 0 auto;
-      transition: transform 0.25s ease;
-    }
-
-    .brand-text {
-      min-width: 0;
-      line-height: 1;
-    }
-
-    .brand-town {
-      display: block;
-      color: var(--yellow);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2.1rem, 4.9vw, 3.7rem);
-      font-weight: 700;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .brand-department {
-      display: block;
-      margin-top: 9px;
-      color: #e6eef4;
-      font-size: clamp(0.75rem, 1.9vw, 1.02rem);
-      font-weight: 800;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
-    .header-location {
-      justify-self: stretch;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 68px;
-      margin: 0 auto;
-      padding: 0 34px;
-      color: #dce8f2;
-      border-left: 2px solid rgba(255, 212, 0, 0.85);
-      border-right: 2px solid rgba(255, 212, 0, 0.85);
-      text-align: center;
-      text-decoration: none;
-      line-height: 1.25;
-      transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
-    }
-
-    .header-location:hover,
-    .header-location:focus {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-2px);
-      outline: 2px solid var(--yellow);
-      outline-offset: 4px;
-    }
-
-    .header-location strong {
-      display: block;
-      color: var(--yellow);
-      font-size: 0.79rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .header-location span {
-      display: block;
-      margin-top: 7px;
-      color: #dce8f2;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .header-location:hover span,
-    .header-location:focus span {
-      color: #ffffff;
-    }
-
-    .explore-button {
-      justify-self: end;
-      min-width: 140px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      padding: 13px 17px;
-      color: var(--navy-dark);
-      background: var(--yellow);
-      border: 0;
-      cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: background 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
-    }
-
-    .explore-button:hover,
-    .explore-button:focus {
-      background: #fff17c;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      outline: none;
-    }
-
-    .menu-icon {
-      width: 20px;
-      display: grid;
-      gap: 4px;
-    }
-
-    .menu-icon span {
-      display: block;
-      height: 2px;
-      background: var(--navy-dark);
-    }
-
-    .site-menu {
-      display: grid;
-      grid-template-rows: 0fr;
-      opacity: 0;
-      background: var(--navy-menu);
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      transition: grid-template-rows 1.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
-    }
-
-    .site-menu.open {
-      grid-template-rows: 1fr;
-      opacity: 1;
-    }
-
-    .site-menu > .wrap {
-      min-height: 0;
-      overflow: hidden;
-      transform: translateY(-24px);
-      transition: transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .site-menu.open > .wrap {
-      transform: translateY(0);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 20px 0 24px;
-    }
-
-    .site-menu a {
-      display: block;
-      padding: 15px 17px;
-      color: #ffffff;
-      opacity: 0;
-      transform: translateY(-12px);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 700;
-      border-left: 3px solid transparent;
-      transition:
-        color 0.22s ease,
-        background 0.22s ease,
-        border-color 0.22s ease,
-        padding-left 0.22s ease,
-        opacity 0.65s ease,
-        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .site-menu.open a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .site-menu.open a:nth-child(1) { transition-delay: 0.16s; }
-    .site-menu.open a:nth-child(2) { transition-delay: 0.22s; }
-    .site-menu.open a:nth-child(3) { transition-delay: 0.28s; }
-    .site-menu.open a:nth-child(4) { transition-delay: 0.34s; }
-    .site-menu.open a:nth-child(5) { transition-delay: 0.40s; }
-    .site-menu.open a:nth-child(6) { transition-delay: 0.46s; }
-    .site-menu.open a:nth-child(7) { transition-delay: 0.52s; }
-    .site-menu.open a:nth-child(8) { transition-delay: 0.58s; }
-    .site-menu.open a:nth-child(9) { transition-delay: 0.64s; }
-    .site-menu.open a:nth-child(10) { transition-delay: 0.70s; }
-
-    .site-menu a:hover,
-    .site-menu a:focus,
-    .site-menu a[aria-current="page"] {
-      padding-left: 22px;
-      color: var(--yellow);
-      background: rgba(255, 255, 255, 0.08);
-      border-left-color: var(--yellow);
-      outline: none;
-    }
-
     .page-banner {
       color: #ffffff;
-      background:
-        linear-gradient(120deg, rgba(8, 28, 45, 0.9), rgba(22, 58, 87, 0.76)),
-        url("assets/images/carousel-community.jpeg") center / cover;
+      background: linear-gradient(120deg, rgba(8, 28, 45, 0.9), rgba(22, 58, 87, 0.76)), url("assets/images/carousel-community.jpeg") center / cover;
       border-bottom: 5px solid var(--yellow);
     }
 
@@ -426,10 +89,6 @@
       font-size: 1.03rem;
       font-weight: 600;
       text-shadow: 0 1px 5px rgba(0, 0, 0, 0.55);
-    }
-
-    main {
-      padding: 65px 0 76px;
     }
 
     .tip-intro {
@@ -485,8 +144,7 @@
       transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .emergency-button:hover,
-    .emergency-button:focus {
+    .emergency-button:hover, .emergency-button:focus {
       color: #ffffff;
       background: var(--navy-dark);
       transform: translateY(-2px);
@@ -498,14 +156,6 @@
       padding: 38px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 23px;
     }
 
     .tip-form-layout {
@@ -541,8 +191,7 @@
       text-transform: uppercase;
     }
 
-    .form-group input,
-    .form-group textarea {
+    .form-group input, .form-group textarea {
       width: 100%;
       padding: 12px 13px;
       color: var(--ink);
@@ -558,8 +207,7 @@
       resize: vertical;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group input:focus, .form-group textarea:focus {
       border-color: var(--navy);
       box-shadow: 0 0 0 3px rgba(255, 212, 0, 0.45);
     }
@@ -569,6 +217,14 @@
       color: var(--muted);
       font-size: 0.78rem;
       line-height: 1.5;
+    }
+
+    .form-help + .form-help {
+      margin-top: 10px;
+    }
+
+    .form-help strong {
+      color: var(--navy-dark);
     }
 
     .submit-button {
@@ -588,8 +244,7 @@
       transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .submit-button:hover,
-    .submit-button:focus {
+    .submit-button:hover, .submit-button:focus {
       color: #ffffff;
       background: var(--navy);
       transform: translateY(-2px);
@@ -696,8 +351,7 @@
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
     }
 
-    .resource-card:hover,
-    .resource-card:focus {
+    .resource-card:hover, .resource-card:focus {
       color: #ffffff;
       background: var(--navy);
       transform: translateY(-4px);
@@ -705,15 +359,14 @@
     }
 
     .resource-card small {
-      color: var(--yellow-dark);
+      color: var(--gold-text);
       font-size: 0.69rem;
       font-weight: 800;
       letter-spacing: 0.11em;
       text-transform: uppercase;
     }
 
-    .resource-card:hover small,
-    .resource-card:focus small {
+    .resource-card:hover small, .resource-card:focus small {
       color: var(--yellow);
     }
 
@@ -761,85 +414,14 @@
 
     main a:not(.resource-card):not(.section-link):not(.emergency-button):hover,
     main a:not(.resource-card):not(.section-link):not(.emergency-button):focus {
-      color: var(--yellow-dark);
+      color: var(--gold-text);
       text-decoration-color: currentColor;
       outline: none;
     }
 
-    .tip-guidance-panel a:hover,
-    .tip-guidance-panel a:focus {
+    .tip-guidance-panel a:hover, .tip-guidance-panel a:focus {
       color: #ffffff;
       text-decoration-color: var(--yellow);
-    }
-
-    footer {
-      width: 100%;
-      padding: 12px 0;
-      color: #dce8f2;
-      background: var(--navy-deep);
-      border-top: 8px solid var(--yellow);
-    }
-
-    .footer-content {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .footer-badge {
-      width: 86px;
-      height: 86px;
-      max-width: none;
-      object-fit: contain;
-      flex: 0 0 auto;
-      transition: transform 0.25s ease;
-    }
-
-    .footer-badge:hover {
-      transform: scale(1.04);
-    }
-
-    .footer-contacts {
-      margin-top: 8px;
-      color: #aebfcb;
-      font-size: 0.8rem;
-    }
-
-    footer a {
-      color: #dce8f2;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      font-weight: 700;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    }
-
-    footer a:hover,
-    footer a:focus {
-      color: var(--yellow);
-      text-decoration-color: currentColor;
-      outline: none;
-    }
-
-    footer strong {
-      color: #ffffff;
-    }
-
-    footer p {
-      margin: 4px 0;
-    }
-
-    .small {
-      font-size: 0.87rem;
-    }
-
-    @media (max-width: 1100px) {
-      .masthead {
-        grid-template-columns: minmax(0, 1fr) auto;
-      }
-
-      .header-location {
-        display: none;
-      }
     }
 
     @media (max-width: 900px) {
@@ -851,8 +433,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .tip-intro,
-      .tip-form-layout {
+      .tip-intro, .tip-form-layout {
         grid-template-columns: 1fr;
         gap: 42px;
       }
@@ -864,64 +445,11 @@
 
     @media (max-width: 560px) {
       body {
-        background: linear-gradient(
-          180deg,
-          #ffd400 0,
-          #ffd400 88rem,
-          #ffe65b 145rem,
-          #fff1a4 202rem,
-          #fff9dd 260rem,
-          #fbfaf5 320rem,
-          #fbfaf5 100%
-        );
+        background: linear-gradient( 180deg, #ffd400 0, #ffd400 88rem, #ffe65b 145rem, #fff1a4 202rem, #fff9dd 260rem, #fbfaf5 320rem, #fbfaf5 100% );
       }
 
       .wrap {
         width: min(1440px, 92%);
-      }
-
-      .masthead {
-        min-height: 112px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 14px 0;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      .brand-badge {
-        width: 99px;
-        height: 99px;
-      }
-
-      .brand-town {
-        font-size: clamp(1.75rem, 8vw, 2.35rem);
-      }
-
-      .brand-department {
-        margin-top: 7px;
-        font-size: 0.61rem;
-        letter-spacing: 0.15em;
-      }
-
-      .explore-button {
-        min-width: 112px;
-        gap: 8px;
-        padding: 11px 12px;
-        font-size: 0.7rem;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-        padding: 10px 0 18px;
-      }
-
-      .site-menu a {
-        padding: 12px 13px;
       }
 
       .page-banner-content {
@@ -933,59 +461,16 @@
         font-size: clamp(2rem, 10vw, 3rem);
       }
 
-      main {
-        padding: 52px 0 60px;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-link {
-        margin-top: 12px;
-      }
-
-      .section-rule {
-        margin-bottom: 24px;
-      }
-
-      .tip-intro,
-      .tip-section {
+      .tip-intro, .tip-section {
         margin-bottom: 58px;
       }
 
-      .form-row,
-      .resource-grid {
+      .form-row, .resource-grid {
         grid-template-columns: 1fr;
       }
 
-      .tip-form,
-      .tip-guidance-panel {
+      .tip-form, .tip-guidance-panel {
         padding: 23px;
-      }
-
-      .footer-content {
-        align-items: center;
-      }
-
-      .footer-badge {
-        width: 66px;
-        height: 66px;
-      }
-
-      .footer-contacts {
-        line-height: 1.55;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -1084,8 +569,8 @@
 
         <p>
           Share facts you know or observed. Include dates, times, locations,
-          descriptions, vehicle information, usernames, links, screenshots, or
-          other details when they are available and safe to provide.
+          descriptions, vehicle information, usernames, links, or other details
+          when they are available and safe to provide.
         </p>
 
         <p>
@@ -1176,6 +661,12 @@
           </div>
 
           <p class="form-help">
+            <strong>Have photos, video, or screenshots?</strong> This form cannot
+            accept attachments. Describe what you have and leave a phone number or
+            email above so an officer can follow up to collect it.
+          </p>
+
+          <p class="form-help">
             Do not include passwords, Social Security numbers, bank account
             information, or other unnecessary sensitive personal information.
             Do not use this form for emergencies.
@@ -1199,7 +690,7 @@
             <li>Date, time, and exact or approximate location.</li>
             <li>Descriptions of people, clothing, vehicles, plates, or direction of travel.</li>
             <li>Names, usernames, profile links, web addresses, or platform names when relevant.</li>
-            <li>Whether you have photos, screenshots, video, messages, or other evidence.</li>
+            <li>Whether you have photos, screenshots, video, messages, or other evidence, and how we can reach you to collect it.</li>
           </ul>
 
           <p>
@@ -1315,7 +806,12 @@
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
-        <p class="small">Official public website. Last updated: September 24, 2026.</p>
+        <p class="small">Official public website of the Gilbertown Police Department.</p>
+        <p class="footer-contacts">
+          <a href="https://maps.google.com/?q=40+Front+Street,+Gilbertown,+AL+36908" target="_blank" rel="noopener noreferrer">40 Front Street, Gilbertown, Alabama 36908</a>
+          &nbsp;|&nbsp;
+          Office hours: 8:00 a.m.–4:00 p.m. (closed Tuesday, Saturday, and Sunday)
+        </p>
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
           &nbsp;|&nbsp;
@@ -1339,15 +835,8 @@
     </div>
   </footer>
 
+  <script src="assets/js/site.js"></script>
   <script>
-    const menuButton = document.getElementById("explore-button");
-    const siteMenu = document.getElementById("site-menu");
-
-    menuButton.addEventListener("click", () => {
-      const isOpen = siteMenu.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
     const tipForm = document.getElementById("tip-form");
     const tipStatus = document.getElementById("tip-form-status");
     const tipSubmit = document.getElementById("tip-submit");
