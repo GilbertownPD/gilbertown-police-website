@@ -3,19 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The page you requested could not be found on the Gilbertown Police Department website.">
-  <meta name="robots" content="noindex">
-  <title>Page Not Found | Gilbertown Police Department</title>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <meta
+    name="description"
+    content="Accessibility statement for the Gilbertown Police Department website, including how to report a problem or request help."
+  >
+  <title>Accessibility | Gilbertown Police Department</title>
+  <link rel="canonical" href="https://www.gilbertownpd.gov/accessibility.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <meta name="theme-color" content="#163a57">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gilbertown Police Department">
+  <meta property="og:title" content="Accessibility | Gilbertown Police Department">
+  <meta property="og:description" content="Accessibility statement for the Gilbertown Police Department website, including how to report a problem or request help.">
+  <meta property="og:url" content="https://www.gilbertownpd.gov/accessibility.html">
+  <meta property="og:image" content="https://www.gilbertownpd.gov/assets/images/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gilbertown Police Department badge with the website address gilbertownpd.gov">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 
   <style>
     body {
@@ -40,7 +54,7 @@
 
     .page-banner {
       color: #ffffff;
-      background: linear-gradient(120deg, rgba(8, 28, 45, 0.9), rgba(22, 58, 87, 0.76)), url("/assets/images/carousel-community.jpeg") center / cover;
+      background: linear-gradient(120deg, rgba(8, 28, 45, 0.9), rgba(22, 58, 87, 0.76)), url("assets/images/carousel-community.jpeg") center / cover;
       border-bottom: 5px solid var(--yellow);
     }
 
@@ -382,6 +396,100 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 50px;
+      align-items: start;
+    }
+
+    .policy-body section {
+      margin-bottom: 44px;
+    }
+
+    .policy-body h2 {
+      margin: 0 0 12px;
+      color: var(--navy-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+      line-height: 1.15;
+    }
+
+    .policy-body p, .policy-body li {
+      max-width: 760px;
+    }
+
+    .policy-body ul {
+      padding-left: 1.2em;
+    }
+
+    .policy-body li {
+      margin-bottom: 8px;
+    }
+
+    .policy-body a {
+      color: var(--navy);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .policy-body a:hover, .policy-body a:focus {
+      color: var(--gold-text);
+    }
+
+    .policy-panel {
+      position: sticky;
+      top: 24px;
+      padding: 30px;
+      color: #ffffff;
+      background: var(--navy);
+      border-top: 6px solid var(--yellow);
+      box-shadow: var(--shadow);
+    }
+
+    .policy-panel .section-kicker {
+      color: var(--yellow);
+    }
+
+    .policy-panel h2 {
+      margin: 0 0 14px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1.1;
+    }
+
+    .policy-panel p {
+      margin: 0 0 12px;
+    }
+
+    .policy-panel a {
+      color: var(--yellow);
+      font-weight: 700;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .policy-panel a:hover, .policy-panel a:focus {
+      color: #ffffff;
+    }
+
+    .policy-updated {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .policy-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .policy-panel {
+        position: static;
+      }
+    }
   </style>
 </head>
 
@@ -393,8 +501,8 @@
   <header class="site-header">
     <div class="wrap">
       <div class="masthead">
-        <a class="brand" href="/index.html" aria-label="Gilbertown Police Department home">
-          <img class="brand-badge" src="/assets/images/badge.png" alt="Gilbertown Police Department badge">
+        <a class="brand" href="index.html" aria-label="Gilbertown Police Department home">
+          <img class="brand-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
 
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
@@ -421,96 +529,88 @@
 
     <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
       <div class="wrap menu-grid">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/forms.html">Forms</a>
-        <a href="/news.html">News &amp; Notices</a>
-        <a href="/events.html">Community Events</a>
-        <a href="/links.html">Helpful Links</a>
-        <a href="/safety-materials.html">Safety Materials</a>
-        <a href="/tips.html">Submit a Tip</a>
-        <a href="/contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="forms.html">Forms</a>
+        <a href="news.html">News &amp; Notices</a>
+        <a href="events.html">Community Events</a>
+        <a href="links.html">Helpful Links</a>
+        <a href="safety-materials.html">Safety Materials</a>
+        <a href="tips.html">Submit a Tip</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
   <section class="page-banner" aria-labelledby="page-title">
     <div class="wrap page-banner-content">
-      <p class="section-kicker">Error 404</p>
-      <h1 id="page-title">Page Not Found</h1>
+      <p class="section-kicker">Website Accessibility</p>
+      <h1 id="page-title">Accessibility</h1>
       <p>
-        The page you were looking for may have moved, been renamed, or the web
-        address may have been typed incorrectly.
+        How the Gilbertown Police Department works to make this website usable for everyone, and how to get help.
       </p>
     </div>
   </section>
 
   <main class="wrap">
-    <section class="news-section" aria-labelledby="missing-heading">
-      <div class="section-rule">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Find What You Need</p>
-            <h2 class="section-title" id="missing-heading">Try one of these pages</h2>
+    <div class="policy-layout">
+      <div class="policy-body">
+        <section aria-labelledby="acc-commitment">
+          <div class="section-rule">
+            <p class="section-kicker">Our Commitment</p>
+            <h2 class="section-title" id="acc-commitment">A website everyone can use</h2>
           </div>
+          <p>
+            The Gilbertown Police Department wants every resident and visitor,
+            including people with disabilities, to be able to use this website.
+            We work to meet the Web Content Accessibility Guidelines (WCAG) 2.1,
+            Level AA, and we review the site as pages are added or changed.
+          </p>
+        </section>
 
-          <a class="section-link" href="/index.html">Back to home</a>
-        </div>
+        <section aria-labelledby="acc-features">
+          <h2 id="acc-features">What this website does</h2>
+          <ul>
+            <li>Works on phones, tablets, and computers, and text can be enlarged with your browser's zoom.</li>
+            <li>Every page can be used with a keyboard, and the menu closes with the Escape key.</li>
+            <li>Form fields, buttons, and images have labels or descriptions for screen readers.</li>
+            <li>Phone numbers can be tapped to call from a mobile phone.</li>
+            <li>Text and background colors are chosen for strong contrast.</li>
+            <li>Moving elements, such as the home page slideshow, slow down or stop when your device is set to reduce motion.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="acc-limits">
+          <h2 id="acc-limits">Known limitations</h2>
+          <ul>
+            <li>Some PDF forms and safety guides may not work fully with screen readers. If you need a document in another format, contact the department and we will work with you.</li>
+            <li>Links to outside websites go to pages the department does not control, and those sites may not meet the same standards.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="acc-report">
+          <h2 id="acc-report">Report a problem or ask for help</h2>
+          <p>
+            If you have trouble using any part of this website, please let us
+            know. Tell us which page you were on, what the problem was, and the
+            best way to reach you. You can call the department office at
+            <a href="tel:+12518432766">(251) 843-2766</a> or email
+            <a href="mailto:gilbertownchief@outlook.com">gilbertownchief@outlook.com</a>.
+          </p>
+          <p class="policy-updated">This statement was last reviewed in September 2026.</p>
+        </section>
       </div>
 
-      <div class="notice-grid">
-        <a class="notice-card" href="/index.html">
-          <small>Start Over</small>
-          <h3>Home</h3>
-          <p>Return to the Gilbertown Police Department home page.</p>
-          <span>Go to home &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/forms.html">
-          <small>Public Documents</small>
-          <h3>Department Forms</h3>
-          <p>Accident report, records request, vacation watch, complaint, and commendation forms.</p>
-          <span>View forms &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/tips.html">
-          <small>Share Information</small>
-          <h3>Submit a Tip</h3>
-          <p>Send non-emergency information to the department online.</p>
-          <span>Submit a tip &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/safety-materials.html">
-          <small>Community Safety</small>
-          <h3>Safety Materials</h3>
-          <p>Free printable guides for home, family, and emergency preparedness.</p>
-          <span>Browse materials &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/services.html">
-          <small>Department Assistance</small>
-          <h3>Services</h3>
-          <p>What the department provides and which number to call for what.</p>
-          <span>View services &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/contact.html">
-          <small>Reach Us</small>
-          <h3>Contact</h3>
-          <p>Phone numbers, office hours, and the department's address.</p>
-          <span>Contact the department &#8594;</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="contact-note">
-      <p>
-        <strong>Emergency?</strong> Do not wait on a website. Call
-        <a href="tel:911">911</a> for emergencies, crimes in progress, or any
-        situation requiring immediate police response.
-      </p>
-    </section>
+      <aside class="policy-panel" aria-labelledby="panel-heading">
+        <p class="section-kicker">Questions or Requests</p>
+        <h2 id="panel-heading">Contact the department</h2>
+        <p>Office: <a href="tel:+12518432766">(251) 843-2766</a><br>
+        8:00 a.m.–4:00 p.m., closed Tuesday, Saturday, and Sunday</p>
+        <p>Email: <a href="mailto:gilbertownchief@outlook.com">gilbertownchief@outlook.com</a></p>
+        <p>For emergencies, always call <a href="tel:911">911</a>.</p>
+      </aside>
+    </div>
   </main>
 
   <nav class="call-bar" aria-label="Call the department">
@@ -520,7 +620,7 @@
 
   <footer>
     <div class="wrap footer-content">
-      <img class="footer-badge" src="/assets/images/badge.png" alt="Gilbertown Police Department badge">
+      <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
@@ -550,12 +650,12 @@
           </a>
         </p>
         <p class="footer-contacts footer-legal">
-          <a href="/privacy.html">Privacy</a><span class="sep" aria-hidden="true">|</span><a href="/accessibility.html">Accessibility</a>
+          <a href="privacy.html">Privacy</a><span class="sep" aria-hidden="true">|</span><a href="accessibility.html" aria-current="page">Accessibility</a>
         </p>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/js/site.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

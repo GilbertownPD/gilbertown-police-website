@@ -3,19 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The page you requested could not be found on the Gilbertown Police Department website.">
-  <meta name="robots" content="noindex">
-  <title>Page Not Found | Gilbertown Police Department</title>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <meta
+    name="description"
+    content="How the Gilbertown Police Department website handles information, including the Submit a Tip form."
+  >
+  <title>Privacy | Gilbertown Police Department</title>
+  <link rel="canonical" href="https://www.gilbertownpd.gov/privacy.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <meta name="theme-color" content="#163a57">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gilbertown Police Department">
+  <meta property="og:title" content="Privacy | Gilbertown Police Department">
+  <meta property="og:description" content="How the Gilbertown Police Department website handles information, including the Submit a Tip form.">
+  <meta property="og:url" content="https://www.gilbertownpd.gov/privacy.html">
+  <meta property="og:image" content="https://www.gilbertownpd.gov/assets/images/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gilbertown Police Department badge with the website address gilbertownpd.gov">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 
   <style>
     body {
@@ -40,7 +54,7 @@
 
     .page-banner {
       color: #ffffff;
-      background: linear-gradient(120deg, rgba(8, 28, 45, 0.9), rgba(22, 58, 87, 0.76)), url("/assets/images/carousel-community.jpeg") center / cover;
+      background: linear-gradient(120deg, rgba(8, 28, 45, 0.9), rgba(22, 58, 87, 0.76)), url("assets/images/carousel-community.jpeg") center / cover;
       border-bottom: 5px solid var(--yellow);
     }
 
@@ -382,6 +396,100 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 50px;
+      align-items: start;
+    }
+
+    .policy-body section {
+      margin-bottom: 44px;
+    }
+
+    .policy-body h2 {
+      margin: 0 0 12px;
+      color: var(--navy-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+      line-height: 1.15;
+    }
+
+    .policy-body p, .policy-body li {
+      max-width: 760px;
+    }
+
+    .policy-body ul {
+      padding-left: 1.2em;
+    }
+
+    .policy-body li {
+      margin-bottom: 8px;
+    }
+
+    .policy-body a {
+      color: var(--navy);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .policy-body a:hover, .policy-body a:focus {
+      color: var(--gold-text);
+    }
+
+    .policy-panel {
+      position: sticky;
+      top: 24px;
+      padding: 30px;
+      color: #ffffff;
+      background: var(--navy);
+      border-top: 6px solid var(--yellow);
+      box-shadow: var(--shadow);
+    }
+
+    .policy-panel .section-kicker {
+      color: var(--yellow);
+    }
+
+    .policy-panel h2 {
+      margin: 0 0 14px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1.1;
+    }
+
+    .policy-panel p {
+      margin: 0 0 12px;
+    }
+
+    .policy-panel a {
+      color: var(--yellow);
+      font-weight: 700;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .policy-panel a:hover, .policy-panel a:focus {
+      color: #ffffff;
+    }
+
+    .policy-updated {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .policy-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .policy-panel {
+        position: static;
+      }
+    }
   </style>
 </head>
 
@@ -393,8 +501,8 @@
   <header class="site-header">
     <div class="wrap">
       <div class="masthead">
-        <a class="brand" href="/index.html" aria-label="Gilbertown Police Department home">
-          <img class="brand-badge" src="/assets/images/badge.png" alt="Gilbertown Police Department badge">
+        <a class="brand" href="index.html" aria-label="Gilbertown Police Department home">
+          <img class="brand-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
 
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
@@ -421,96 +529,110 @@
 
     <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
       <div class="wrap menu-grid">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/forms.html">Forms</a>
-        <a href="/news.html">News &amp; Notices</a>
-        <a href="/events.html">Community Events</a>
-        <a href="/links.html">Helpful Links</a>
-        <a href="/safety-materials.html">Safety Materials</a>
-        <a href="/tips.html">Submit a Tip</a>
-        <a href="/contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="forms.html">Forms</a>
+        <a href="news.html">News &amp; Notices</a>
+        <a href="events.html">Community Events</a>
+        <a href="links.html">Helpful Links</a>
+        <a href="safety-materials.html">Safety Materials</a>
+        <a href="tips.html">Submit a Tip</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
   <section class="page-banner" aria-labelledby="page-title">
     <div class="wrap page-banner-content">
-      <p class="section-kicker">Error 404</p>
-      <h1 id="page-title">Page Not Found</h1>
+      <p class="section-kicker">Website Privacy</p>
+      <h1 id="page-title">Privacy</h1>
       <p>
-        The page you were looking for may have moved, been renamed, or the web
-        address may have been typed incorrectly.
+        What this website collects, how the Submit a Tip form works, and how the department handles your information.
       </p>
     </div>
   </section>
 
   <main class="wrap">
-    <section class="news-section" aria-labelledby="missing-heading">
-      <div class="section-rule">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Find What You Need</p>
-            <h2 class="section-title" id="missing-heading">Try one of these pages</h2>
+    <div class="policy-layout">
+      <div class="policy-body">
+        <section aria-labelledby="priv-overview">
+          <div class="section-rule">
+            <p class="section-kicker">Your Information</p>
+            <h2 class="section-title" id="priv-overview">How this website handles information</h2>
           </div>
+          <p>
+            This page explains what information this website collects and how
+            the Gilbertown Police Department uses it.
+          </p>
+        </section>
 
-          <a class="section-link" href="/index.html">Back to home</a>
-        </div>
+        <section aria-labelledby="priv-browsing">
+          <h2 id="priv-browsing">Browsing the website</h2>
+          <ul>
+            <li>You do not need an account to use this website.</li>
+            <li>The department does not use tracking cookies or visitor analytics on this website.</li>
+            <li>
+              The site is hosted by GitHub Pages and delivered through Cloudflare. Like
+              most websites, these services may keep standard technical records, such
+              as your IP address, to deliver and protect the site.
+            </li>
+            <li>
+              Pages load their fonts from Google Fonts, and the Contact page shows a
+              Google map. Google receives standard technical information from your
+              browser when these load.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="priv-tips">
+          <h2 id="priv-tips">The Submit a Tip form</h2>
+          <p>
+            The <a href="tips.html">Submit a Tip</a> form asks for the location,
+            date, and time involved and the information you want to share. Your
+            name and your phone number or email are optional.
+          </p>
+          <ul>
+            <li>
+              Tips are delivered by a form service called Web3Forms to a department
+              email inbox and are reviewed by the department.
+            </li>
+            <li>
+              Web3Forms may record technical information, such as your IP address, to
+              block spam. The department does not store this information or use it
+              during normal follow-up on a tip.
+            </li>
+            <li>
+              Web3Forms keeps its own copy of submissions under its
+              <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+            </li>
+            <li>
+              Do not use the form for emergencies or crimes in progress. Call
+              <a href="tel:911">911</a>.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="priv-links">
+          <h2 id="priv-links">Outside websites</h2>
+          <p>
+            This website links to other agencies and organizations, including the
+            department's Facebook page. Those websites have their own privacy
+            practices, which the department does not control.
+          </p>
+          <p class="policy-updated">This page was last reviewed in September 2026.</p>
+        </section>
       </div>
 
-      <div class="notice-grid">
-        <a class="notice-card" href="/index.html">
-          <small>Start Over</small>
-          <h3>Home</h3>
-          <p>Return to the Gilbertown Police Department home page.</p>
-          <span>Go to home &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/forms.html">
-          <small>Public Documents</small>
-          <h3>Department Forms</h3>
-          <p>Accident report, records request, vacation watch, complaint, and commendation forms.</p>
-          <span>View forms &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/tips.html">
-          <small>Share Information</small>
-          <h3>Submit a Tip</h3>
-          <p>Send non-emergency information to the department online.</p>
-          <span>Submit a tip &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/safety-materials.html">
-          <small>Community Safety</small>
-          <h3>Safety Materials</h3>
-          <p>Free printable guides for home, family, and emergency preparedness.</p>
-          <span>Browse materials &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/services.html">
-          <small>Department Assistance</small>
-          <h3>Services</h3>
-          <p>What the department provides and which number to call for what.</p>
-          <span>View services &#8594;</span>
-        </a>
-
-        <a class="notice-card" href="/contact.html">
-          <small>Reach Us</small>
-          <h3>Contact</h3>
-          <p>Phone numbers, office hours, and the department's address.</p>
-          <span>Contact the department &#8594;</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="contact-note">
-      <p>
-        <strong>Emergency?</strong> Do not wait on a website. Call
-        <a href="tel:911">911</a> for emergencies, crimes in progress, or any
-        situation requiring immediate police response.
-      </p>
-    </section>
+      <aside class="policy-panel" aria-labelledby="panel-heading">
+        <p class="section-kicker">Questions or Requests</p>
+        <h2 id="panel-heading">Contact the department</h2>
+        <p>Office: <a href="tel:+12518432766">(251) 843-2766</a><br>
+        8:00 a.m.–4:00 p.m., closed Tuesday, Saturday, and Sunday</p>
+        <p>Email: <a href="mailto:gilbertownchief@outlook.com">gilbertownchief@outlook.com</a></p>
+        <p>For emergencies, always call <a href="tel:911">911</a>.</p>
+      </aside>
+    </div>
   </main>
 
   <nav class="call-bar" aria-label="Call the department">
@@ -520,7 +642,7 @@
 
   <footer>
     <div class="wrap footer-content">
-      <img class="footer-badge" src="/assets/images/badge.png" alt="Gilbertown Police Department badge">
+      <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
@@ -550,12 +672,12 @@
           </a>
         </p>
         <p class="footer-contacts footer-legal">
-          <a href="/privacy.html">Privacy</a><span class="sep" aria-hidden="true">|</span><a href="/accessibility.html">Accessibility</a>
+          <a href="privacy.html" aria-current="page">Privacy</a><span class="sep" aria-hidden="true">|</span><a href="accessibility.html">Accessibility</a>
         </p>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/js/site.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

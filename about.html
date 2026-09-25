@@ -214,6 +214,40 @@
       line-height: 1.2;
     }
 
+    .hiring-note {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 22px;
+      padding: 18px 22px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--yellow-dark);
+    }
+
+    .hiring-note p {
+      margin: 0;
+    }
+
+    .hiring-label {
+      flex: 0 0 auto;
+      color: var(--gold-text);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 560px) {
+      .hiring-note {
+        display: block;
+      }
+
+      .hiring-label {
+        margin-bottom: 6px !important;
+      }
+    }
+
     .public-resources-section {
       margin-bottom: 88px;
     }
@@ -577,6 +611,14 @@
           <span class="officer-name">Kendal Gardner</span>
         </li>
       </ul>
+
+      <div class="hiring-note">
+        <p class="hiring-label">Employment</p>
+        <p>
+          The Gilbertown Police Department is fully staffed at this time. When we
+          are hiring, openings will be posted on this website.
+        </p>
+      </div>
     </section>
 
     <section class="public-resources-section" aria-labelledby="resources-heading">
@@ -784,6 +826,9 @@
           >
             Gilbertown Police Department on Facebook
           </a>
+        </p>
+        <p class="footer-contacts footer-legal">
+          <a href="privacy.html">Privacy</a><span class="sep" aria-hidden="true">|</span><a href="accessibility.html">Accessibility</a>
         </p>
       </div>
     </div>
