@@ -1,29 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Public forms from the Gilbertown Police Department.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Gilbertown Police Department forms, requests, and downloadable documents."
+  />
   <title>Forms | Gilbertown Police Department</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --navy: #163a57;
-      --navy-dark: #0d263b;
-      --navy-deep: #081c2d;
-      --navy-menu: #1c4666;
-      --yellow: #ffd400;
-      --yellow-dark: #bc8b00;
-      --ivory: #fbfaf5;
-      --ink: #172735;
-      --muted: #607080;
-      --red: #8e1f26;
-      --line: rgba(22, 58, 87, 0.24);
-      --shadow: 0 16px 42px rgba(8, 28, 45, 0.16);
+      --navy: #12304a;
+      --navy-dark: #0b2235;
+      --teal: #087e8b;
+      --teal-dark: #05636d;
+      --blue-light: #eaf4f7;
+      --blue-pale: #f5fafb;
+      --gold: #e6b44f;
+      --text: #193244;
+      --muted: #607484;
+      --line: #c7dce1;
+      --white: #ffffff;
+      --shadow: 0 12px 28px rgba(18, 48, 74, 0.1);
+      --radius: 14px;
     }
 
     * {
@@ -35,1099 +42,564 @@
     }
 
     body {
-      min-width: 0;
       margin: 0;
-      color: var(--ink);
-      background: linear-gradient(
-        180deg,
-        #ffd400 0,
-        #ffd400 46rem,
-        #ffe451 76rem,
-        #fff19d 108rem,
-        #fff9dd 144rem,
-        #fbfaf5 182rem,
-        #fbfaf5 100%
-      );
-      font-family: "Montserrat", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--blue-pale);
+      font-family: "Inter", Arial, sans-serif;
       line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button,
-    a {
-      font: inherit;
     }
 
     a {
       color: inherit;
     }
 
-    .wrap {
-      width: min(96vw, 1920px);
-      margin: 0 auto;
-    }
-
-    .section-rule {
-      position: relative;
-      margin-bottom: 30px;
-      padding-top: 25px;
-      border-top: 2px solid var(--navy);
-    }
-
-    .section-rule::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: 0;
-      width: 105px;
-      height: 5px;
-      background: var(--yellow-dark);
-    }
-
-    .section-kicker {
-      margin: 0 0 7px;
-      color: var(--navy);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin: 0;
-      color: var(--navy-dark);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.03;
-      letter-spacing: -0.04em;
-    }
-
-    .emergency-strip {
-      width: 100%;
-      padding: 9px 18px;
-      color: #ffffff;
-      background: var(--red);
-      text-align: center;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-
-    .emergency-strip a {
-      color: #ffffff;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    }
-
-    .emergency-strip a:hover,
-    .emergency-strip a:focus {
-      color: var(--yellow);
-      outline: none;
-    }
-
     .site-header {
-      position: relative;
-      z-index: 20;
-      width: 100%;
-      color: #ffffff;
       background: var(--navy);
-      border-bottom: 10px solid var(--yellow);
+      color: var(--white);
+      border-bottom: 4px solid var(--teal);
     }
 
-    .masthead {
-      min-height: 154px;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
+    .header-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
       align-items: center;
-      gap: 24px;
-      padding: 8px 0;
+      justify-content: space-between;
+      gap: 28px;
     }
 
     .brand {
+      text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 15px;
-      min-width: 0;
-      color: #ffffff;
-      text-decoration: none;
+      gap: 13px;
     }
 
-    .brand:hover .brand-badge,
-    .brand:focus .brand-badge {
-      transform: scale(1.04);
-    }
-
-    .brand-badge {
-      width: 138px;
-      height: 138px;
-      max-width: none;
-      object-fit: contain;
-      flex: 0 0 auto;
-      transition: transform 0.25s ease;
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      color: var(--gold);
     }
 
     .brand-text {
-      min-width: 0;
-      line-height: 1;
+      display: grid;
+      gap: 1px;
     }
 
-    .brand-town {
-      display: block;
-      color: var(--yellow);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2.1rem, 4.9vw, 3.7rem);
-      font-weight: 700;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .brand-department {
-      display: block;
-      margin-top: 9px;
-      color: #e6eef4;
-      font-size: clamp(0.75rem, 1.9vw, 1.02rem);
-      font-weight: 800;
-      letter-spacing: 0.24em;
+    .brand-text strong {
+      font-size: 16px;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
     }
 
-    .header-location {
-      justify-self: stretch;
+    .brand-text span {
+      color: #c9dce6;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
       display: flex;
       align-items: center;
-      justify-content: center;
-      min-height: 68px;
-      margin: 0 auto;
-      padding: 0 34px;
-      color: #dce8f2;
-      border-left: 2px solid rgba(255, 212, 0, 0.85);
-      border-right: 2px solid rgba(255, 212, 0, 0.85);
-      text-align: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .main-nav a {
+      color: #e7f0f3;
       text-decoration: none;
-      line-height: 1.25;
-      transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 7px;
     }
 
-    .header-location:hover,
-    .header-location:focus {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-2px);
-      outline: 2px solid var(--yellow);
-      outline-offset: 4px;
-    }
-
-    .header-location strong {
-      display: block;
-      color: var(--yellow);
-      font-size: 0.79rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .header-location span {
-      display: block;
-      margin-top: 7px;
-      color: #dce8f2;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .header-location:hover span,
-    .header-location:focus span {
-      color: #ffffff;
-    }
-
-    .explore-button {
-      justify-self: end;
-      min-width: 140px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      padding: 13px 17px;
-      color: var(--navy-dark);
-      background: var(--yellow);
-      border: 0;
-      cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: background 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
-    }
-
-    .explore-button:hover,
-    .explore-button:focus {
-      background: #fff17c;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    .main-nav a:hover,
+    .main-nav a:focus,
+    .main-nav a.active {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
       outline: none;
     }
 
-    .menu-icon {
-      width: 20px;
-      display: grid;
-      gap: 4px;
-    }
-
-    .menu-icon span {
-      display: block;
-      height: 2px;
-      background: var(--navy-dark);
-    }
-
-    .site-menu {
-      display: grid;
-      grid-template-rows: 0fr;
-      opacity: 0;
-      background: var(--navy-menu);
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      transition: grid-template-rows 1.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
-    }
-
-    .site-menu.open {
-      grid-template-rows: 1fr;
-      opacity: 1;
-    }
-
-    .site-menu > .wrap {
-      min-height: 0;
-      overflow: hidden;
-      transform: translateY(-24px);
-      transition: transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .site-menu.open > .wrap {
-      transform: translateY(0);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 20px 0 24px;
-    }
-
-    .site-menu a {
-      display: block;
-      padding: 15px 17px;
-      color: #ffffff;
-      opacity: 0;
-      transform: translateY(-12px);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 700;
-      border-left: 3px solid transparent;
-      transition: color 0.22s ease, background 0.22s ease, border-color 0.22s ease, padding-left 0.22s ease, opacity 0.65s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .site-menu.open a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .site-menu.open a:nth-child(1) { transition-delay: 0.16s; }
-    .site-menu.open a:nth-child(2) { transition-delay: 0.22s; }
-    .site-menu.open a:nth-child(3) { transition-delay: 0.28s; }
-    .site-menu.open a:nth-child(4) { transition-delay: 0.34s; }
-    .site-menu.open a:nth-child(5) { transition-delay: 0.40s; }
-    .site-menu.open a:nth-child(6) { transition-delay: 0.46s; }
-    .site-menu.open a:nth-child(7) { transition-delay: 0.52s; }
-    .site-menu.open a:nth-child(8) { transition-delay: 0.58s; }
-    .site-menu.open a:nth-child(9) { transition-delay: 0.64s; }
-
-    .site-menu a:hover,
-    .site-menu a:focus,
-    .site-menu a[aria-current="page"] {
-      padding-left: 22px;
-      color: var(--yellow);
-      background: rgba(255, 255, 255, 0.08);
-      border-left-color: var(--yellow);
-      outline: none;
-    }
-
-    .page-banner {
-      position: relative;
-      overflow: hidden;
-      color: #ffffff;
+    .hero {
       background:
-        linear-gradient(115deg, rgba(8, 28, 45, 0.97), rgba(22, 58, 87, 0.92)),
+        linear-gradient(125deg, rgba(18, 48, 74, 0.96), rgba(8, 126, 139, 0.88)),
         var(--navy);
-      border-bottom: 6px solid var(--yellow);
+      color: var(--white);
     }
 
-    .page-banner::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 7%;
-      width: min(480px, 38vw);
-      height: min(480px, 38vw);
-      background: url("assets/images/badge.png") center / contain no-repeat;
-      opacity: 0.11;
-      pointer-events: none;
-      transform: translateY(-50%);
+    .hero-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 62px 0 66px;
     }
 
-    .page-banner-content {
-      position: relative;
-      z-index: 1;
-      padding: 56px 0 60px;
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #c8edf0;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .page-banner .section-kicker {
-      color: var(--yellow);
+    h1,
+    h2,
+    h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
     }
 
-    .page-banner h1 {
-      max-width: 780px;
+    h1 {
+      max-width: 760px;
       margin: 0;
-      color: #ffffff;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 4.7rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.15;
     }
 
-    .page-banner p {
-      max-width: 740px;
-      margin: 16px 0 0;
-      color: #dce8f2;
-      font-size: clamp(1rem, 1.8vw, 1.18rem);
+    .hero p:last-child {
+      max-width: 710px;
+      margin: 18px 0 0;
+      color: #edf8fa;
+      font-size: 18px;
     }
 
     main {
-      padding: 72px 0 80px;
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
     }
 
-    .forms-intro {
+    .intro {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: clamp(42px, 6vw, 100px);
-      align-items: start;
-      margin-bottom: 72px;
+      grid-template-columns: 1.45fr 0.85fr;
+      gap: 28px;
+      margin-bottom: 34px;
     }
 
-    .forms-intro-copy {
-      max-width: 860px;
-    }
-
-    .forms-intro-copy p {
-      max-width: 790px;
-      margin: 0 0 18px;
-    }
-
-    .forms-instructions {
-      padding: 28px;
-      color: #ffffff;
-      background: var(--navy);
-      border-top: 6px solid var(--yellow);
+    .intro-card,
+    .notice-card {
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
-    .forms-instructions strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--yellow);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
+    .intro-card {
+      background: var(--white);
+      padding: 28px;
+      border: 1px solid var(--line);
     }
 
-    .forms-instructions p {
+    .intro-card h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 24px;
+    }
+
+    .intro-card p {
       margin: 0;
-      color: #dce8f2;
-      font-size: 0.92rem;
-    }
-
-    .forms-instructions p + p {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .forms-instructions a {
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    }
-
-    .forms-instructions a:hover,
-    .forms-instructions a:focus {
-      color: var(--yellow);
-      text-decoration-color: currentColor;
-      outline: none;
-    }
-
-    .forms-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .form-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 34px;
-      align-items: center;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .form-item::before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: 0;
-      width: 78px;
-      height: 4px;
-      background: var(--yellow-dark);
-    }
-
-    .form-item-content {
-      max-width: 850px;
-    }
-
-    .form-item h2 {
-      margin: 0;
-      color: var(--navy-dark);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(1.65rem, 2.7vw, 2.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-    }
-
-    .form-item p {
-      margin: 14px 0 0;
-    }
-
-    .form-item .form-note {
       color: var(--muted);
-      font-size: 0.87rem;
     }
 
-    .form-actions {
+    .notice-card {
+      background: #fff8e8;
+      border: 1px solid #f0d493;
+      padding: 24px;
+    }
+
+    .notice-card h2 {
+      margin: 0 0 8px;
+      color: #7b5100;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .notice-card p {
+      margin: 0;
+      color: #6a5529;
+      font-size: 14px;
+    }
+
+    .section-heading {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 29px;
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .form-card {
+      min-height: 224px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 22px rgba(18, 48, 74, 0.07);
+      padding: 25px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
+      flex-direction: column;
     }
 
-    .form-download {
-      min-width: 150px;
+    .form-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      color: var(--teal-dark);
+      font-size: 21px;
+    }
+
+    .form-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .form-card p {
+      margin: 10px 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 13px 16px;
-      color: var(--navy-dark);
-      background: var(--yellow);
-      border: 2px solid var(--yellow);
-      text-align: center;
-      text-decoration: none;
-      font-size: 0.75rem;
+      min-height: 42px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 14px;
       font-weight: 800;
-      letter-spacing: 0.07em;
-      line-height: 1.25;
-      text-transform: uppercase;
-      transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .form-download::after {
-      content: "↓";
-      font-size: 1.15rem;
-      line-height: 1;
+    .button:hover,
+    .button:focus {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+      outline: none;
     }
 
-    .form-download:hover,
-    .form-download:focus {
-      color: #ffffff;
-      background: var(--navy);
-      border-color: var(--navy);
-      transform: translateY(-3px);
-      box-shadow: 0 9px 22px rgba(8, 28, 45, 0.16);
-      outline: 2px solid var(--yellow-dark);
-      outline-offset: 4px;
-    }
-
-    .form-download:focus {
-      outline-color: var(--navy);
-    }
-
-    .form-download--fillable {
-      color: #ffffff;
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-
-    .form-download--fillable:hover,
-    .form-download--fillable:focus {
-      color: var(--navy-dark);
-      background: #fff17c;
-      border-color: #fff17c;
-      outline-color: var(--navy);
-    }
-
-    .complaint-note {
-      margin-top: 18px;
-      padding: 16px 18px;
-      color: #6a171d;
-      background: rgba(255, 255, 255, 0.46);
-      border-left: 4px solid var(--red);
-      font-size: 0.9rem;
+    .pdf-label {
+      color: var(--muted);
+      font-size: 12px;
       font-weight: 700;
     }
 
-    .complaint-note strong {
-      color: var(--red);
+    .help-panel {
+      margin-top: 36px;
+      padding: 26px 28px;
+      border-left: 6px solid var(--teal);
+      background: var(--blue-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
     }
 
-    .emergency-note {
-      margin-top: 74px;
-      padding: 24px 28px;
-      color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.52);
-      border-left: 4px solid var(--yellow-dark);
-    }
-
-    .emergency-note p {
-      max-width: 1080px;
-      margin: 0;
-    }
-
-    .emergency-note a {
+    .help-panel h2 {
+      margin: 0 0 8px;
       color: var(--navy);
-      font-weight: 800;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+      font-size: 22px;
     }
 
-    .emergency-note a:hover,
-    .emergency-note a:focus {
-      color: var(--yellow-dark);
-      text-decoration-color: currentColor;
-      outline: none;
+    .help-panel p {
+      max-width: 900px;
+      margin: 0;
+      color: #345363;
+    }
+
+    .help-panel a {
+      color: var(--teal-dark);
+      font-weight: 800;
     }
 
     footer {
-      width: 100%;
-      padding: 12px 0;
-      color: #dce8f2;
-      background: var(--navy-deep);
-      border-top: 8px solid var(--yellow);
+      background: var(--navy-dark);
+      color: #d4e4ea;
     }
 
-    .footer-content {
+    .footer-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 25px 0;
       display: flex;
       align-items: center;
-      gap: 18px;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
     }
 
-    .footer-badge {
-      width: 86px;
-      height: 86px;
-      max-width: none;
-      object-fit: contain;
-      flex: 0 0 auto;
-      transition: transform 0.25s ease;
+    .footer-inner p {
+      margin: 0;
     }
 
-    .footer-badge:hover {
-      transform: scale(1.04);
-    }
-
-    .footer-contacts {
-      margin-top: 8px;
-      color: #aebfcb;
-      font-size: 0.8rem;
-    }
-
-    footer a {
-      color: #dce8f2;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+    .footer-inner a {
+      color: #ffffff;
       font-weight: 700;
-      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+      text-decoration: none;
     }
 
-    footer a:hover,
-    footer a:focus {
-      color: var(--yellow);
-      text-decoration-color: currentColor;
+    .footer-inner a:hover,
+    .footer-inner a:focus {
+      text-decoration: underline;
       outline: none;
     }
 
-    footer strong {
-      color: #ffffff;
-    }
-
-    footer p {
-      margin: 4px 0;
-    }
-
-    .small {
-      font-size: 0.87rem;
-    }
-
-    @media (max-width: 1100px) {
-      .masthead {
-        grid-template-columns: minmax(0, 1fr) auto;
-      }
-
-      .header-location {
-        display: none;
-      }
-
-      .forms-intro {
+    @media (max-width: 820px) {
+      .header-inner,
+      .footer-inner,
+      .intro {
         grid-template-columns: 1fr;
       }
 
-      .forms-instructions {
-        max-width: 680px;
+      .header-inner {
+        display: grid;
       }
 
-      .page-banner::after {
-        right: -6%;
-        width: min(500px, 55vw);
-        height: min(500px, 55vw);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .wrap {
-        width: min(1440px, 94%);
-      }
-
-      .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .page-banner-content {
-        padding: 48px 0 52px;
-      }
-
-      .form-actions {
+      .main-nav {
         justify-content: flex-start;
       }
-    }
 
-    @media (max-width: 560px) {
-      body {
-        background: linear-gradient(
-          180deg,
-          #ffd400 0,
-          #ffd400 98rem,
-          #ffe65b 138rem,
-          #fff1a4 180rem,
-          #fff9dd 226rem,
-          #fbfaf5 276rem,
-          #fbfaf5 100%
-        );
-      }
-
-      .wrap {
-        width: min(1440px, 92%);
-      }
-
-      .masthead {
-        min-height: 112px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 14px 0;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      .brand-badge {
-        width: 99px;
-        height: 99px;
-      }
-
-      .brand-town {
-        font-size: clamp(1.75rem, 8vw, 2.35rem);
-      }
-
-      .brand-department {
-        margin-top: 7px;
-        font-size: 0.61rem;
-        letter-spacing: 0.15em;
-      }
-
-      .explore-button {
-        min-width: 112px;
-        gap: 8px;
-        padding: 11px 12px;
-        font-size: 0.7rem;
-      }
-
-      .menu-grid {
+      .forms-grid {
         grid-template-columns: 1fr;
-        padding: 10px 0 18px;
       }
 
-      .site-menu a {
-        padding: 12px 13px;
-      }
-
-      .page-banner::after {
-        top: auto;
-        right: -22%;
-        bottom: -20%;
-        width: 360px;
-        height: 360px;
-        transform: none;
-        opacity: 0.09;
-      }
-
-      .page-banner-content {
-        padding: 42px 0 47px;
-      }
-
-      .page-banner h1 {
-        max-width: 300px;
-      }
-
-      main {
-        padding: 54px 0 62px;
-      }
-
-      .section-rule {
-        margin-bottom: 24px;
-      }
-
-      .forms-intro {
-        margin-bottom: 52px;
-      }
-
-      .forms-instructions {
-        padding: 25px;
-      }
-
-      .form-item {
-        display: block;
-        padding: 28px 0 30px;
-      }
-
-      .form-actions {
+      .footer-inner {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-        margin-top: 21px;
-      }
-
-      .form-actions .form-download {
-        width: 100%;
-      }
-
-      .complaint-note {
-        padding: 15px;
-      }
-
-      .emergency-note {
-        margin-top: 56px;
-        padding: 20px;
-      }
-
-      .footer-content {
-        align-items: center;
-      }
-
-      .footer-badge {
-        width: 66px;
-        height: 66px;
-      }
-
-      .footer-contacts {
-        line-height: 1.55;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+    @media (max-width: 520px) {
+      .header-inner,
+      .hero-inner,
+      main,
+      .footer-inner {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .hero-inner {
+        padding: 46px 0 50px;
+      }
+
+      .intro-card,
+      .notice-card,
+      .form-card {
+        padding: 21px;
+      }
+
+      .main-nav a {
+        padding: 7px 8px;
+        font-size: 13px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="emergency-strip">
-    For emergencies or crimes in progress, call <a href="tel:911">911</a>.
-  </div>
-
   <header class="site-header">
-    <div class="wrap">
-      <div class="masthead">
-        <a class="brand" href="index.html" aria-label="Gilbertown Police Department home">
-          <img class="brand-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Gilbertown Police Department home">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span class="brand-text">
+          <strong>Gilbertown Police Department</strong>
+          <span>Gilbertown, Alabama</span>
+        </span>
+      </a>
 
-          <span class="brand-text">
-            <span class="brand-town">Gilbertown</span>
-            <span class="brand-department">Police Department</span>
-          </span>
-        </a>
-
-        <a
-          class="header-location"
-          href="https://www.gilbertown.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit the official Town of Gilbertown website"
-        >
-          <span>
-            <strong>Town of Gilbertown</strong>
-            <span>Choctaw County · Alabama</span>
-          </span>
-        </a>
-
-        <button class="explore-button" id="explore-button" type="button" aria-expanded="false" aria-controls="site-menu">
-          Explore
-          <span class="menu-icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
-      <div class="wrap menu-grid">
+      <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        <a href="forms.html" aria-current="page">Forms</a>
-        <a href="news.html">News &amp; Notices</a>
-        <a href="events.html">Community Events</a>
-<a href="links.html">Helpful Links</a>
-<a href="safety-materials.html">Safety Materials</a>
-<a href="tips.html">Submit a Tip</a>
-<a href="contact.html">Contact</a>
-      </div>
-    </nav>
+        <a href="forms.html" class="active" aria-current="page">Forms</a>
+        <a href="safety-materials.html">Safety Materials</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="page-banner" aria-labelledby="page-heading">
-    <div class="wrap page-banner-content">
-      <p class="section-kicker">Public Documents</p>
-      <h1 id="page-heading">Department Forms</h1>
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-inner">
+      <p class="eyebrow">Downloads & Requests</p>
+      <h1 id="page-title">Forms</h1>
       <p>
-        Download approved public forms from the Gilbertown Police Department.
+        Download the form you need, complete it, and submit it using the
+        instructions on the form or by contacting the Gilbertown Police Department.
       </p>
     </div>
   </section>
 
-  <main class="wrap">
-    <section class="forms-intro" aria-labelledby="forms-intro-heading">
-      <div class="forms-intro-copy">
-        <div class="section-rule">
-          <p class="section-kicker">Public Resources</p>
-          <h2 class="section-title" id="forms-intro-heading">Available Forms</h2>
-        </div>
-
+  <main>
+    <section class="intro" aria-label="Forms information">
+      <article class="intro-card">
+        <h2>Official department forms</h2>
         <p>
-          Download, print, and complete the appropriate form. Select <strong>Fillable PDF</strong>
-          to complete a form with a keyboard and save a copy to your device, or select
-          <strong>Print PDF</strong> to print a blank form for handwriting.
+          These documents are provided for common requests and community
+          communication. Please read each form carefully before submitting it.
+          If you need help choosing the correct form, contact the department
+          before providing personal or sensitive information.
         </p>
+      </article>
 
+      <aside class="notice-card">
+        <h2>Emergency? Call 911.</h2>
         <p>
-          Forms are not monitored for emergency reporting. For an emergency or crime in progress,
-          call 911.
-        </p>
-      </div>
-
-      <aside class="forms-instructions">
-        <strong>Submitting Most Forms</strong>
-        <p>
-          Unless a form states otherwise, completed forms may be delivered to the Chief of Police
-          in person, left with the Town Clerk for delivery to the Chief, mailed to 40 Front Street,
-          Gilbertown, Alabama 36908, or emailed to
-          <a href="mailto:gilbertownchief@outlook.com">gilbertownchief@outlook.com</a>.
-        </p>
-
-        <p>
-          <strong>Complaint Forms:</strong> Must be delivered in person by the complainant with
-          an original signature. Complaint Forms may not be submitted by email or through this
-          website.
+          Do not use these forms to report an emergency, a crime in progress,
+          immediate danger, or a situation requiring urgent police response.
         </p>
       </aside>
     </section>
 
-    <section class="forms-list" aria-label="Available department forms">
-      <article class="form-item">
-        <div class="form-item-content">
-          <h2>Public Records Request Form</h2>
+    <section aria-labelledby="available-forms">
+      <h2 class="section-heading" id="available-forms">Available Forms</h2>
+
+      <div class="forms-grid">
+        <article class="form-card">
+          <div class="form-icon" aria-hidden="true">▣</div>
+          <h3>Accident Report Request</h3>
           <p>
-            Use this form to request public records from the Gilbertown Police Department.
-            Requests are reviewed before records are released.
+            Request a copy of an available accident report. Follow the form
+            instructions for identification, payment, and submission details.
           </p>
-          <p class="form-note">
-            No processing fees are charged at this time. Release of records remains subject to
-            applicable law.
-          </p>
-        </div>
+          <div class="card-actions">
+            <a
+              class="button"
+              href="assets/forms/accident-report-request-form.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open PDF
+            </a>
+            <span class="pdf-label">PDF form</span>
+          </div>
+        </article>
 
-        <div class="form-actions">
-          <a class="form-download" href="assets/Forms/public-records-request-form.pdf" target="_blank" rel="noopener noreferrer">
-            Print PDF
-          </a>
-          <a class="form-download form-download--fillable" href="assets/Forms/public-records-request-form-fillable.pdf" target="_blank" rel="noopener noreferrer">
-            Fillable PDF
-          </a>
-        </div>
-      </article>
-
-      <article class="form-item">
-        <div class="form-item-content">
-          <h2>Accident Report Request Form</h2>
+        <article class="form-card">
+          <div class="form-icon" aria-hidden="true">★</div>
+          <h3>Citizen Commendation</h3>
           <p>
-            Use this form to request an accident report through the Gilbertown Police Department
-            records-request process.
+            Share recognition for an officer, employee, volunteer, or positive
+            interaction with the Gilbertown Police Department.
           </p>
-          <p class="form-note">
-            Submission of a request does not guarantee that a report is available or may be released.
-          </p>
-        </div>
+          <div class="card-actions">
+            <a
+              class="button"
+              href="assets/forms/commendation-form.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open PDF
+            </a>
+            <span class="pdf-label">PDF form</span>
+          </div>
+        </article>
 
-        <div class="form-actions">
-          <a class="form-download" href="assets/Forms/accident-report-request-form.pdf" target="_blank" rel="noopener noreferrer">
-            Print PDF
-          </a>
-          <a class="form-download form-download--fillable" href="assets/Forms/accident-report-request-form-fillable.pdf" target="_blank" rel="noopener noreferrer">
-            Fillable PDF
-          </a>
-        </div>
-      </article>
-
-      <article class="form-item">
-        <div class="form-item-content">
-          <h2>Commendation Form</h2>
+        <article class="form-card">
+          <div class="form-icon" aria-hidden="true">!</div>
+          <h3>Citizen Complaint</h3>
           <p>
-            Use this form to recognize professional service by a Gilbertown Police Department
-            employee or to share positive feedback about a department interaction.
+            Submit a concern or complaint regarding department service,
+            employee conduct, or another matter requiring department review.
           </p>
-        </div>
+          <div class="card-actions">
+            <a
+              class="button"
+              href="assets/forms/complaint-form.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open PDF
+            </a>
+            <span class="pdf-label">PDF form</span>
+          </div>
+        </article>
 
-        <div class="form-actions">
-          <a class="form-download" href="assets/Forms/commendation-form.pdf" target="_blank" rel="noopener noreferrer">
-            Print PDF
-          </a>
-          <a class="form-download form-download--fillable" href="assets/Forms/commendation-form-fillable.pdf" target="_blank" rel="noopener noreferrer">
-            Fillable PDF
-          </a>
-        </div>
-      </article>
-
-      <article class="form-item">
-        <div class="form-item-content">
-          <h2>Complaint Form</h2>
+        <article class="form-card">
+          <div class="form-icon" aria-hidden="true">≡</div>
+          <h3>Public Records Request</h3>
           <p>
-            Use this form to submit a formal complaint for department review. All fields must be
-            completed by the complainant. Anonymous complaints are not accepted through this form.
+            Request access to public records from the Gilbertown Police
+            Department. Availability, exemptions, and fees may apply.
           </p>
+          <div class="card-actions">
+            <a
+              class="button"
+              href="assets/forms/public-records-request-form.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open PDF
+            </a>
+            <span class="pdf-label">PDF form</span>
+          </div>
+        </article>
 
-          <p class="complaint-note">
-            <strong>In-person submission required:</strong> The complainant must personally
-            deliver the completed Complaint Form to the Chief of Police with an original signature.
-            If the Chief is unavailable, the form may be left and the Chief will contact the
-            complainant at his convenience. Do not email this form.
-          </p>
-
-          <p class="form-note">
-            The Fillable PDF may be completed on a computer for convenience, but it must be
-            printed, signed in original ink, and personally delivered by the complainant to the
-            Chief of Police.
-          </p>
-        </div>
-
-        <div class="form-actions">
-          <a class="form-download" href="assets/Forms/complaint-form.pdf" target="_blank" rel="noopener noreferrer">
-            Print PDF
-          </a>
-          <a class="form-download form-download--fillable" href="assets/Forms/complaint-form-fillable.pdf" target="_blank" rel="noopener noreferrer">
-            Fillable PDF
-          </a>
-        </div>
-      </article>
-
-      <article class="form-item">
-        <div class="form-item-content">
-          <h2>Vacation Watch Request Form</h2>
+        <article class="form-card">
+          <div class="form-icon" aria-hidden="true">⌂</div>
+          <h3>Vacation Watch Request</h3>
           <p>
-            Use this form to request vacation-watch attention for a residence within the
-            Gilbertown Police Department service area.
+            Request extra patrol attention for an unoccupied residence while
+            you are away. Vacation watches are subject to department staffing
+            and operational needs.
           </p>
-          <p class="form-note">
-            Submit the completed form before leaving town whenever possible, and notify the
-            department when you return so the request can be closed.
-          </p>
-        </div>
-
-        <div class="form-actions">
-          <a class="form-download" href="assets/Forms/vacation-watch-request-form.pdf" target="_blank" rel="noopener noreferrer">
-            Print PDF
-          </a>
-          <a class="form-download form-download--fillable" href="assets/Forms/vacation-watch-request-form-fillable.pdf" target="_blank" rel="noopener noreferrer">
-            Fillable PDF
-          </a>
-        </div>
-      </article>
+          <div class="card-actions">
+            <a
+              class="button"
+              href="assets/forms/vacation-watch-request-form.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open PDF
+            </a>
+            <span class="pdf-label">PDF form</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="emergency-note" aria-label="Emergency reporting reminder">
+    <section class="help-panel" aria-labelledby="help-title">
+      <h2 id="help-title">Need assistance?</h2>
       <p>
-        <strong>Important:</strong> Do not use a form, email, or this website to report an
-        emergency, a crime in progress, or urgent police assistance. Call
-        <a href="tel:911">911</a>.
+        If you are unsure which form applies, need an accommodation, or cannot
+        download a form, please contact the department through the
+        <a href="contact.html">Contact page</a>. For immediate emergencies or
+        crimes in progress, call 911.
       </p>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-content">
-      <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
-
-      <div>
-        <p><strong>Gilbertown Police Department</strong></p>
-        <p class="small">Official public website. Last updated: September 23, 2026.</p>
-        <p class="footer-contacts">
-          Emergency: <a href="tel:911">911</a>
-          &nbsp;|&nbsp;
-          Non-Emergency Dispatch: <a href="tel:+12054595911">(205) 459-5911</a>
-        </p>
-      </div>
+    <div class="footer-inner">
+      <p>© 2026 Gilbertown Police Department. All rights reserved.</p>
+      <p>
+        <a href="contact.html">Contact Us</a>
+        &nbsp;|&nbsp;
+        <a href="safety-materials.html">Safety Materials</a>
+      </p>
     </div>
   </footer>
-
-  <script>
-    const menuButton = document.getElementById('explore-button');
-    const siteMenu = document.getElementById('site-menu');
-
-    menuButton.addEventListener('click', () => {
-      const isOpen = siteMenu.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-    });
-  </script>
 </body>
 </html>
