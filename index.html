@@ -364,6 +364,7 @@
     .site-menu.open a:nth-child(7) { transition-delay: 0.52s; }
     .site-menu.open a:nth-child(8) { transition-delay: 0.58s; }
     .site-menu.open a:nth-child(9) { transition-delay: 0.64s; }
+    .site-menu.open a:nth-child(10) { transition-delay: 0.70s; }
 
     .site-menu a:hover,
     .site-menu a:focus,
@@ -1277,10 +1278,10 @@
         <a href="forms.html">Forms</a>
         <a href="news.html">News &amp; Notices</a>
         <a href="events.html">Community Events</a>
-<a href="links.html">Helpful Links</a>
-<a href="safety-materials.html">Safety Materials</a>
-<a href="tips.html">Submit a Tip</a>
-<a href="contact.html">Contact</a>
+        <a href="links.html">Helpful Links</a>
+        <a href="safety-materials.html">Safety Materials</a>
+        <a href="tips.html">Submit a Tip</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
@@ -1570,47 +1571,63 @@
 
       <div>
         <p><strong>Gilbertown Police Department</strong></p>
-        <p class="small">Official public website. Last updated: September 21, 2026.</p>
+        <p class="small">Official public website. Last updated: September 24, 2026.</p>
+
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
           &nbsp;|&nbsp;
-          Non-Emergency Dispatch: <a href="tel:+12054595911">(205) 459-5911</a>
+          Non-Emergency Dispatch:
+          <a href="tel:+12054595911">(205) 459-5911</a>
+          &nbsp;|&nbsp;
+          Office:
+          <a href="tel:+12518432766">(251) 843-2766</a>
+        </p>
+
+        <p class="footer-contacts">
+          Follow approved public updates:
+          <a
+            href="https://www.facebook.com/profile.php?id=61558416355452"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gilbertown Police Department on Facebook
+          </a>
         </p>
       </div>
     </div>
   </footer>
 
   <script>
-    const menuButton = document.getElementById('explore-button');
-    const siteMenu = document.getElementById('site-menu');
+    const menuButton = document.getElementById("explore-button");
+    const siteMenu = document.getElementById("site-menu");
 
-    menuButton.addEventListener('click', () => {
-      const isOpen = siteMenu.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.addEventListener("click", () => {
+      const isOpen = siteMenu.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
     });
 
-    const carousel = document.getElementById('homepage-carousel');
-    const track = document.getElementById('carousel-track');
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
-    const previousButton = document.getElementById('previous-slide');
-    const nextButton = document.getElementById('next-slide');
-    const slideCounter = document.getElementById('slide-counter');
+    const carousel = document.getElementById("homepage-carousel");
+    const track = document.getElementById("carousel-track");
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const dots = Array.from(document.querySelectorAll(".carousel-dot"));
+    const previousButton = document.getElementById("previous-slide");
+    const nextButton = document.getElementById("next-slide");
+    const slideCounter = document.getElementById("slide-counter");
 
     let currentSlide = 0;
     let autoRotateTimer;
     const autoRotateDelay = 6375;
-    const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function showSlide(index) {
       currentSlide = (index + slides.length) % slides.length;
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
       dots.forEach((dot, dotIndex) => {
-        dot.setAttribute('aria-current', dotIndex === currentSlide ? 'true' : 'false');
+        dot.setAttribute("aria-current", dotIndex === currentSlide ? "true" : "false");
       });
 
-      slideCounter.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      slideCounter.textContent = `${String(currentSlide + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
     }
 
     function stopAutoRotate() {
@@ -1632,29 +1649,29 @@
       startAutoRotate();
     }
 
-    previousButton.addEventListener('click', () => {
+    previousButton.addEventListener("click", () => {
       showSlide(currentSlide - 1);
       interactWithCarousel();
     });
 
-    nextButton.addEventListener('click', () => {
+    nextButton.addEventListener("click", () => {
       showSlide(currentSlide + 1);
       interactWithCarousel();
     });
 
     dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener("click", () => {
         showSlide(Number(dot.dataset.slide));
         interactWithCarousel();
       });
     });
 
-    carousel.addEventListener('mouseenter', stopAutoRotate);
-    carousel.addEventListener('mouseleave', startAutoRotate);
-    carousel.addEventListener('focusin', stopAutoRotate);
-    carousel.addEventListener('focusout', startAutoRotate);
+    carousel.addEventListener("mouseenter", stopAutoRotate);
+    carousel.addEventListener("mouseleave", startAutoRotate);
+    carousel.addEventListener("focusin", stopAutoRotate);
+    carousel.addEventListener("focusout", startAutoRotate);
 
-    document.addEventListener('visibilitychange', () => {
+    document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         stopAutoRotate();
       } else {
@@ -1662,17 +1679,17 @@
       }
     });
 
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener("keydown", (event) => {
       const tag = document.activeElement.tagName.toLowerCase();
 
-      if (tag === 'input' || tag === 'textarea') return;
+      if (tag === "input" || tag === "textarea") return;
 
-      if (event.key === 'ArrowLeft') {
+      if (event.key === "ArrowLeft") {
         showSlide(currentSlide - 1);
         interactWithCarousel();
       }
 
-      if (event.key === 'ArrowRight') {
+      if (event.key === "ArrowRight") {
         showSlide(currentSlide + 1);
         interactWithCarousel();
       }
