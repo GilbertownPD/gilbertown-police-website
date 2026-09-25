@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta
     name="description"
-    content="Official downloadable fillable public forms from the Gilbertown Police Department."
+    content="Official downloadable and fillable public forms from the Gilbertown Police Department."
   >
   <title>Forms | Gilbertown Police Department</title>
 
@@ -496,23 +496,21 @@
     }
 
     .resource-card {
-      min-height: 260px;
+      min-height: 295px;
       display: flex;
       flex-direction: column;
       padding: 24px;
       color: var(--navy-dark);
       background: rgba(255, 255, 255, 0.28);
       border: 1px solid var(--line);
-      text-decoration: none;
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
     }
 
-    .resource-card:hover,
-    .resource-card:focus {
-      color: #ffffff;
-      background: var(--navy);
+    .form-card:hover,
+    .form-card:focus-within {
+      color: var(--navy-dark);
+      background: rgba(255, 255, 255, 0.48);
       transform: translateY(-4px);
-      outline: none;
     }
 
     .resource-card small {
@@ -521,11 +519,6 @@
       font-weight: 800;
       letter-spacing: 0.11em;
       text-transform: uppercase;
-    }
-
-    .resource-card:hover small,
-    .resource-card:focus small {
-      color: var(--yellow);
     }
 
     .resource-card h3 {
@@ -542,13 +535,61 @@
       line-height: 1.55;
     }
 
-    .resource-card span {
+    .form-card-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
       margin-top: auto;
-      padding-top: 17px;
+      padding-top: 20px;
+    }
+
+    .form-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border: 1px solid var(--navy);
+      text-decoration: none;
       font-size: 0.73rem;
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .form-button-primary {
+      color: #ffffff;
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .form-button-primary:hover,
+    .form-button-primary:focus {
+      color: var(--navy-dark);
+      background: var(--yellow);
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .form-button-secondary {
+      color: var(--navy-dark);
+      background: transparent;
+      border-color: var(--navy);
+    }
+
+    .form-button-secondary:hover,
+    .form-button-secondary:focus {
+      color: #ffffff;
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-2px);
+      outline: none;
     }
 
     .help-section {
@@ -623,15 +664,15 @@
       margin: 0;
     }
 
-    main a:not(.resource-card):not(.section-link) {
+    main a:not(.section-link):not(.form-button) {
       position: relative;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
       transition: color 0.2s ease, text-decoration-color 0.2s ease, opacity 0.2s ease;
     }
 
-    main a:not(.resource-card):not(.section-link):hover,
-    main a:not(.resource-card):not(.section-link):focus {
+    main a:not(.section-link):not(.form-button):hover,
+    main a:not(.section-link):not(.form-button):focus {
       color: var(--yellow-dark);
       text-decoration-color: currentColor;
       outline: none;
@@ -923,7 +964,7 @@
       <p class="section-kicker">Public Documents &amp; Requests</p>
       <h1 id="page-title">Forms</h1>
       <p>
-        Download official fillable Gilbertown Police Department forms for common
+        Download official Gilbertown Police Department forms for common
         requests, feedback, records, accident reports, and vacation-watch
         information.
       </p>
@@ -941,10 +982,9 @@
         </div>
 
         <p>
-          These PDFs are fillable forms. Download the appropriate form, enter
-          the requested information electronically when possible, save a copy
-          for your records, and follow the submission instructions provided
-          within the document.
+          Choose the regular PDF when you want to view or print a blank form.
+          Choose the fillable version when you want to complete the form
+          electronically using a current PDF reader.
         </p>
 
         <p>
@@ -972,7 +1012,7 @@
           <div>
             <p class="section-kicker">Available Downloads</p>
             <h2 class="section-title" id="available-forms-heading">
-              Fillable Department Forms
+              Department Forms
             </h2>
           </div>
 
@@ -981,86 +1021,157 @@
       </div>
 
       <p class="forms-intro">
-        Select a form to open or download the fillable PDF. Safety guides and
+        Select the regular PDF for viewing or printing, or choose the fillable
+        version to complete the form electronically. Safety guides and
         household preparedness worksheets are available separately on the
         <a href="safety-materials.html">Safety Materials page</a>.
       </p>
 
       <div class="resource-grid">
-        <a
-          class="resource-card"
-          href="assets/forms/accident-report-request-form-fillable.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <small>Fillable PDF · Records Request</small>
+        <article class="resource-card form-card">
+          <small>Records Request</small>
           <h3>Accident Report Request</h3>
           <p>
             Request a copy of an available traffic accident report. Review the
             form for required identification, payment, and submission details.
           </p>
-          <span>Open fillable PDF &#8594;</span>
-        </a>
 
-        <a
-          class="resource-card"
-          href="assets/forms/commendation-form-fillable.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <small>Fillable PDF · Community Feedback</small>
+          <div class="form-card-actions">
+            <a
+              class="form-button form-button-primary"
+              href="assets/forms/accident-report-request-form.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View / Print PDF
+            </a>
+
+            <a
+              class="form-button form-button-secondary"
+              href="assets/forms/accident-report-request-form-fillable.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fillable Form
+            </a>
+          </div>
+        </article>
+
+        <article class="resource-card form-card">
+          <small>Community Feedback</small>
           <h3>Citizen Commendation</h3>
           <p>
             Share recognition for an officer, employee, volunteer, or positive
             interaction with the Gilbertown Police Department.
           </p>
-          <span>Open fillable PDF &#8594;</span>
-        </a>
 
-        <a
-          class="resource-card"
-          href="assets/forms/complaint-form-fillable.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <small>Fillable PDF · Community Feedback</small>
+          <div class="form-card-actions">
+            <a
+              class="form-button form-button-primary"
+              href="assets/forms/commendation-form.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View / Print PDF
+            </a>
+
+            <a
+              class="form-button form-button-secondary"
+              href="assets/forms/commendation-form-fillable.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fillable Form
+            </a>
+          </div>
+        </article>
+
+        <article class="resource-card form-card">
+          <small>Community Feedback</small>
           <h3>Citizen Complaint</h3>
           <p>
             Submit a concern or complaint involving department service,
             employee conduct, or another matter requiring department review.
           </p>
-          <span>Open fillable PDF &#8594;</span>
-        </a>
 
-        <a
-          class="resource-card"
-          href="assets/forms/public-records-request-form-fillable.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <small>Fillable PDF · Records Request</small>
+          <div class="form-card-actions">
+            <a
+              class="form-button form-button-primary"
+              href="assets/forms/complaint-form.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View / Print PDF
+            </a>
+
+            <a
+              class="form-button form-button-secondary"
+              href="assets/forms/complaint-form-fillable.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fillable Form
+            </a>
+          </div>
+        </article>
+
+        <article class="resource-card form-card">
+          <small>Records Request</small>
           <h3>Public Records Request</h3>
           <p>
             Request access to public records held by the Gilbertown Police
             Department. Availability, exemptions, and fees may apply.
           </p>
-          <span>Open fillable PDF &#8594;</span>
-        </a>
 
-        <a
-          class="resource-card"
-          href="assets/forms/vacation-watch-request-form-fillable.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <small>Fillable PDF · Community Service</small>
+          <div class="form-card-actions">
+            <a
+              class="form-button form-button-primary"
+              href="assets/forms/public-records-request-form.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View / Print PDF
+            </a>
+
+            <a
+              class="form-button form-button-secondary"
+              href="assets/forms/public-records-request-form-fillable.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fillable Form
+            </a>
+          </div>
+        </article>
+
+        <article class="resource-card form-card">
+          <small>Community Service</small>
           <h3>Vacation Watch Request</h3>
           <p>
             Request extra patrol attention for an unoccupied residence while
             you are away, subject to staffing and operational needs.
           </p>
-          <span>Open fillable PDF &#8594;</span>
-        </a>
+
+          <div class="form-card-actions">
+            <a
+              class="form-button form-button-primary"
+              href="assets/forms/vacation-watch-request-form.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View / Print PDF
+            </a>
+
+            <a
+              class="form-button form-button-secondary"
+              href="assets/forms/vacation-watch-request-form-fillable.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fillable Form
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1092,8 +1203,8 @@
           <small>Step 1</small>
           <h3>Download</h3>
           <p>
-            Open the fillable PDF with a current PDF reader and save a copy
-            before completing it.
+            Open the regular PDF to view or print a blank form, or use the
+            fillable version to type information electronically.
           </p>
         </article>
 
