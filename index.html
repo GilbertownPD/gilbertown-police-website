@@ -36,7 +36,7 @@
       min-width: 0;
       margin: 0;
       color: var(--ink);
-      background: linear-gradient( 180deg, #ffd400 0, #ffd400 56rem, #ffe451 82rem, #fff19d 112rem, #fff9dd 144rem, #fbfaf5 178rem, #fbfaf5 100% );
+      background: var(--ivory);
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
@@ -81,7 +81,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient( 180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.08) 90%, rgba(0, 0, 0, 0.22) 100% );
+      background:
+        linear-gradient(90deg, rgba(8, 28, 45, 0.86) 0%, rgba(8, 28, 45, 0.62) 38%, rgba(8, 28, 45, 0.12) 68%, rgba(8, 28, 45, 0) 100%),
+        linear-gradient(0deg, rgba(8, 28, 45, 0.55) 0%, rgba(8, 28, 45, 0) 45%);
     }
 
     .slide-1 {
@@ -285,10 +287,22 @@
       outline: none;
     }
 
+    .help-band {
+      position: relative;
+      margin: -65px 0 86px;
+      padding: 60px 0 64px;
+      background: var(--yellow);
+      box-shadow: 0 0 0 100vmax var(--yellow);
+      clip-path: inset(0 -100vmax);
+    }
+
+    .help-band .section-rule::before {
+      background: var(--navy);
+    }
+
     .quick-actions {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      margin-bottom: 86px;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -297,7 +311,6 @@
       min-height: 184px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       padding: 25px;
       color: var(--navy-dark);
       border-right: 1px solid var(--line);
@@ -314,6 +327,28 @@
       background: var(--navy);
       transform: translateY(-5px);
       outline: none;
+    }
+
+    .quick-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      color: var(--yellow);
+      background: var(--navy);
+      border-radius: 50%;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .quick-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .quick-action:hover .quick-icon, .quick-action:focus .quick-icon {
+      color: var(--navy-dark);
+      background: var(--yellow);
     }
 
     .quick-action small {
@@ -336,8 +371,9 @@
       letter-spacing: -0.03em;
     }
 
-    .quick-action span {
-      margin-top: 18px;
+    .quick-action > span:last-child {
+      margin-top: auto;
+      padding-top: 18px;
       font-size: 0.74rem;
       font-weight: 800;
       letter-spacing: 0.06em;
@@ -346,13 +382,13 @@
 
     .chief-welcome {
       position: relative;
-      display: block;
       isolation: isolate;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+      gap: 40px;
+      align-items: center;
       margin-bottom: 88px;
-      padding: 48px 0;
-      overflow: visible;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      padding: 30px 0;
     }
 
     .chief-watermark {
@@ -360,21 +396,44 @@
       z-index: -1;
       top: 50%;
       left: 50%;
-      width: min(930px, 84vw);
-      height: min(930px, 84vw);
+      width: min(760px, 84vw);
+      height: auto;
       max-width: none;
-      object-fit: contain;
-      opacity: 0.115;
+      opacity: 0.07;
       pointer-events: none;
       transform: translate(-50%, -50%);
     }
 
     .chief-welcome-content {
       position: relative;
-      z-index: 1;
-      width: min(860px, 100%);
-      margin: 0 auto;
+      min-width: 0;
+      padding: 56px 60px 48px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--yellow);
+      box-shadow: var(--shadow);
     }
+
+    .chief-welcome-content .section-rule {
+      margin-right: 90px;
+    }
+
+    .letter-quote {
+      position: absolute;
+      top: 14px;
+      right: 40px;
+      color: var(--yellow);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 9rem;
+      line-height: 1;
+    }
+
+    .values-card { padding: 32px 30px; background: var(--navy); border-top: 6px solid var(--yellow); box-shadow: var(--shadow); }
+    .values-kicker { margin: 0 0 18px; color: var(--yellow); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+    .values-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .values-list li { display: flex; align-items: center; gap: 16px; padding: 14px 16px; color: #fff; background: rgba(255,255,255,0.07); border-left: 3px solid var(--yellow); font-family: "Playfair Display", Georgia, serif; font-size: 1.3rem; font-weight: 700; }
+    .value-icon { width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; color: var(--navy-dark); background: var(--yellow); border-radius: 50%; }
+    .value-icon svg { width: 22px; height: 22px; }
 
     .chief-welcome .section-title {
       max-width: 710px;
@@ -385,7 +444,10 @@
     }
 
     .chief-signature {
-      margin-top: 20px;
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 1.3rem;
       color: var(--navy-dark);
       font-family: "Playfair Display", Georgia, serif;
       font-size: 1.12rem;
@@ -484,6 +546,18 @@
       color: var(--yellow);
     }
 
+    .event-panel .panel-link {
+      margin: 20px 0 0;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .event-panel .panel-link a {
+      color: #ffffff;
+    }
+
     .resources-section {
       margin-bottom: 88px;
       padding: 38px 0;
@@ -504,7 +578,7 @@
       flex-direction: column;
       padding: 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.28);
+      background: #ffffff;
       border: 1px solid var(--line);
       text-decoration: none;
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
@@ -545,63 +619,11 @@
       text-transform: uppercase;
     }
 
-    .contact-section {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
-      gap: 50px;
-      align-items: start;
-      margin-bottom: 54px;
-    }
-
-    .contact-intro p {
-      max-width: 680px;
-    }
-
-    .contact-panel {
-      padding: 30px;
-      color: #ffffff;
-      background: var(--navy);
-      border-top: 6px solid var(--yellow);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-panel h2 {
-      margin: 0 0 20px;
-      color: #ffffff;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 2rem;
-      line-height: 1.05;
-    }
-
-    .contact-line {
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .contact-line:last-child {
-      border-bottom: 0;
-    }
-
-    .contact-line strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--yellow);
-      font-size: 0.71rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .contact-line a {
-      color: #ffffff;
-      font-weight: 700;
-    }
-
     .contact-note {
       margin-top: 28px;
       padding: 21px 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.52);
+      background: #ffffff;
       border-left: 4px solid var(--yellow-dark);
     }
 
@@ -623,8 +645,6 @@
       outline: none;
     }
 
-    .contact-panel a:hover,
-    .contact-panel a:focus,
     .event-panel a:hover,
     .event-panel a:focus {
       color: #ffffff;
@@ -644,9 +664,13 @@
         border-left: 1px solid var(--line);
       }
 
-      .updates-grid, .contact-section {
+      .updates-grid, .chief-welcome {
         grid-template-columns: 1fr;
         gap: 42px;
+      }
+
+      .values-card {
+        max-width: 560px;
       }
 
       .resource-grid {
@@ -660,7 +684,7 @@
 
     @media (max-width: 560px) {
       body {
-        background: linear-gradient( 180deg, #ffd400 0, #ffd400 76rem, #ffe65b 105rem, #fff1a4 137rem, #fff9dd 171rem, #fbfaf5 210rem, #fbfaf5 100% );
+        background: var(--ivory);
       }
 
       .wrap, .slide-content {
@@ -705,25 +729,40 @@
 
       .quick-actions {
         grid-template-columns: 1fr;
-        margin-bottom: 58px;
       }
 
       .quick-action, .quick-action:first-child, .quick-action:nth-child(3) {
-        min-height: 145px;
+        min-height: 0;
         border-left: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
 
       .chief-welcome {
         margin-bottom: 58px;
-        padding: 40px 0;
+        padding: 0;
         overflow-x: clip;
       }
 
-      .chief-watermark {
-        width: min(780px, 136vw);
-        height: min(780px, 136vw);
-        opacity: 0.085;
+      .chief-welcome-content {
+        padding: 44px 22px 34px;
+      }
+
+      .chief-welcome-content .section-rule {
+        margin-right: 56px;
+      }
+
+      .letter-quote {
+        right: 16px;
+        font-size: 6rem;
+      }
+
+      .help-band {
+        margin: -52px 0 58px;
+        padding: 46px 0 50px;
+      }
+
+      .slide::before {
+        background: linear-gradient(0deg, rgba(8, 28, 45, 0.92) 0%, rgba(8, 28, 45, 0.72) 42%, rgba(8, 28, 45, 0.2) 75%, rgba(8, 28, 45, 0.05) 100%);
       }
 
       .updates-grid {
@@ -755,19 +794,6 @@
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
             <span class="brand-department">Police Department</span>
-          </span>
-        </a>
-
-        <a
-          class="header-location"
-          href="https://www.gilbertown.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit the official Town of Gilbertown website"
-        >
-          <span>
-            <strong>Town of Gilbertown</strong>
-            <span>Choctaw County · Alabama</span>
           </span>
         </a>
 
@@ -872,7 +898,7 @@
   </section>
 
   <main class="wrap">
-    <section aria-labelledby="quick-actions-heading">
+    <section class="help-band" aria-labelledby="quick-actions-heading">
       <div class="section-rule">
         <div class="section-heading">
           <div>
@@ -886,24 +912,28 @@
 
       <div class="quick-actions">
         <a class="quick-action" href="tips.html">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12Z"/><path d="M12 8v4"/><path d="M12 15.5h.01"/></svg></span>
           <small>Share Information</small>
           <h3>Submit a Tip</h3>
           <span>Submit a non-emergency tip &#8594;</span>
         </a>
 
         <a class="quick-action" href="forms.html">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></span>
           <small>Public Documents</small>
           <h3>Department Forms</h3>
           <span>View available forms &#8594;</span>
         </a>
 
         <a class="quick-action" href="services.html">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
           <small>Community Services</small>
           <h3>Department Services</h3>
           <span>Explore services &#8594;</span>
         </a>
 
         <a class="quick-action" href="links.html">
+          <span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></span>
           <small>Public Resources</small>
           <h3>Helpful Links</h3>
           <span>Find community resources &#8594;</span>
@@ -915,6 +945,7 @@
       <img class="chief-watermark" src="assets/images/badge.png" alt="" aria-hidden="true">
 
       <div class="chief-welcome-content">
+        <span class="letter-quote" aria-hidden="true">&ldquo;</span>
         <div class="section-rule">
           <p class="section-kicker">A Message From the Chief</p>
           <h2 class="section-title" id="chief-welcome-heading">
@@ -944,6 +975,15 @@
           <span>Gilbertown Police Department</span>
         </p>
       </div>
+      <aside class="values-card" aria-labelledby="values-heading">
+        <p class="values-kicker" id="values-heading">Our Values</p>
+        <ul class="values-list">
+          <li><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Professionalism</li>
+          <li><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M4 7h16"/><path d="m4 7-2.5 6a3 3 0 0 0 5 0Z"/><path d="m20 7-2.5 6a3 3 0 0 0 5 0Z"/></svg></span>Fairness</li>
+          <li><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>Integrity</li>
+          <li><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1Z"/></svg></span>Respect</li>
+        </ul>
+      </aside>
     </section>
 
     <section class="updates-grid" aria-label="News and community events">
@@ -985,6 +1025,16 @@
         <h2 class="section-title">Department Office</h2>
 
         <article class="event-item">
+          <p class="event-date">Emergency</p>
+          <h3><a href="tel:911">Call 911</a></h3>
+        </article>
+
+        <article class="event-item">
+          <p class="event-date">Non-Emergency Dispatch</p>
+          <p><a href="tel:+12054595911">Choctaw County E-911: (205) 459-5911</a></p>
+        </article>
+
+        <article class="event-item">
           <p class="event-date">Office Hours</p>
           <h3>8:00 a.m.–4:00 p.m.</h3>
           <p>Closed Tuesday, Saturday, and Sunday</p>
@@ -1000,6 +1050,8 @@
           <p class="event-date">Community Events</p>
           <p>No events are posted right now. <a href="events.html">Check the events page &#8594;</a></p>
         </article>
+
+        <p class="panel-link"><a href="contact.html">Full contact information &#8594;</a></p>
       </aside>
     </section>
 
@@ -1067,52 +1119,6 @@
       </div>
     </section>
 
-    <section class="contact-section" aria-labelledby="contact-heading">
-      <div class="contact-intro">
-        <div class="section-rule">
-          <p class="section-kicker">Contact the Department</p>
-          <h2 class="section-title" id="contact-heading">We Are Here to Help</h2>
-        </div>
-
-        <p>
-          Use the appropriate number below for emergency and non-emergency needs. This
-          website and email are not monitored for emergency dispatch.
-        </p>
-
-        <a class="section-link" href="contact.html">Full contact information</a>
-      </div>
-
-      <aside class="contact-panel">
-        <h2>Contact Information</h2>
-
-        <div class="contact-line">
-          <strong>Emergency</strong>
-          <a href="tel:911">Call 911</a>
-        </div>
-
-        <div class="contact-line">
-          <strong>Non-Emergency Dispatch</strong>
-          <a href="tel:+12054595911">Choctaw County E-911: (205) 459-5911</a>
-        </div>
-
-        <div class="contact-line">
-          <strong>Department Office</strong>
-          <a href="tel:+12518432766">(251) 843-2766</a>
-        </div>
-
-        <div class="contact-line">
-          <strong>Office Hours</strong>
-          8:00 a.m.–4:00 p.m.<br>
-          Closed Tuesday, Saturday, and Sunday
-        </div>
-
-        <div class="contact-line">
-          <strong>Location</strong>
-          40 Front Street<br>
-          Gilbertown, Alabama 36908
-        </div>
-      </aside>
-    </section>
 
     <section class="contact-note">
       <p>
@@ -1123,6 +1129,11 @@
     </section>
   </main>
 
+  <nav class="call-bar" aria-label="Call the department">
+    <a href="tel:+12518432766" aria-label="Call the department office at (251) 843-2766"><span>Call Office</span>(251) 843-2766</a>
+    <a href="tel:+12054595911" aria-label="Call Choctaw County non-emergency dispatch at (205) 459-5911"><span>Non-Emergency</span>(205) 459-5911</a>
+  </nav>
+
   <footer>
     <div class="wrap footer-content">
       <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
@@ -1132,16 +1143,16 @@
         <p class="small">Official public website of the Gilbertown Police Department.</p>
         <p class="footer-contacts">
           <a href="https://maps.google.com/?q=40+Front+Street,+Gilbertown,+AL+36908" target="_blank" rel="noopener noreferrer">40 Front Street, Gilbertown, Alabama 36908</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office hours: 8:00 a.m.–4:00 p.m. (closed Tuesday, Saturday, and Sunday)
         </p>
 
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Non-Emergency Dispatch:
           <a href="tel:+12054595911">(205) 459-5911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office:
           <a href="tel:+12518432766">(251) 843-2766</a>
         </p>

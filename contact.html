@@ -36,7 +36,7 @@
       min-width: 0;
       margin: 0;
       color: var(--ink);
-      background: linear-gradient( 180deg, #ffd400 0, #ffd400 56rem, #ffe451 96rem, #fff19d 145rem, #fff9dd 195rem, #fbfaf5 245rem, #fbfaf5 100% );
+      background: var(--ivory);
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
@@ -113,7 +113,7 @@
       flex-direction: column;
       padding: 26px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.3);
+      background: #ffffff;
       border: 1px solid var(--line);
     }
 
@@ -195,6 +195,30 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .map-frame {
+      position: relative;
+      margin-top: 28px;
+      aspect-ratio: 16 / 10;
+      background: #e9edf1;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .map-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .map-link {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
     .office-section p {
       max-width: 760px;
     }
@@ -260,7 +284,7 @@
       flex-direction: column;
       padding: 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.28);
+      background: #ffffff;
       border: 1px solid var(--line);
       text-decoration: none;
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
@@ -387,7 +411,7 @@
       margin-top: 28px;
       padding: 21px 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.52);
+      background: #ffffff;
       border-left: 4px solid var(--yellow-dark);
     }
 
@@ -445,7 +469,7 @@
 
     @media (max-width: 560px) {
       body {
-        background: linear-gradient( 180deg, #ffd400 0, #ffd400 86rem, #ffe65b 140rem, #fff1a4 194rem, #fff9dd 248rem, #fbfaf5 305rem, #fbfaf5 100% );
+        background: var(--ivory);
       }
 
       .wrap {
@@ -486,19 +510,6 @@
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
             <span class="brand-department">Police Department</span>
-          </span>
-        </a>
-
-        <a
-          class="header-location"
-          href="https://www.gilbertown.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit the official Town of Gilbertown website"
-        >
-          <span>
-            <strong>Town of Gilbertown</strong>
-            <span>Choctaw County · Alabama</span>
           </span>
         </a>
 
@@ -633,6 +644,18 @@
           <a href="forms.html">Forms page</a>. For printable household,
           emergency, fraud-prevention, weather, pet, medical, and digital-safety
           materials, visit the <a href="safety-materials.html">Safety Materials page</a>.
+        </p>
+
+        <div class="map-frame">
+          <iframe
+            title="Map showing the Gilbertown Police Department at 40 Front Street, Gilbertown, Alabama"
+            src="https://www.google.com/maps?q=40+Front+Street,+Gilbertown,+AL+36908&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p class="map-link">
+          <a href="https://maps.google.com/?q=40+Front+Street,+Gilbertown,+AL+36908" target="_blank" rel="noopener noreferrer">Get directions in Google Maps &#8594;</a>
         </p>
       </div>
 
@@ -805,6 +828,11 @@
     </section>
   </main>
 
+  <nav class="call-bar" aria-label="Call the department">
+    <a href="tel:+12518432766" aria-label="Call the department office at (251) 843-2766"><span>Call Office</span>(251) 843-2766</a>
+    <a href="tel:+12054595911" aria-label="Call Choctaw County non-emergency dispatch at (205) 459-5911"><span>Non-Emergency</span>(205) 459-5911</a>
+  </nav>
+
   <footer>
     <div class="wrap footer-content">
       <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
@@ -814,15 +842,15 @@
         <p class="small">Official public website of the Gilbertown Police Department.</p>
         <p class="footer-contacts">
           <a href="https://maps.google.com/?q=40+Front+Street,+Gilbertown,+AL+36908" target="_blank" rel="noopener noreferrer">40 Front Street, Gilbertown, Alabama 36908</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office hours: 8:00 a.m.–4:00 p.m. (closed Tuesday, Saturday, and Sunday)
         </p>
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Non-Emergency Dispatch:
           <a href="tel:+12054595911">(205) 459-5911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office:
           <a href="tel:+12518432766">(251) 843-2766</a>
         </p>

@@ -36,7 +36,7 @@
       min-width: 0;
       margin: 0;
       color: var(--ink);
-      background: linear-gradient( 180deg, #ffd400 0, #ffd400 50rem, #ffe451 78rem, #fff19d 110rem, #fff9dd 145rem, #fbfaf5 182rem, #fbfaf5 100% );
+      background: var(--ivory);
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
@@ -153,14 +153,14 @@
       flex-direction: column;
       padding: 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.28);
+      background: #ffffff;
       border: 1px solid var(--line);
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
     }
 
     .form-card:hover, .form-card:focus-within {
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.48);
+      background: #ffffff;
       transform: translateY(-4px);
     }
 
@@ -261,7 +261,7 @@
       padding: 24px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.24);
+      background: #ffffff;
       transition: color 0.25s ease, background 0.25s ease;
     }
 
@@ -301,7 +301,7 @@
       margin-top: 28px;
       padding: 21px 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.52);
+      background: #ffffff;
       border-left: 4px solid var(--yellow-dark);
     }
 
@@ -344,7 +344,7 @@
 
     @media (max-width: 560px) {
       body {
-        background: linear-gradient( 180deg, #ffd400 0, #ffd400 76rem, #ffe65b 108rem, #fff1a4 140rem, #fff9dd 174rem, #fbfaf5 214rem, #fbfaf5 100% );
+        background: var(--ivory);
       }
 
       .wrap {
@@ -389,19 +389,6 @@
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
             <span class="brand-department">Police Department</span>
-          </span>
-        </a>
-
-        <a
-          class="header-location"
-          href="https://www.gilbertown.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit the official Town of Gilbertown website"
-        >
-          <span>
-            <strong>Town of Gilbertown</strong>
-            <span>Choctaw County · Alabama</span>
           </span>
         </a>
 
@@ -726,6 +713,11 @@
     </section>
   </main>
 
+  <nav class="call-bar" aria-label="Call the department">
+    <a href="tel:+12518432766" aria-label="Call the department office at (251) 843-2766"><span>Call Office</span>(251) 843-2766</a>
+    <a href="tel:+12054595911" aria-label="Call Choctaw County non-emergency dispatch at (205) 459-5911"><span>Non-Emergency</span>(205) 459-5911</a>
+  </nav>
+
   <footer>
     <div class="wrap footer-content">
       <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
@@ -735,15 +727,15 @@
         <p class="small">Official public website of the Gilbertown Police Department.</p>
         <p class="footer-contacts">
           <a href="https://maps.google.com/?q=40+Front+Street,+Gilbertown,+AL+36908" target="_blank" rel="noopener noreferrer">40 Front Street, Gilbertown, Alabama 36908</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office hours: 8:00 a.m.–4:00 p.m. (closed Tuesday, Saturday, and Sunday)
         </p>
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Non-Emergency Dispatch:
           <a href="tel:+12054595911">(205) 459-5911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office:
           <a href="tel:+12518432766">(251) 843-2766</a>
         </p>

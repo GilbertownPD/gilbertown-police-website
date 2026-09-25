@@ -36,7 +36,7 @@
       min-width: 0;
       margin: 0;
       color: var(--ink);
-      background: linear-gradient( 180deg, #ffd400 0, #ffd400 56rem, #ffe451 96rem, #fff19d 145rem, #fff9dd 195rem, #fbfaf5 245rem, #fbfaf5 100% );
+      background: var(--ivory);
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
@@ -144,23 +144,74 @@
     }
 
     .roster {
-      max-width: 780px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 18px;
       margin: 16px 0 0;
       padding: 0;
       list-style: none;
     }
 
-    .roster li {
-      padding: 14px 0;
+    .officer-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 18px 26px;
       color: var(--navy-dark);
-      border-bottom: 1px solid var(--line);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(1.18rem, 2.1vw, 1.48rem);
-      line-height: 1.3;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--navy);
+      text-align: center;
     }
 
-    .roster li:first-child {
-      border-top: 1px solid var(--line);
+    .officer-card.is-chief {
+      color: #ffffff;
+      background: var(--navy);
+      border-color: var(--navy);
+      border-top-color: var(--yellow);
+    }
+
+    .officer-emblem {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      color: var(--yellow);
+      background: var(--navy);
+      border: 3px solid var(--yellow);
+      border-radius: 50%;
+    }
+
+    .is-chief .officer-emblem {
+      color: var(--navy-dark);
+      background: var(--yellow);
+      border-color: #ffffff;
+    }
+
+    .officer-emblem svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .officer-rank {
+      color: var(--gold-text);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .is-chief .officer-rank {
+      color: var(--yellow);
+    }
+
+    .officer-name {
+      margin-top: 6px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .public-resources-section {
@@ -180,7 +231,7 @@
       flex-direction: column;
       padding: 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.28);
+      background: #ffffff;
       border: 1px solid var(--line);
       text-decoration: none;
       transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
@@ -256,7 +307,7 @@
       padding: 22px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.24);
+      background: #ffffff;
       transition: color 0.25s ease, background 0.25s ease;
     }
 
@@ -303,7 +354,7 @@
       margin-top: 28px;
       padding: 21px 24px;
       color: var(--navy-dark);
-      background: rgba(255, 255, 255, 0.52);
+      background: #ffffff;
       border-left: 4px solid var(--yellow-dark);
     }
 
@@ -346,7 +397,7 @@
 
     @media (max-width: 560px) {
       body {
-        background: linear-gradient( 180deg, #ffd400 0, #ffd400 84rem, #ffe65b 137rem, #fff1a4 190rem, #fff9dd 244rem, #fbfaf5 300rem, #fbfaf5 100% );
+        background: var(--ivory);
       }
 
       .wrap {
@@ -391,19 +442,6 @@
           <span class="brand-text">
             <span class="brand-town">Gilbertown</span>
             <span class="brand-department">Police Department</span>
-          </span>
-        </a>
-
-        <a
-          class="header-location"
-          href="https://www.gilbertown.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit the official Town of Gilbertown website"
-        >
-          <span>
-            <strong>Town of Gilbertown</strong>
-            <span>Choctaw County · Alabama</span>
           </span>
         </a>
 
@@ -513,11 +551,31 @@
       </div>
 
       <ul class="roster">
-        <li>Chief Frank Burkett</li>
-        <li>Sergeant Austin Dew</li>
-        <li>Officer Daniel Jackson</li>
-        <li>Officer Ken Meeks</li>
-        <li>Officer Kendal Gardner</li>
+        <li class="officer-card is-chief">
+          <span class="officer-emblem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
+          <span class="officer-rank">Chief</span>
+          <span class="officer-name">Frank Burkett</span>
+        </li>
+        <li class="officer-card">
+          <span class="officer-emblem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
+          <span class="officer-rank">Sergeant</span>
+          <span class="officer-name">Austin Dew</span>
+        </li>
+        <li class="officer-card">
+          <span class="officer-emblem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
+          <span class="officer-rank">Officer</span>
+          <span class="officer-name">Daniel Jackson</span>
+        </li>
+        <li class="officer-card">
+          <span class="officer-emblem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
+          <span class="officer-rank">Officer</span>
+          <span class="officer-name">Ken Meeks</span>
+        </li>
+        <li class="officer-card">
+          <span class="officer-emblem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
+          <span class="officer-rank">Officer</span>
+          <span class="officer-name">Kendal Gardner</span>
+        </li>
       </ul>
     </section>
 
@@ -689,6 +747,11 @@
     </section>
   </main>
 
+  <nav class="call-bar" aria-label="Call the department">
+    <a href="tel:+12518432766" aria-label="Call the department office at (251) 843-2766"><span>Call Office</span>(251) 843-2766</a>
+    <a href="tel:+12054595911" aria-label="Call Choctaw County non-emergency dispatch at (205) 459-5911"><span>Non-Emergency</span>(205) 459-5911</a>
+  </nav>
+
   <footer>
     <div class="wrap footer-content">
       <img class="footer-badge" src="assets/images/badge.png" alt="Gilbertown Police Department badge">
@@ -698,16 +761,16 @@
         <p class="small">Official public website of the Gilbertown Police Department.</p>
         <p class="footer-contacts">
           <a href="https://maps.google.com/?q=40+Front+Street,+Gilbertown,+AL+36908" target="_blank" rel="noopener noreferrer">40 Front Street, Gilbertown, Alabama 36908</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office hours: 8:00 a.m.–4:00 p.m. (closed Tuesday, Saturday, and Sunday)
         </p>
 
         <p class="footer-contacts">
           Emergency: <a href="tel:911">911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Non-Emergency Dispatch:
           <a href="tel:+12054595911">(205) 459-5911</a>
-          &nbsp;|&nbsp;
+          <span class="sep" aria-hidden="true">|</span>
           Office:
           <a href="tel:+12518432766">(251) 843-2766</a>
         </p>
